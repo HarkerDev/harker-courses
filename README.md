@@ -30,9 +30,11 @@ Due to anonymity, we will need to verify if students are from Harker or not. In 
 
 ### To run:
 
+In command line,
+
 `git clone https://github.com/aggarwalneeraj141/harker-courses`
 
-Create a folder `credentials`, and inside, `credentials.js`. Inside of this file, add your Firebase configuration script. So,
+Wherever you cloned it, create a folder inside the project named `credentials`, and inside, `credentials.js`. Inside of this file, add your Firebase configuration script. So,
 
 ```
   var config = {
@@ -44,6 +46,8 @@ Create a folder `credentials`, and inside, `credentials.js`. Inside of this file
   };
   firebase.initializeApp(config);
 ```
+
+Then, again in command line,
 
 `npm install`
 
