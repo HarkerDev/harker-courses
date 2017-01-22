@@ -32,6 +32,19 @@ Due to anonymity, we will need to verify if students are from Harker or not. In 
 
 `git clone https://github.com/aggarwalneeraj141/harker-courses`
 
+Create a folder `credentials`, and inside, `credentials.js`. Inside of this file, add your Firebase configuration script. So,
+
+```
+  var config = {
+    apiKey: "<API_KEY>",
+    authDomain: "<PROJECT_ID>.firebaseapp.com",
+    databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+    storageBucket: "<BUCKET>.appspot.com",
+    messagingSenderId: "<SENDER_ID>",
+  };
+  firebase.initializeApp(config);
+```
+
 `npm install`
 
 `npm start`
