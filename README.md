@@ -22,9 +22,11 @@ Will have three parameters.
 2. Ratings (hardness, work load, etcc)
 3. Verification Questionm
 
-## Verification
+## Verification/Login
 
-Due to anonymity, we will need to verify if students are from Harker or not. In order to do this, there will be a set of questions asking about Harker, such as the names of certain buildings, or the names of administrators. A user will be able to cycle through at most 3 questions, all appearing in random order.
+Due to anonymity, we will need to verify if students are from Harker or not. In order to do this, students will log into their Google account (student account), but post anonymously. This is also to be able to track and maintain malicious activity and posts, and ban from the platform if necessary.
+
+Login for Google will be done through Firebase.
 
 ## Usage
 
