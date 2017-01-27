@@ -1,0 +1,2983 @@
+{
+   "BE010":{
+      "credits":0.5,
+      "id":"BE010",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":false,
+      "subject":"Business and Entrepreneurship",
+      "title":"Principles of Business and Entrepreneurship"
+   },
+   "BE011":{
+      "credits":0.25,
+      "id":"BE011",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Principles of Business and Entrepreneurship.",
+      "semester":true,
+      "subject":"Business and Entrepreneurship",
+      "title":"Advanced Business: Operations and Management"
+   },
+   "BE015":{
+      "credits":0,
+      "id":"BE015",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":false,
+      "subject":"Business and Entrepreneurship",
+      "title":"Business Leadership"
+   },
+   "BE100":{
+      "credits":0.5,
+      "id":"BE100",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"World History 1 or World History 1 Honors. UC approved.",
+      "semester":true,
+      "subject":"Business and Entrepreneurship",
+      "title":"Economics"
+   },
+   "BE400":{
+      "credits":0.5,
+      "id":"BE400",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Prerequisite: AP Microeconomics. UC approved.",
+      "semester":true,
+      "subject":"Business and Entrepreneurship",
+      "title":"Honors Advanced Topics in Economics: Game Theory"
+   },
+   "BE604":{
+      "credits":1,
+      "id":"BE604",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Economics is open to juniors and seniors who are approved for honors level math or who have completed Economics and obtain teacher approval. Sophomores in AP Calculus may request an exception. UC approved.",
+      "semester":false,
+      "subject":"Business and Entrepreneurship",
+      "title":"AP Economics (Micro and Macro)"
+   },
+   "CM100":{
+      "credits":0.5,
+      "id":"CM100",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None",
+      "semester":false,
+      "subject":"Communication Studies",
+      "title":"Introduction to Speech & Debate"
+   },
+   "CM104":{
+      "credits":0.5,
+      "id":"CM104",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Application process",
+      "semester":false,
+      "subject":"Communication Studies",
+      "title":"Intermediate Speech and Debate"
+   },
+   "CM110":{
+      "credits":0,
+      "id":"CM110",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Departmental approval",
+      "semester":false,
+      "subject":"Communication Studies",
+      "title":"Competitive Speech and Debate"
+   },
+   "CS100":{
+      "credits":0.5,
+      "id":"CS100",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Algebra 1. UC approved.",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Digital World"
+   },
+   "CS101":{
+      "credits":0.5,
+      "id":"CS101",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Geometry or Honors Geometry. UC approved.",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Programming"
+   },
+   "CS102":{
+      "credits":0.5,
+      "id":"CS102",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Geometry or Honors Geometry with A- or",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Advanced Programming"
+   },
+   "CS105":{
+      "credits":0.5,
+      "id":"CS105",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Programming or Advanced Programming",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Robotics Principles: Hardware"
+   },
+   "CS106":{
+      "credits":0.5,
+      "id":"CS106",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Programming or Advanced Programming",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Robotics Principles: Software"
+   },
+   "CS600":{
+      "credits":1,
+      "id":"CS600",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Algebra 2/Trig. or Honors Algebra 2/ Trig. Programming with an A- or better, or Advanced\nProgramming with a B or better. UC approved.",
+      "semester":false,
+      "subject":"Computer Science",
+      "title":"AP Computer Science"
+   },
+   "CS601":{
+      "credits":1,
+      "id":"CS601",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Algebra 2/Trig. Advanced Programming with an A- or better. UC approved.",
+      "semester":false,
+      "subject":"Computer Science",
+      "title":"AP Computer Science (Data Structures)"
+   },
+   "CS700":{
+      "credits":0.5,
+      "id":"CS700",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Algebra 2/Trig. AP Computer Science with a B+ or better. UC approved.",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Honors Data Structures"
+   },
+   "CS703":{
+      "credits":0.5,
+      "id":"CS703",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Co-requisite: Calculus; Prerequisite: Data Structures with a B+ or better or AP Computer Science with Data Structures with a B+ or better. Subject to instructor approval. UC approved.",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Honors Advanced Topics Computer Science: AI Expert Systems"
+   },
+   "CS705":{
+      "credits":0.5,
+      "id":"CS705",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Co-requisite: Calculus; Prerequisite: Data Structures with a B+ or better or AP Computer Science with Data Structures with a B+ or better. Subject to instructor approval. UC approved.",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Honors Advanced Topics Computer Science: AI Neural Networks"
+   },
+   "CS707":{
+      "credits":0.5,
+      "id":"CS707",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Co-requisite: Calculus; Prerequisite: Data Structures with a B+ or better or AP Computer Science with Data Structures with a B+ or better. Subject to instructor approval. UC approved.",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Honors Advanced Topics Computer Science: Compilers & Interpreters"
+   },
+   "CS708":{
+      "credits":0.5,
+      "id":"CS708",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Prerequisites for all honors advanced topics in computer science courses will be: Data\nStructures with a B+ or better or AP Computer Science with Data Structures with a B+ or better. Subject to instructor approval. UC approved.",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Honors Advanced Topics Computer Science: Computer Architecture"
+   },
+   "CS712":{
+      "credits":0.5,
+      "id":"CS712",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Co-requisite: Calculus; Prerequisite: Data Structures with a B+ or better or AP Computer Science with Data Structures with a B+ or better. Subject to instructor approval. UC approved.",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Honors Advanced Topics Computer Science: Generic A"
+   },
+   "CS714":{
+      "credits":0.5,
+      "id":"CS714",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Co-requisite: Calculus; Prerequisite: Data Structures with a B+ or better or AP Computer Science with Data Structures with a B+ or better. Subject to instructor approval. UC approved.",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Honors Advanced Topics Computer Science: Numerical Methods"
+   },
+   "CS715":{
+      "credits":0.5,
+      "id":"CS715",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Co-requisite: Calculus; Prerequisite: Data Structures with a B+ or better or AP Computer Science with Data Structures with a B+ or better. Subject to instructor approval. UC approved.",
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Honors Advanced Topics Computer Science: Prog Languages"
+   },
+   "CS719":{
+      "credits":0.5,
+      "id":"CS719",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Computer Science",
+      "title":"Honors Advanced Topics Computer Science: Generic B"
+   },
+   "EN100":{
+      "credits":1,
+      "id":"EN100",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"English",
+      "title":"English 1: The Study of Literary Genres"
+   },
+   "EN101":{
+      "credits":1,
+      "id":"EN101",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"English",
+      "title":"Honors English 1: The Study of Literary Genres"
+   },
+   "EN200":{
+      "credits":1,
+      "id":"EN200",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 1 or Honors English 1. UC approved.",
+      "semester":false,
+      "subject":"English",
+      "title":"English 2: Survey of British Literature"
+   },
+   "EN201":{
+      "credits":1,
+      "id":"EN201",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English I or Honors English I and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"English",
+      "title":"Honors English 2: Survey of Bristish Literature"
+   },
+   "EN300":{
+      "credits":1,
+      "id":"EN300",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 2 or Honors English 2. UC approved.",
+      "semester":false,
+      "subject":"English",
+      "title":"English 3: Survey of American Literature"
+   },
+   "EN301":{
+      "credits":1,
+      "id":"EN301",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English II or Honors English II or and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"English",
+      "title":"Honors English 3: Survey of American Literature"
+   },
+   "EN400":{
+      "credits":0.5,
+      "id":"EN400",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 4 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: 18th & 19th Century Women Writers"
+   },
+   "EN401":{
+      "credits":0.5,
+      "id":"EN401",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: 20th Century Women Writers"
+   },
+   "EN402":{
+      "credits":0.5,
+      "id":"EN402",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: 20th Century American Drama"
+   },
+   "EN403":{
+      "credits":0.5,
+      "id":"EN403",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: 20th-Century American Poetics"
+   },
+   "EN404":{
+      "credits":0.5,
+      "id":"EN404",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Asian Masterpieces"
+   },
+   "EN405":{
+      "credits":0.5,
+      "id":"EN405",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 4 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Theory and Practice - Poetry and Fiction"
+   },
+   "EN407":{
+      "credits":0.5,
+      "id":"EN407",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Gothic Lit - Vampires and the Macabre"
+   },
+   "EN408":{
+      "credits":0.5,
+      "id":"EN408",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Great Novels"
+   },
+   "EN409":{
+      "credits":0.5,
+      "id":"EN409",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Justice in Literature"
+   },
+   "EN410":{
+      "credits":0.5,
+      "id":"EN410",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Literature of the Holocaust"
+   },
+   "EN411":{
+      "credits":0.5,
+      "id":"EN411",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Madness in Literature"
+   },
+   "EN413":{
+      "credits":0.5,
+      "id":"EN413",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Modern European Drama"
+   },
+   "EN414":{
+      "credits":0.5,
+      "id":"EN414",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Mystery & Detective Fiction"
+   },
+   "EN416":{
+      "credits":0.5,
+      "id":"EN416",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Satire & Comedy"
+   },
+   "EN417":{
+      "credits":0.5,
+      "id":"EN417",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Literature into Film"
+   },
+   "EN418":{
+      "credits":0.5,
+      "id":"EN418",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Shakespeare - The Comedies"
+   },
+   "EN419":{
+      "credits":0.5,
+      "id":"EN419",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Shakespeare - The Tragedies"
+   },
+   "EN420":{
+      "credits":0.5,
+      "id":"EN420",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 4 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Southern Fiction"
+   },
+   "EN421":{
+      "credits":0.5,
+      "id":"EN421",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Speculative Fiction and Society: Science\nFiction and Fantasy*"
+   },
+   "EN422":{
+      "credits":0.5,
+      "id":"EN422",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Study of Short Fiction"
+   },
+   "EN424":{
+      "credits":0.5,
+      "id":"EN424",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Being Oscar Wilde"
+   },
+   "EN425":{
+      "credits":0.5,
+      "id":"EN425",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.\t",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Jack Kerouac and the Beat Generation"
+   },
+   "EN426":{
+      "credits":0.5,
+      "id":"EN426",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or department approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Postmodern Literature"
+   },
+   "EN427":{
+      "credits":0.5,
+      "id":"EN427",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or department approval. UC approved.",
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: The Graphic Novel"
+   },
+   "EN498":{
+      "credits":0.5,
+      "id":"EN498",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Generic Course A"
+   },
+   "EN499":{
+      "credits":0.5,
+      "id":"EN499",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"English",
+      "title":"English 4: Generic Course  B"
+   },
+   "EN600":{
+      "credits":1,
+      "id":"EN600",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"English 3 or Honors English 3 and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"English",
+      "title":"AP English: Literature & Composition"
+   },
+   "FL100":{
+      "credits":1,
+      "id":"FL100",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Spanish 1"
+   },
+   "FL110":{
+      "credits":1,
+      "id":"FL110",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"French 1"
+   },
+   "FL120":{
+      "credits":1,
+      "id":"FL120",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Latin 1"
+   },
+   "FL130":{
+      "credits":1,
+      "id":"FL130",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Mandarin 1"
+   },
+   "FL140":{
+      "credits":1,
+      "id":"FL140",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Japanese 1"
+   },
+   "FL200":{
+      "credits":1,
+      "id":"FL200",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Spanish 1. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Spanish 2"
+   },
+   "FL201":{
+      "credits":1,
+      "id":"FL201",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Spanish 1 and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Spanish 2"
+   },
+   "FL210":{
+      "credits":1,
+      "id":"FL210",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"French 1. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"French 2"
+   },
+   "FL220":{
+      "credits":1,
+      "id":"FL220",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Latin 1. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Latin 2"
+   },
+   "FL230":{
+      "credits":1,
+      "id":"FL230",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Mandarin 1. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Mandarin 2"
+   },
+   "FL240":{
+      "credits":1,
+      "id":"FL240",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Japanese 1. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Japanese 2"
+   },
+   "FL300":{
+      "credits":1,
+      "id":"FL300",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Spanish 2. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Spanish 3"
+   },
+   "FL301":{
+      "credits":1,
+      "id":"FL301",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Spanish 2 and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Spanish 3"
+   },
+   "FL310":{
+      "credits":1,
+      "id":"FL310",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"French 2. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"French 3"
+   },
+   "FL311":{
+      "credits":1,
+      "id":"FL311",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"French 2 and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors French 3"
+   },
+   "FL320":{
+      "credits":1,
+      "id":"FL320",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Latin 2. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Latin 3"
+   },
+   "FL321":{
+      "credits":1,
+      "id":"FL321",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Latin 2 and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Latin 3"
+   },
+   "FL330":{
+      "credits":1,
+      "id":"FL330",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Mandarin 2. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Mandarin 3"
+   },
+   "FL331":{
+      "credits":1,
+      "id":"FL331",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Mandarin 2 and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Mandarin 3"
+   },
+   "FL340":{
+      "credits":1,
+      "id":"FL340",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Japanese 2. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Japanese 3"
+   },
+   "FL341":{
+      "credits":1,
+      "id":"FL341",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Japanese 2 and departmental approval.UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Japanese 3"
+   },
+   "FL431":{
+      "credits":1,
+      "id":"FL431",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Mandarin 3 and departmental approval.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Mandarin 4"
+   },
+   "FL400":{
+      "credits":1,
+      "id":"FL400",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Spanish 3. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Spanish 4: Advanced Conversation and Composition"
+   },
+   "FL401":{
+      "credits":1,
+      "id":"FL401",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Spanish 3 or Spanish 3 with departmental approval.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Spanish 4"
+   },
+   "FL410":{
+      "credits":1,
+      "id":"FL410",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"French 3 or French 3 Honors and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"French 4: Advanced Conversation and Composition"
+   },
+   "FL411":{
+      "credits":1,
+      "id":"FL411",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors French 4 is open to students who have\nsuccessfully completed Honors French 3.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors French 4"
+   },
+   "FL412":{
+      "credits":0.5,
+      "id":"FL412",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"French 4 or AP French. UC approved.",
+      "semester":true,
+      "subject":"Modern - Classical Languages",
+      "title":"French Prose"
+   },
+   "FL413":{
+      "credits":0.5,
+      "id":"FL413",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"French 4 or AP French. UC approved.",
+      "semester":true,
+      "subject":"Modern - Classical Languages",
+      "title":"French Literature &Film"
+   },
+   "FL420":{
+      "credits":1,
+      "id":"FL420",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Latin 3 or Honors Latin 3. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Latin 4: Advanced Study of Roman Prose and Poetry"
+   },
+   "FL430":{
+      "credits":1,
+      "id":"FL430",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Mandarin 3 or Honors Mandarin 3. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Mandarin 4"
+   },
+   "FL440":{
+      "credits":1,
+      "id":"FL440",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Japanese 3 or Honors Japanese 3. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Japanese 4"
+   },
+   "FL441":{
+      "credits":1,
+      "id":"FL441",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Japanese 3 or Honors Japanese 3. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Japanese 4"
+   },
+   "FL500":{
+      "credits":0.5,
+      "id":"FL500",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Spanish 4: Advanced Conversation and Composition or AP Spanish Language. UC approved.",
+      "semester":true,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Advanced Spanish: The Latin American Short Story"
+   },
+   "FL501":{
+      "credits":0.5,
+      "id":"FL501",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Spanish 4: Advanced Conversation and Composition, AP Spanish Language. UC approved.",
+      "semester":true,
+      "subject":"Modern - Classical Languages",
+      "title":"Contemporary Issues in the Spanish Speaking World"
+   },
+   "FL502":{
+      "credits":0.5,
+      "id":"FL502",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Spanish 4: Advanced Conversation and Composition or AP Spanish Language. UC approved.",
+      "semester":true,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Advanced Spanish: Literature and Film"
+   },
+   "FL540":{
+      "credits":1,
+      "id":"FL540",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Japanese 4. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Japanese 5"
+   },
+   "FL600":{
+      "credits":1,
+      "id":"FL600",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Spanish 3 or Spanish 4: Advanced Conversation and Composition, and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"AP Spanish Language and Culture"
+   },
+   "FL601":{
+      "credits":1,
+      "id":"FL601",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Spanish Language and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"AP Spanish Literature"
+   },
+   "FL610":{
+      "credits":1,
+      "id":"FL610",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"French 3 Honors or French 4: Advanced Conversation and Composition and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"AP French Language and Culture"
+   },
+   "FL620":{
+      "credits":1,
+      "id":"FL620",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Latin 3 and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"AP Latin"
+   },
+   "FL630":{
+      "credits":1,
+      "id":"FL630",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Mandarin 3 or Mandarin 4 and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"AP Chinese Language & Culture"
+   },
+   "FL640":{
+      "credits":1,
+      "id":"FL640",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Japanese 4 and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"AP Japanese Language and Culture"
+   },
+   "FL720":{
+      "credits":0.5,
+      "id":"FL720",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Latin Vergil. UC approved.",
+      "semester":true,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Advanced Latin Literature: Catullus/Horace"
+   },
+   "FL721":{
+      "credits":0.5,
+      "id":"FL721",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Latin.",
+      "semester":true,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Advanced Latin Literature: Prose"
+   },
+   "FL722":{
+      "credits":1,
+      "id":"FL722",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Latin: Virgil or Honors Advanced Latin Literature. UC approved.",
+      "semester":false,
+      "subject":"Modern - Classical Languages",
+      "title":"Honors Advanced Classical Studies: Latin"
+   },
+   "FP000":{
+      "credits":0,
+      "id":"FP000",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":false,
+      "subject":"NULL",
+      "title":"Free Period"
+   },
+   "FP001":{
+      "credits":0,
+      "id":"FP001",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"NULL",
+      "title":"Free Period Semester"
+   },
+   "GOA003":{
+      "credits":0.5,
+      "id":"GOA003",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: 9/11 in a Global Context"
+   },
+   "GOA004":{
+      "credits":0.5,
+      "id":"GOA004",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Comparative Governments*"
+   },
+   "GOA005":{
+      "credits":0.5,
+      "id":"GOA005",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Applying Philosophy to Modern Global Issues*"
+   },
+   "GOA006":{
+      "credits":0.5,
+      "id":"GOA006",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Digital Photography"
+   },
+   "GOA007":{
+      "credits":0.5,
+      "id":"GOA007",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Environmental Economics"
+   },
+   "GOA008":{
+      "credits":0.5,
+      "id":"GOA008",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: French Seminar"
+   },
+   "GOA009":{
+      "credits":0.5,
+      "id":"GOA009",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Global Health"
+   },
+   "GOA011":{
+      "credits":0.5,
+      "id":"GOA011",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Bioethics"
+   },
+   "GOA012":{
+      "credits":0.5,
+      "id":"GOA012",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: iOS App Design*"
+   },
+   "GOA013":{
+      "credits":0.5,
+      "id":"GOA013",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Japanese"
+   },
+   "GOA014":{
+      "credits":0.5,
+      "id":"GOA014",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Media Studies"
+   },
+   "GOA015":{
+      "credits":0.5,
+      "id":"GOA015",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Modern Ethical Dilemmas"
+   },
+   "GOA016":{
+      "credits":1,
+      "id":"GOA016",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":false,
+      "subject":"Global Online Academy",
+      "title":"GOA: Multivariable Calculus"
+   },
+   "GOA017":{
+      "credits":0.5,
+      "id":"GOA017",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Playwriting"
+   },
+   "GOA018":{
+      "credits":0.5,
+      "id":"GOA018",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: The Hispanic Experience"
+   },
+   "GOA019":{
+      "credits":0.5,
+      "id":"GOA019",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Urban Studies"
+   },
+   "GOA020":{
+      "credits":0.5,
+      "id":"GOA020",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Medical Problem Solving"
+   },
+   "GOA021":{
+      "credits":0.5,
+      "id":"GOA021",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Using Global Information Systems"
+   },
+   "GOA022":{
+      "credits":1,
+      "id":"GOA022",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":false,
+      "subject":"Global Online Academy",
+      "title":"GOA: Arabic I: Language through Culture"
+   },
+   "GOA023":{
+      "credits":0.5,
+      "id":"GOA023",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: This we believe: Comparative Religions*"
+   },
+   "GOA024":{
+      "credits":0.5,
+      "id":"GOA024",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: An Introduction to Computer Programming*"
+   },
+   "GOA025":{
+      "credits":0.5,
+      "id":"GOA025",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Genocide and Human Rights*"
+   },
+   "GOA026":{
+      "credits":0.5,
+      "id":"GOA026",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Game Theory*"
+   },
+   "GOA027":{
+      "credits":0.5,
+      "id":"GOA027",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Fiction Writing*"
+   },
+   "GOA028":{
+      "credits":0.5,
+      "id":"GOA028",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Poetry Writing*"
+   },
+   "GOA029":{
+      "credits":0.5,
+      "id":"GOA029",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Graphic Design*"
+   },
+   "GOA030":{
+      "credits":0.5,
+      "id":"GOA030",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: International Macroeconomics*"
+   },
+   "GOA031":{
+      "credits":1,
+      "id":"GOA031",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":false,
+      "subject":"Global Online Academy",
+      "title":"GOA: Japanese Language through Culture"
+   },
+   "GOA032":{
+      "credits":0.5,
+      "id":"GOA032",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Microeconomics*"
+   },
+   "GOA033":{
+      "credits":0.5,
+      "id":"GOA033",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"NULL",
+      "title":"GOA: Music Theory and Digital Composition*"
+   },
+   "GOA034":{
+      "credits":0.5,
+      "id":"GOA034",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Neuropsychology*"
+   },
+   "GOA035":{
+      "credits":1,
+      "id":"GOA035",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":false,
+      "subject":"Global Online Academy",
+      "title":"GOA: Digital Journalism"
+   },
+   "GOA036":{
+      "credits":1,
+      "id":"GOA036",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":false,
+      "subject":"Global Online Academy",
+      "title":"GOA: Precalculus"
+   },
+   "GOA037":{
+      "credits":0.5,
+      "id":"GOA037",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: An Introduction to Psychology*"
+   },
+   "GOA038":{
+      "credits":1,
+      "id":"GOA038",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":false,
+      "subject":"Global Online Academy",
+      "title":"GOA: Computer Programming I: Java"
+   },
+   "GOA039":{
+      "credits":0.5,
+      "id":"GOA039",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Note: Students should have taken at least one semester or equivalent of an introductory statistics course.",
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Advanced Statistics and Data Science*"
+   },
+   "GOA040":{
+      "credits":0.5,
+      "id":"GOA040",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: The Graphic Novel*"
+   },
+   "GOA041":{
+      "credits":0.5,
+      "id":"GOA041",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Music Theory and Digital Composition*"
+   },
+   "GOA042":{
+      "credits":0.5,
+      "id":"GOA042",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Gender Studies*"
+   },
+   "GOA043":{
+      "credits":0.5,
+      "id":"GOA043",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Advocacy*"
+   },
+   "GOA044":{
+      "credits":0.5,
+      "id":"GOA044",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Computer Programming II: Analyzing Data w Python*"
+   },
+   "GOA045":{
+      "credits":0.5,
+      "id":"GOA045",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Energy*"
+   },
+   "GOA046":{
+      "credits":0.5,
+      "id":"GOA046",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Abnormal Psychology*"
+   },
+   "GOA047":{
+      "credits":0.5,
+      "id":"GOA047",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Organic Chemistry in Modern Society*"
+   },
+   "GOA048":{
+      "credits":0.5,
+      "id":"GOA048",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Global Online Academy",
+      "title":"GOA: Comparative Politics*"
+   },
+   "HS100":{
+      "credits":1,
+      "id":"HS100",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"History - Social Studies",
+      "title":"World History 1: Early Civilizations through the Renaissance"
+   },
+   "HS101":{
+      "credits":1,
+      "id":"HS101",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"History - Social Studies",
+      "title":"Honors World History 1: Early Civilizations through the Renaissance"
+   },
+   "HS200":{
+      "credits":1,
+      "id":"HS200",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"World History 1 or World History 1 Honors. UC approved.",
+      "semester":false,
+      "subject":"History - Social Studies",
+      "title":"World History 2"
+   },
+   "HS201":{
+      "credits":1,
+      "id":"HS201",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors World History 1 or World History 1 and deparment approval.",
+      "semester":false,
+      "subject":"History - Social Studies",
+      "title":"Honors World History 2"
+   },
+   "HS300":{
+      "credits":1,
+      "id":"HS300",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Completion of Gr. 10 history requirement. UC approved.",
+      "semester":false,
+      "subject":"History - Social Studies",
+      "title":"US History"
+   },
+   "HS301":{
+      "credits":1,
+      "id":"HS301",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Prerequisite: Completion of grade 10 history requirement and department approval. UC Approved.",
+      "semester":false,
+      "subject":"History - Social Studies",
+      "title":"Honors United States History"
+   },
+   "HS402":{
+      "credits":0.5,
+      "id":"HS402",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"World History 1 or World History 1 Honors. UC approved.",
+      "semester":true,
+      "subject":"History - Social Studies",
+      "title":"Moral Philosophy: East and West"
+   },
+   "HS403":{
+      "credits":0.5,
+      "id":"HS403",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"U.S. History or AP U.S. History and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"History - Social Studies",
+      "title":"Honors Modern International Affairs"
+   },
+   "HS404":{
+      "credits":0.5,
+      "id":"HS404",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Completion of grade 10 history requirement. UC approved.",
+      "semester":true,
+      "subject":"History - Social Studies",
+      "title":"Psychology"
+   },
+   "HS405":{
+      "credits":0.5,
+      "id":"HS405",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"U.S. History, AP U.S. History or departmental approval. UC approved.",
+      "semester":true,
+      "subject":"History - Social Studies",
+      "title":"Western Political Thought & Philosophy"
+   },
+   "HS407":{
+      "credits":0.5,
+      "id":"HS407",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"World History 1. UC approved",
+      "semester":true,
+      "subject":"History - Social Studies",
+      "title":"World Religions & Philosophy"
+   },
+   "HS600":{
+      "credits":1,
+      "id":"HS600",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"World History 1 or World History 1 Honors and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"History - Social Studies",
+      "title":"AP World History"
+   },
+   "HS601":{
+      "credits":1,
+      "id":"HS601",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"World History 1 or World History 1 Honors and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"History - Social Studies",
+      "title":"AP European History"
+   },
+   "HS602":{
+      "credits":1,
+      "id":"HS602",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Completion of Gr. 10 history requirement",
+      "semester":false,
+      "subject":"History - Social Studies",
+      "title":"AP US History"
+   },
+   "HS603":{
+      "credits":1,
+      "id":"HS603",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"World History 1 or World History 1 Honors and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"History - Social Studies",
+      "title":"AP Art History"
+   },
+   "HS606":{
+      "credits":1,
+      "id":"HS606",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Psychology is open to seniors who have completed one of the  following: 1) AP U.S. History with departmental approval; 2) U.S. History with an A; or 3) U.S. History with an A- and who are approved for an honors or AP science course senior year.UC approved.",
+      "semester":false,
+      "subject":"History - Social Studies",
+      "title":"AP Psychology"
+   },
+   "HS607":{
+      "credits":0.5,
+      "id":"HS607",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"U.S. History or AP U.S. History and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"History - Social Studies",
+      "title":"AP U.S. Government & Politics"
+   },
+   "HS609":{
+      "credits":1,
+      "id":"HS609",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Economics is open to grade 11 and 12 students who meet one of the following criteria: 1) are enrolled in an honors or AP history course; 2) have an A in a regular history course; or 3) have an A- in a regular history course and are approved for an honors or AP math course. Sophomores in AP Calculus may request an exception. UC approved.",
+      "semester":false,
+      "subject":"History - Social Studies",
+      "title":"AP Economics (Micro and Macro)"
+   },
+   "JO100":{
+      "credits":0.5,
+      "id":"JO100",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Application process.",
+      "semester":false,
+      "subject":"Journalism",
+      "title":"Journalism: Newspaper Concentration"
+   },
+   "JO101":{
+      "credits":0.5,
+      "id":"JO101",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Application process.",
+      "semester":false,
+      "subject":"Journalism",
+      "title":"Journalism: Yearbook Concentration"
+   },
+   "JO200":{
+      "credits":0.5,
+      "id":"JO200",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Application process.",
+      "semester":false,
+      "subject":"Journalism",
+      "title":"Advanced Journalism: Newspaper Concentration"
+   },
+   "JO201":{
+      "credits":0.5,
+      "id":"JO201",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Application process.",
+      "semester":false,
+      "subject":"Journalism",
+      "title":"Advanced Journalism: Yearbook Concentration"
+   },
+   "MT100":{
+      "credits":1,
+      "id":"MT100",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"Math",
+      "title":"Algebra 1"
+   },
+   "MT200":{
+      "credits":1,
+      "id":"MT200",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Geometry and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Math",
+      "title":"Algebra 2 & Trigonometry"
+   },
+   "MT201":{
+      "credits":1,
+      "id":"MT201",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Geometry and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Math",
+      "title":"Honors Algebra 2 & Trigonometry"
+   },
+   "MT300":{
+      "credits":1,
+      "id":"MT300",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Algebra 1. UC approved.",
+      "semester":false,
+      "subject":"Math",
+      "title":"Geometry"
+   },
+   "MT301":{
+      "credits":1,
+      "id":"MT301",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Algebra 1 and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Math",
+      "title":"Honors Geometry"
+   },
+   "MT400":{
+      "credits":1,
+      "id":"MT400",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Algebra 2 & Trigonometry and Geometry. UC approved.",
+      "semester":false,
+      "subject":"Math",
+      "title":"Precalculus"
+   },
+   "MT401":{
+      "credits":1,
+      "id":"MT401",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Algebra 2 & Trigonometry, Geometry and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Math",
+      "title":"Honors Precalculus"
+   },
+   "MT502":{
+      "credits":0.5,
+      "id":"MT502",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Precalculus. UC approved.",
+      "semester":true,
+      "subject":"Math",
+      "title":"Discrete Mathematics"
+   },
+   "MT503":{
+      "credits":1,
+      "id":"MT503",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Algebra 2/Trigonometry or Precalculus\nand departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Math",
+      "title":"Finite Mathematics \"Previously Advanced Math with Calculus\""
+   },
+   "MT504":{
+      "credits":1,
+      "id":"MT504",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Precalculus. UC approved.",
+      "semester":false,
+      "subject":"Math",
+      "title":"Calculus"
+   },
+   "MT507":{
+      "credits":0.5,
+      "id":"MT507",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Precalculus. Open to seniors only. UC approved but as an elective course, not as a math course.",
+      "semester":true,
+      "subject":"Math",
+      "title":"Engineering"
+   },
+   "MT600":{
+      "credits":1,
+      "id":"MT600",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Precalculus and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Math",
+      "title":"AP Calculus AB"
+   },
+   "MT601":{
+      "credits":1,
+      "id":"MT601",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Precalculus and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Math",
+      "title":"AP Calculus BC"
+   },
+   "MT602":{
+      "credits":1,
+      "id":"MT602",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Calculus AB and departmental approval. UC approved. A 4 or 5 on the AP Calculus AB exam is recommended.",
+      "semester":false,
+      "subject":"Math",
+      "title":"Honors Calculus C with Multivariable Calculus"
+   },
+   "MT610":{
+      "credits":1,
+      "id":"MT610",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Precalculus and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Math",
+      "title":"AP Statistics"
+   },
+   "MT700":{
+      "credits":0.5,
+      "id":"MT700",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Calculus BC and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Math",
+      "title":"Honors Multivariate Calculus"
+   },
+   "MT701":{
+      "credits":0.5,
+      "id":"MT701",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Multivariate Calculus or Honors  Calculus C and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Math",
+      "title":"Honors Differential Equations"
+   },
+   "MT702":{
+      "credits":0.5,
+      "id":"MT702",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Calculus BC, or Honors Calculus C and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Math",
+      "title":"Honors Linear Algebra"
+   },
+   "MT703":{
+      "credits":0.5,
+      "id":"MT703",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Calculus AB or AP Calculus BC and departmental approval. Specific topics may have additional prerequisites. Topics studied have included number theory, numerical analysis and imperical systems. UC approved.",
+      "semester":true,
+      "subject":"Math",
+      "title":"Honors Advanced Topics Math: Generic #1"
+   },
+   "MT706":{
+      "credits":0.5,
+      "id":"MT706",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Differential Equations and department approval.",
+      "semester":true,
+      "subject":"Math",
+      "title":"Honors Advanced Topics Math: Signals and Systems"
+   },
+   "MT707":{
+      "credits":0.5,
+      "id":"MT707",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Differential Equations and department approval.",
+      "semester":true,
+      "subject":"Math",
+      "title":"Honors Advanced Topics Math: Differential Equations II"
+   },
+   "MT799":{
+      "credits":0.5,
+      "id":"MT799",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Math",
+      "title":"Honors Advanced Topics Math: Generic #2"
+   },
+   "MT709":{
+      "credits":0.5,
+      "id":"MT709",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Differential Equations and department approval.",
+      "semester":true,
+      "subject":"Math",
+      "title":"Honors Advanced Topics Math: Information Theory I"
+   },
+   "MT710":{
+      "credits":0.5,
+      "id":"MT710",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Differential Equations and department approval.",
+      "semester":true,
+      "subject":"Math",
+      "title":"Honors Advanced Topics Math: Information Theory II"
+   },
+   "PA100":{
+      "credits":0.5,
+      "id":"PA100",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"JV and Varsity Dance Troupe is by audition only. Auditions are in the spring of every year.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"JV Dance Troupe"
+   },
+   "PA105":{
+      "credits":1,
+      "id":"PA105",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"Study of Dance"
+   },
+   "PA110":{
+      "credits":1,
+      "id":"PA110",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"Study of Music"
+   },
+   "PA111":{
+      "credits":0.5,
+      "id":"PA111",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"Bel Canto (choir)"
+   },
+   "PA112":{
+      "credits":0.5,
+      "id":"PA112",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Some auditions may be required for various instruments.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"Orchestra"
+   },
+   "PA113":{
+      "credits":0.5,
+      "id":"PA113",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"Lab Band"
+   },
+   "PA114":{
+      "credits":0.5,
+      "id":"PA114",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Open to any student with an intermediate proficiency or higher on any given musical instrument. In some cases, pre-screening and/or department approval may be required.",
+      "semester":true,
+      "subject":"Performing Arts",
+      "title":"Performance Practice for Instrumentalists"
+   },
+   "PA120":{
+      "credits":1,
+      "id":"PA120",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"Study of Theater Arts"
+   },
+   "PA130":{
+      "credits":0.5,
+      "id":"PA130",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":true,
+      "subject":"Performing Arts",
+      "title":"Technical Theater"
+   },
+   "PA200":{
+      "credits":0.5,
+      "id":"PA200",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Varsity Dance Troupe is by audition only. Auditions are in the spring of every year.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"Varsity Dance Troupe"
+   },
+   "PA203":{
+      "credits":0.5,
+      "id":"PA203",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":null,
+      "semester":true,
+      "subject":"Performing Arts",
+      "title":"Dance Composition"
+   },
+   "PA205":{
+      "credits":0.5,
+      "id":"PA205",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Dance Certificate candidate, JV/Varsity Dance Troupe participant for three years, dance production/after-school dancer for two years, or instructor consent. Application submission process year prior.",
+      "semester":true,
+      "subject":"Performing Arts",
+      "title":"Choreography"
+   },
+   "PA210":{
+      "credits":0.5,
+      "id":"PA210",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Bel Canto, departmental approval and exam proficiency. UC approved.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"Camerata (choir)"
+   },
+   "PA211":{
+      "credits":0.5,
+      "id":"PA211",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Bel Canto or director's approval. UC approved.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"Cantilena (choir)"
+   },
+   "PA212":{
+      "credits":0.5,
+      "id":"PA212",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Bel Canto, Cantilena or Camerata. By audition only for grades 10-12. UC approved.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"Downbeat"
+   },
+   "PA213":{
+      "credits":0.5,
+      "id":"PA213",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Lab Band or instructor consent.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"Jazz Band"
+   },
+   "PA220":{
+      "credits":0.5,
+      "id":"PA220",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Study of Theater Arts and/or departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Performing Arts",
+      "title":"Advanced Acting"
+   },
+   "PA221":{
+      "credits":0.5,
+      "id":"PA221",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Previous stage experience, Advanced Acting and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Performing Arts",
+      "title":"Advanced Scene Study"
+   },
+   "PA222":{
+      "credits":0.5,
+      "id":"PA222",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Previous stage experience, Advanced Acting and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Performing Arts",
+      "title":"Vocal Interpretation"
+   },
+   "PA223":{
+      "credits":0.5,
+      "id":"PA223",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Previous stage experience, Advanced Acting and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Performing Arts",
+      "title":"Shakespeare in Performance"
+   },
+   "PA320":{
+      "credits":0.5,
+      "id":"PA320",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Advanced Scene Study, Advanced Acting and/or departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Performing Arts",
+      "title":"Student-Directed Showcase"
+   },
+   "PA600":{
+      "credits":1,
+      "id":"PA600",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Diagnostic test and departmental approval. Study of Music strongly recommended. UC approved.",
+      "semester":false,
+      "subject":"Performing Arts",
+      "title":"AP Music Theory"
+   },
+   "PE001":{
+      "credits":0,
+      "id":"PE001",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None.",
+      "semester":true,
+      "subject":"Physical Education",
+      "title":"PE: Fitness"
+   },
+   "PE005":{
+      "credits":0,
+      "id":"PE005",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None.",
+      "semester":true,
+      "subject":"Physical Education",
+      "title":"PE: Dance"
+   },
+   "PE010":{
+      "credits":0,
+      "id":"PE010",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Participation on one of the competitive sports teams. Approval by Athletic Director required.",
+      "semester":true,
+      "subject":"Physical Education",
+      "title":"PE: Advanced Fitness"
+   },
+   "SC100":{
+      "credits":1,
+      "id":"SC100",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"Science - Physical",
+      "title":"Physics"
+   },
+   "SC101":{
+      "credits":1,
+      "id":"SC101",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Concurrent enrollment in Honors Algebra 2 or higher honors mathematics course and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Science - Physical",
+      "title":"Honors Physics"
+   },
+   "SC200":{
+      "credits":1,
+      "id":"SC200",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Physics or Honors Physics. UC approved.",
+      "semester":false,
+      "subject":"Science - Physical",
+      "title":"Chemistry"
+   },
+   "SC201":{
+      "credits":1,
+      "id":"SC201",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Physics or Honors Physics and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Science - Physical",
+      "title":"Honors Chemistry"
+   },
+   "SC210":{
+      "credits":0.5,
+      "id":"SC210",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None.",
+      "semester":true,
+      "subject":"Science - Life",
+      "title":"Kinesiology and Sports Medicine 1"
+   },
+   "SC211":{
+      "credits":0.5,
+      "id":"SC211",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Kinesiology and Sports Medicine 1",
+      "semester":true,
+      "subject":"Science - Life",
+      "title":"Kinesiology and Sports Medicine 2"
+   },
+   "SC300":{
+      "credits":1,
+      "id":"SC300",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Chemistry, Honors Chemistry or AP Chemistry. UC approved.",
+      "semester":false,
+      "subject":"Science - Life",
+      "title":"Biology"
+   },
+   "SC301":{
+      "credits":1,
+      "id":"SC301",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Chemistry or Honors Chemistry and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Science - Life",
+      "title":"Honors Biology"
+   },
+   "SC400":{
+      "credits":0.5,
+      "id":"SC400",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Physics or Honors Physics.",
+      "semester":true,
+      "subject":"Science - Physical",
+      "title":"Electronics"
+   },
+   "SC401":{
+      "credits":0.5,
+      "id":"SC401",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Physics or Honors Physics. UC approved.",
+      "semester":true,
+      "subject":"Science - Physical",
+      "title":"Astronomy"
+   },
+   "SC402":{
+      "credits":0.5,
+      "id":"SC402",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Physics or Honors Physics. UC approved.",
+      "semester":true,
+      "subject":"Science - Physical",
+      "title":"Seminar in Modern Physics"
+   },
+   "SC411":{
+      "credits":0.5,
+      "id":"SC411",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Chemistry, Honors Chemistry or AP Chemistry and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Science - Life",
+      "title":"Study of Organic Chemistry"
+   },
+   "SC420":{
+      "credits":0.5,
+      "id":"SC420",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Physics or Honors Physics. UC approved.",
+      "semester":true,
+      "subject":"Science - Life",
+      "title":"Marine Ecology"
+   },
+   "SC421":{
+      "credits":1,
+      "id":"SC421",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"A or better in Biology or B or better in Honors or AP Biology and department approval. UC approved.",
+      "semester":false,
+      "subject":"Science - Life",
+      "title":"Honors Human Anatomy & Physiology"
+   },
+   "SC422":{
+      "credits":0.5,
+      "id":"SC422",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Biology, Honors Biology or AP Biology. UC approved.",
+      "semester":true,
+      "subject":"Science - Life",
+      "title":"Evolution"
+   },
+   "SC423":{
+      "credits":0.5,
+      "id":"SC423",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Completion of 1st semester of Biology or Biology Honors. UC approved.",
+      "semester":true,
+      "subject":"Science - Life",
+      "title":"Biotechnology"
+   },
+   "SC424":{
+      "credits":0.5,
+      "id":"SC424",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Chemistry, Honors Chemistry or AP Chemistry. UC approved.",
+      "semester":true,
+      "subject":"Science - Life",
+      "title":"The Science of Food"
+   },
+   "SC450":{
+      "credits":1,
+      "id":"SC450",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Physics or Honors Physics and recommendation of the student’s science and/or mathematics teacher. In addition, students must attend a brief meeting in the spring prior to their enrollment in the course. UC Approved.",
+      "semester":false,
+      "subject":"Science - Physical",
+      "title":"Research Methods"
+   },
+   "SC452":{
+      "credits":0.5,
+      "id":"SC452",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Research Methods or instructor approval.  Typically, instructor approval requires satisfactory completion of a summer research internship or a formal research proposal.",
+      "semester":true,
+      "subject":"Science - Physical",
+      "title":"Advanced Research"
+   },
+   "SC453":{
+      "credits":1,
+      "id":"SC453",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Research Methods or instructor approval.  Typically, instructor approval requires satisfactory completion of a summer research internship or a formal research proposal.",
+      "semester":false,
+      "subject":"Science - Physical",
+      "title":"Advanced Research (yearlong course)"
+   },
+   "SC600":{
+      "credits":1,
+      "id":"SC600",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Physics or Honors Physics and concurrent enrollment in Honors Precalculus or higher level math course and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Science - Physical",
+      "title":"AP Physics 2"
+   },
+   "SC601":{
+      "credits":1,
+      "id":"SC601",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Physics or Honors Physics and concurrent enrollment in AP Calculus BC or equivalent and instructor approval. UC approved.",
+      "semester":false,
+      "subject":"Science - Physical",
+      "title":"AP Physics C"
+   },
+   "SC610":{
+      "credits":1,
+      "id":"SC610",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Chemistry is available to sophomores who satisfy department requirements to take the course, earn an A- or better for the first semester of Honors Physics, obtain department approval, and successfully complete a Harker summer course. UC approved.",
+      "semester":false,
+      "subject":"Science - Physical",
+      "title":"AP Chemistry - 10th"
+   },
+   "SC611":{
+      "credits":1,
+      "id":"SC611",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors Chemistry and department approval.",
+      "semester":false,
+      "subject":"Science - Physical",
+      "title":"AP Chemistry - 11th/12th"
+   },
+   "SC612":{
+      "credits":0.5,
+      "id":"SC612",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors or AP Chemistry and department\napproval.",
+      "semester":true,
+      "subject":"Science - Physical",
+      "title":"Honors Nanoscience"
+   },
+   "SC613":{
+      "credits":0.5,
+      "id":"SC613",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors or AP Chemistry and department\napproval.",
+      "semester":true,
+      "subject":"Science - Physical",
+      "title":"Honors Analytical Chemistry"
+   },
+   "SC621":{
+      "credits":1,
+      "id":"SC621",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"AP Biology is available to juniors who satisfy department requirements to take the course (from Honors Chemistry an A- or better for the first semester; from AP Chemistry a B+ or better for the first semester), obtain department approval, and successfully complete a Harker summer course. UC approved.",
+      "semester":false,
+      "subject":"Science - Life",
+      "title":"AP Biology - 11th"
+   },
+   "SC622":{
+      "credits":1,
+      "id":"SC622",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"A or better in Biology or B+ or better in Honors Biology and department approval.",
+      "semester":false,
+      "subject":"Science - Life",
+      "title":"AP Biology - 12th"
+   },
+   "SC655":{
+      "credits":1,
+      "id":"SC655",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Honors or AP Biology or a B+ or better in Biology and department approval. UC Approved.",
+      "semester":false,
+      "subject":"Science - Life",
+      "title":"AP Environmental Science"
+   },
+   "VA100":{
+      "credits":1,
+      "id":"VA100",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":false,
+      "subject":"Visual Arts",
+      "title":"Study of Visual Arts"
+   },
+   "VA200":{
+      "credits":0.5,
+      "id":"VA200",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Ceramics"
+   },
+   "VA202":{
+      "credits":0.5,
+      "id":"VA202",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Drawing"
+   },
+   "VA204":{
+      "credits":0.5,
+      "id":"VA204",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None. UC approved.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Graphic Arts"
+   },
+   "VA205":{
+      "credits":0.5,
+      "id":"VA205",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Painting"
+   },
+   "VA207":{
+      "credits":0.5,
+      "id":"VA207",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Sculpture"
+   },
+   "VA209":{
+      "credits":0.5,
+      "id":"VA209",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Stone Carving"
+   },
+   "VA211":{
+      "credits":0.5,
+      "id":"VA211",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Photography or departmental approval.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Filmmaking"
+   },
+   "VA212":{
+      "credits":0.5,
+      "id":"VA212",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"None.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Photography"
+   },
+   "VA213":{
+      "credits":0.5,
+      "id":"VA213",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Architecture"
+   },
+   "VA300":{
+      "credits":0.5,
+      "id":"VA300",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Ceramics and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Advanced Ceramics"
+   },
+   "VA302":{
+      "credits":0.5,
+      "id":"VA302",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Drawing and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Advanced Drawing"
+   },
+   "VA304":{
+      "credits":0.5,
+      "id":"VA304",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Graphic Arts. UC approved.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Advanced Graphic Arts"
+   },
+   "VA305":{
+      "credits":0.5,
+      "id":"VA305",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Painting and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Advanced Painting"
+   },
+   "VA307":{
+      "credits":0.5,
+      "id":"VA307",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Sculpture. UC approved.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Advanced Sculpture"
+   },
+   "VA309":{
+      "credits":0.5,
+      "id":"VA309",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Stone Carving and departmental approval. UC approved.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Advanced Stone Carving"
+   },
+   "VA312":{
+      "credits":0.5,
+      "id":"VA312",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Photography",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Advanced Photography"
+   },
+   "VA600":{
+      "credits":1,
+      "id":"VA600",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Coursework in the chosen area of concentration and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Visual Arts",
+      "title":"AP Studio Art - 2D Design"
+   },
+   "VA601":{
+      "credits":1,
+      "id":"VA601",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Coursework in the chosen area of concentration and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Visual Arts",
+      "title":"AP Studio Art - 3D Design"
+   },
+   "VA602":{
+      "credits":1,
+      "id":"VA602",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Coursework in the chosen area of concentration and departmental approval. UC approved.",
+      "semester":false,
+      "subject":"Visual Arts",
+      "title":"AP Studio Art - Drawing"
+   },
+   "VA605":{
+      "credits":0.5,
+      "id":"VA605",
+      "prerequisites":[
+
+      ],
+      "prerequisiteString":"Completion of AP Studio Art and department approval. US Approved.",
+      "semester":true,
+      "subject":"Visual Arts",
+      "title":"Honors Art: Directed Portfolio"
+   }
+}
