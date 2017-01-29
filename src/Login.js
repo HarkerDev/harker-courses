@@ -5,7 +5,9 @@ export default class Login extends Component {
 
 	constructor(props){
 		super(props);
-		this.state_props = {};
+		this.state_props = {
+			loggedIn: false
+		};
 
 		// Init auth
 		var config = {
