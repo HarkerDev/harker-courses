@@ -3,7 +3,10 @@ import * as firebase from 'firebase';
 
 export default class Login extends Component {
 
-	authenticateUser(x) {
+	constructor(props){
+		super(props);
+		this.state = {};
+
 		// Init auth
 		var config = {
 			apiKey: "AIzaSyDGzHdJ-4B35kuShuJCgmHhkbBy_nMCvy4",
@@ -13,7 +16,17 @@ export default class Login extends Component {
 			messagingSenderId: "125151666633"
 		};
 		firebase.initializeApp(config);
+		this.authenticateUser();
+	}
 
+	setState(d){
+		for(var k in d){
+			this.state[k] = d[k];
+		}
+		this.forceUpdate();
+	}
+
+	authenticateUser() {
 		// Install state change handler
 		firebase.auth().onAuthStateChanged(function(user) {
 			if (user) {
@@ -24,7 +37,7 @@ export default class Login extends Component {
 	            var uid = user.uid;
 	            var providerData = user.providerData;
 	            user.getToken().then(function(accessToken) {
-					console.log(JSON.stringify({
+					var login_info = {
 	  	                displayName: displayName,
 	  	                email: email,
 	  	                emailVerified: emailVerified,
@@ -32,8 +45,12 @@ export default class Login extends Component {
 	  	                uid: uid,
 	  	                accessToken: accessToken,
 	  	                providerData: providerData
-					}, null, '  ')
-				);
+					};
+					console.log(JSON.stringify(login_info, null, '  '));
+					this.setState({
+						loggedIn: true,
+						userInfo: login_info
+					});
 					/*
 	              document.getElementById('sign-in-status').textContent = 'Signed in';
 	              document.getElementById('sign-in').textContent = 'Sign out';
@@ -47,8 +64,11 @@ export default class Login extends Component {
 	                providerData: providerData
 	              }, null, '  ');
 					*/
-	            });
+	            }.bind(this));
 			} else {
+				this.setState({
+					loggedIn: true
+				})
 				/*
 				// User is signed out.
 				document.getElementById('sign-in-status').textContent = 'Signed out';
@@ -56,31 +76,47 @@ export default class Login extends Component {
 				document.getElementById('account-details').textContent = 'null';
 				*/
 			}
-		}, function(error) {
+		}.bind(this), function(error) {
 			console.log(error);
-		});
+		}).bind(this);
 	}
 
 	handleSubmit(event) {
 
 	}
 
-	render() {
-		this.authenticateUser();
-		return (
-			<form className='loginForm' onSubmit={this.handleSubmit}>
-				<h3>Login</h3>
-				<label htmlFor="uid">Username:</label>
-				<div className="input-group">
-				  <input type="text" className="form-control" placeholder="Username" ref='uid' />
-				  <span className="input-group-addon" id="basic-addon1">@students.harker.org</span>
-				</div>
-				<div className="form-group">
-				  <label htmlFor="pwd">Password:</label>
-				  <input type="password" className="form-control" placeholder="Password" ref='pwd' />
-				</div>
-				<div id="firebaseui-auth-container"></div>
-        	</form>
+	html_gen() {
+		console.log(this.state.loggedIn);
+		if(!this.state.loggedIn){
+			return (
+				<form className='loginForm' onSubmit={this.handleSubmit}>
+					<h3>Login</h3>
+					<label htmlFor="uid">Username:</label>
+					<div className="input-group">
+					  <input type="text" className="form-control" placeholder="Username" ref='uid' />
+					  <span className="input-group-addon" id="basic-addon1">@students.harker.org</span>
+					</div>
+					<div className="form-group">
+					  <label htmlFor="pwd">Password:</label>
+					  <input type="password" className="form-control" placeholder="Password" ref='pwd' />
+					</div>
+					<div id="firebaseui-auth-container"></div>
+	        	</form>
 			);
+		} else {
+			return (
+				<div>
+					{ JSON.stringify(this.state.userInfo) }
+				</div>
+			)
+		}
+	}
+
+	render() {
+		return (
+			<div>
+				{ this.html_gen() }
+			</div>
+		);
 	}
 }
