@@ -25,14 +25,15 @@ export default class Login extends Component {
 	            var providerData = user.providerData;
 	            user.getToken().then(function(accessToken) {
 					console.log(JSON.stringify({
-  	                displayName: displayName,
-  	                email: email,
-  	                emailVerified: emailVerified,
-  	                photoURL: photoURL,
-  	                uid: uid,
-  	                accessToken: accessToken,
-  	                providerData: providerData
-				}, null, '  '));
+	  	                displayName: displayName,
+	  	                email: email,
+	  	                emailVerified: emailVerified,
+	  	                photoURL: photoURL,
+	  	                uid: uid,
+	  	                accessToken: accessToken,
+	  	                providerData: providerData
+					}, null, '  ')
+				);
 					/*
 	              document.getElementById('sign-in-status').textContent = 'Signed in';
 	              document.getElementById('sign-in').textContent = 'Sign out';
