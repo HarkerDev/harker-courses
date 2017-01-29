@@ -8,6 +8,7 @@
     "react-scripts": "0.8.5"
   },
   "dependencies": {
+    "firebase": "^3.6.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
@@ -16,6 +17,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy" : "npm run build&&gh-pages -d build"
+    "deploy": "npm run build&&gh-pages -d build"
   }
 }
