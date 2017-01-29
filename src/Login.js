@@ -5,7 +5,10 @@ export default class Login extends Component {
 
 	constructor(props){
 		super(props);
-		this.state = {};
+		this.state = {
+			loggedIn: false,
+			name: ""
+		};
 
 		// Init auth
 		var config = {
@@ -31,6 +34,7 @@ export default class Login extends Component {
 		firebase.auth().onAuthStateChanged(function(user) {
 			if (user) {
 				var displayName = user.displayName;
+				this.state.name = user.displayName;
 	            var email = user.email;
 	            var emailVerified = user.emailVerified;
 	            var photoURL = user.photoURL;
@@ -47,9 +51,9 @@ export default class Login extends Component {
 	  	                providerData: providerData
 					};
 					console.log(JSON.stringify(login_info, null, '  '));
+					this.state.loggedIn = true;
 					this.setState({
-						loggedIn: true,
-						userInfo: login_info
+						loggedIn: true
 					});
 					/*
 	              document.getElementById('sign-in-status').textContent = 'Signed in';
@@ -66,9 +70,7 @@ export default class Login extends Component {
 					
 	            }.bind(this));
 			} else {
-				this.setState({
-					loggedIn: true
-				})
+				this.state.loggedIn = true;
 				/*
 				// User is signed out.
 				document.getElementById('sign-in-status').textContent = 'Signed out';
@@ -82,15 +84,11 @@ export default class Login extends Component {
 		}).bind(this);
 	}
 
-	handleSubmit(event) {
-
-	}
-
 	html_gen() {
-		console.log(this.state.loggedIn);
+		console.log("logged in state:" + this.state.loggedIn);
 		if(!this.state.loggedIn){
 			return (
-				<form className='loginForm' onSubmit={this.handleSubmit}>
+				<form className='loginForm'>
 					<h3>Login</h3>
 					<label htmlFor="uid">Username:</label>
 					<div className="input-group">
@@ -107,7 +105,7 @@ export default class Login extends Component {
 		} else {
 			return (
 				<div>
-					{ JSON.stringify(this.state.userInfo) }
+					hello {this.state.name}
 				</div>
 			)
 		}
