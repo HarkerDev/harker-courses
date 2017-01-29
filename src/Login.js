@@ -51,7 +51,7 @@ export default class Login extends Component {
 						loggedIn: true,
 						userInfo: login_info
 					});
-					
+					/*
 	              document.getElementById('sign-in-status').textContent = 'Signed in';
 	              document.getElementById('sign-in').textContent = 'Sign out';
 	              document.getElementById('account-details').textContent = JSON.stringify({
@@ -62,18 +62,19 @@ export default class Login extends Component {
 	                uid: uid,
 	                accessToken: accessToken,
 	                providerData: providerData
-	              }, null, '  ');
+	              }, null, '  ');*/
 					
 	            }.bind(this));
 			} else {
 				this.setState({
 					loggedIn: true
 				})
-				
+				/*
 				// User is signed out.
 				document.getElementById('sign-in-status').textContent = 'Signed out';
 				document.getElementById('sign-in').textContent = 'Sign in';
 				document.getElementById('account-details').textContent = 'null';
+				*/
 			
 			}
 		}.bind(this), function(error) {
