@@ -36,7 +36,7 @@ In command line,
 
 `git clone https://github.com/aggarwalneeraj141/harker-courses`
 
-Wherever you cloned it, create a folder inside the project named `credentials`, and inside, `credentials.js`. Inside of this file, add your Firebase configuration script. So,
+Wherever you cloned it, create a folder inside the `public` folder named `credentials`, and inside, `credentials.js`. Inside of this file, add your Firebase configuration script. So,
 
 ```
   var config = {
