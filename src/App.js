@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import ReviewForm from "./ReviewForm";
+import Login from "./Login";
 
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
           list of courses
         </p>
         <ReviewForm />
+        <Login />
       </div>
     );
   }
