@@ -2,12 +2,8 @@
 //functionality can be expanded for multiple parts of the rating (work load, how fun, etc)
 import React, { Component } from 'react';
 
-var database = firebase.database();
-
-class Data extends Component {
+export default class Data extends Component {
 	render() {
 		return ();
 	}
 }
-
-export default Data;
