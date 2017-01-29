@@ -5,10 +5,7 @@ export default class Login extends Component {
 
 	constructor(props){
 		super(props);
-		this.state = {
-			loggedIn: false,
-			name: ""
-		};
+		this.state = {};
 
 		// Init auth
 		var config = {
@@ -23,7 +20,7 @@ export default class Login extends Component {
 	}
 
 	setState(d){
-		for(var k = 0; k<d.length; k++){
+		for(var k in d){
 			this.state[k] = d[k];
 		}
 		this.forceUpdate();
@@ -34,7 +31,6 @@ export default class Login extends Component {
 		firebase.auth().onAuthStateChanged(function(user) {
 			if (user) {
 				var displayName = user.displayName;
-				this.state.name = user.displayName;
 	            var email = user.email;
 	            var emailVerified = user.emailVerified;
 	            var photoURL = user.photoURL;
@@ -51,9 +47,9 @@ export default class Login extends Component {
 	  	                providerData: providerData
 					};
 					console.log(JSON.stringify(login_info, null, '  '));
-					this.state.loggedIn = true;
 					this.setState({
-						loggedIn: true
+						loggedIn: true,
+						userInfo: login_info
 					});
 					/*
 	              document.getElementById('sign-in-status').textContent = 'Signed in';
@@ -66,29 +62,34 @@ export default class Login extends Component {
 	                uid: uid,
 	                accessToken: accessToken,
 	                providerData: providerData
-	              }, null, '  ');*/
-					
+	              }, null, '  ');
+					*/
 	            }.bind(this));
 			} else {
-				this.state.loggedIn = true;
+				this.setState({
+					loggedIn: true
+				})
 				/*
 				// User is signed out.
 				document.getElementById('sign-in-status').textContent = 'Signed out';
 				document.getElementById('sign-in').textContent = 'Sign in';
 				document.getElementById('account-details').textContent = 'null';
 				*/
-			
 			}
 		}.bind(this), function(error) {
 			console.log(error);
 		}).bind(this);
 	}
 
+	handleSubmit(event) {
+
+	}
+
 	html_gen() {
-		console.log("logged in state:" + this.state.loggedIn);
+		console.log(this.state.loggedIn);
 		if(!this.state.loggedIn){
 			return (
-				<form className='loginForm'>
+				<form className='loginForm' onSubmit={this.handleSubmit}>
 					<h3>Login</h3>
 					<label htmlFor="uid">Username:</label>
 					<div className="input-group">
@@ -105,7 +106,7 @@ export default class Login extends Component {
 		} else {
 			return (
 				<div>
-					hello {this.state.name}
+					{ JSON.stringify(this.state.userInfo) }
 				</div>
 			)
 		}
