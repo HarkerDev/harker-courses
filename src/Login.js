@@ -5,7 +5,7 @@ export default class Login extends Component {
 
 	constructor(props){
 		super(props);
-		this.state = {};
+		this.state_props = {};
 
 		// Init auth
 		var config = {
@@ -21,7 +21,7 @@ export default class Login extends Component {
 
 	setState(d){
 		for(var k in d){
-			this.state[k] = d[k];
+			this.state_props[k] = d[k];
 		}
 		this.forceUpdate();
 	}
@@ -86,8 +86,8 @@ export default class Login extends Component {
 	}
 
 	html_gen() {
-		console.log(this.state.loggedIn);
-		if(!this.state.loggedIn){
+		console.log(this.state_props.loggedIn);
+		if(!this.state_props.loggedIn){
 			return (
 				<form className='loginForm' onSubmit={this.handleSubmit}>
 					<h3>Login</h3>
@@ -106,7 +106,7 @@ export default class Login extends Component {
 		} else {
 			return (
 				<div>
-					{ JSON.stringify(this.state.userInfo) }
+					{ JSON.stringify(this.state_props.userInfo) }
 				</div>
 			)
 		}
