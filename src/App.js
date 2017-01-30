@@ -15,7 +15,6 @@ class App extends Component {
           <p className="App-intro">
             list of courses
           </p>
-          <ReviewForm />
           <Login />
       </div>
     );
