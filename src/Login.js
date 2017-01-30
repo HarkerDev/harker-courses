@@ -69,7 +69,7 @@ export default class Login extends Component {
 	            }.bind(this));
 			} else {
 				this.setState({
-					loggedIn: true
+					loggedIn: false
 				})
 				/*
 				// User is signed out.
@@ -87,11 +87,22 @@ export default class Login extends Component {
 
 	}
 
+	signOut(){
+		firebase.auth().signOut().then(() => {
+			this.setState({
+				loggedIn: false
+			});
+			// TODO: Re-init firebase ui sign in 
+		}, (err) => {
+			console.log(err);
+		});
+	}
+
 	html_gen() {
 		console.log(this.state_props.loggedIn);
 		if(!this.state_props.loggedIn){
 			return (
-				<form className='loginForm' onSubmit={this.handleSubmit}>
+				<form className='loginForm' onSubmit={this.handleSubmit.bind(this)}>
 					<h3>Login</h3>
 					<label htmlFor="uid">Username:</label>
 					<div className="input-group">
@@ -109,6 +120,10 @@ export default class Login extends Component {
 			return (
 				<div>
 					{ JSON.stringify(this.state_props.userInfo) }
+					<br />
+					<button type="button" className="btn btn-primary" onClick={this.signOut.bind(this)}>
+						Sign Out
+					</button>
 				</div>
 			)
 		}
