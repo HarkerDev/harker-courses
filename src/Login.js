@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
+import * as firebaseui from 'firebaseui';
 
 export default class Login extends Component {
 
@@ -92,7 +93,27 @@ export default class Login extends Component {
 			this.setState({
 				loggedIn: false
 			});
-			// TODO: Re-init firebase ui sign in 
+			// TODO: Re-init firebase ui sign in
+			// Define UI Config.
+	        var uiConfig = {
+	            signInSuccessUrl: '/',
+	            signInOptions: [
+	                // Leave the lines as is for the providers you want to offer your users.
+	                firebase.auth.GoogleAuthProvider.PROVIDER_ID
+	                //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+	                //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+	                //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+	                //firebase.auth.EmailAuthProvider.PROVIDER_ID
+	            ],
+	            // Terms of service url.
+	            tosUrl: 'google.com'
+	        };
+
+	        // Initialize the FirebaseUI Widget using Firebase.
+	        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+	        // The start method will wait until the DOM is loaded.
+	        ui.start('#firebaseui-auth-container', uiConfig);
 		}, (err) => {
 			console.log(err);
 		});
