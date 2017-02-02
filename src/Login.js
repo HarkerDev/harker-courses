@@ -24,7 +24,9 @@ export default class Login extends Component {
 
 	setState(d){
 		for(var k in d){
-			this.state_props[k] = d[k];
+			if (d[k] != null) {
+				this.state_props[k] = d[k];
+			}
 		}
 		this.forceUpdate();
 	}
