@@ -19,6 +19,8 @@ export default class Login extends Component {
 			messagingSenderId: "125151666633"
 		};
 		firebase.initializeApp(config);
+
+		// Init sign in
 		this.authenticateUser();
 	}
 
@@ -73,7 +75,8 @@ export default class Login extends Component {
 			} else {
 				this.setState({
 					loggedIn: false
-				})
+				});
+				this.initSignIn();
 				/*
 				// User is signed out.
 				document.getElementById('sign-in-status').textContent = 'Signed out';
@@ -90,32 +93,36 @@ export default class Login extends Component {
 
 	}
 
+	initSignIn(){
+		// Define UI Config.
+		var uiConfig = {
+			signInSuccessUrl: '/',
+			signInOptions: [
+				// Leave the lines as is for the providers you want to offer your users.
+				firebase.auth.GoogleAuthProvider.PROVIDER_ID
+				//firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+				//firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+				//firebase.auth.GithubAuthProvider.PROVIDER_ID,
+				//firebase.auth.EmailAuthProvider.PROVIDER_ID
+			],
+			// Terms of service url.
+			tosUrl: 'google.com'
+		};
+
+		// Initialize the FirebaseUI Widget using Firebase.
+		var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+		// The start method will wait until the DOM is loaded.
+		ui.start('#firebaseui-auth-container', uiConfig);
+	}
+
 	signOut(){
 		firebase.auth().signOut().then(() => {
 			this.setState({
 				loggedIn: false
 			});
-			// TODO: Re-init firebase ui sign in
-			// Define UI Config.
-	        var uiConfig = {
-	            signInSuccessUrl: '/',
-	            signInOptions: [
-	                // Leave the lines as is for the providers you want to offer your users.
-	                firebase.auth.GoogleAuthProvider.PROVIDER_ID
-	                //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-	                //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-	                //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-	                //firebase.auth.EmailAuthProvider.PROVIDER_ID
-	            ],
-	            // Terms of service url.
-	            tosUrl: 'google.com'
-	        };
 
-	        // Initialize the FirebaseUI Widget using Firebase.
-	        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-	        // The start method will wait until the DOM is loaded.
-	        ui.start('#firebaseui-auth-container', uiConfig);
+			this.initSignIn();
 		}, (err) => {
 			console.log(err);
 		});
