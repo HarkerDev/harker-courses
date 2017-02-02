@@ -4,6 +4,17 @@ body {
   font-family: sans-serif;
 }
 
+h1 {
+	text-align: center;
+}
+
+a {
+	color: #000;
+	display: block; 
+	text-align: center;
+	font-size: 24px;
+}
+
 form {
 	width: 60%;
 	margin: 5em auto;
