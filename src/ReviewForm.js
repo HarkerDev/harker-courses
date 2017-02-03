@@ -15,9 +15,6 @@ export default class ReviewForm extends Component {
     constructor(props){
         super(props);
 
-        // Note: Login component should be included on this page so firebase
-        // has been initialized.
-
         // Init tooltip (broken right now)
         /*
         $('.rating-tooltip-manual').rating({

@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import * as firebaseui from 'firebaseui';
+var Loading = require('react-loading');
 
 export default class Login extends Component {
 
 	constructor(props){
 		super(props);
 		this.state_props = {
-			loggedIn: false,
+			loggedIn: undefined,
 			name: "",
 			photo: ""
 		};
-
-		// Init auth
-		var config = {
-			apiKey: "AIzaSyDGzHdJ-4B35kuShuJCgmHhkbBy_nMCvy4",
-			authDomain: "harker-courses.firebaseapp.com",
-			databaseURL: "https://harker-courses.firebaseio.com",
-			storageBucket: "harker-courses.appspot.com",
-			messagingSenderId: "125151666633"
-		};
-		firebase.initializeApp(config);
 
 		// Init sign in
 		this.authenticateUser();
@@ -130,11 +121,17 @@ export default class Login extends Component {
 
 	html_gen() {
 		console.log(this.state_props.loggedIn);
-		if(!this.state_props.loggedIn){
+		if(this.state_props.loggedIn === undefined){
+			return (
+				<div>
+					<Loading type='balls' color='#e3e3e3' />
+				</div>
+			);
+		} else if(this.state_props.loggedIn === false){
 			return (
 				<div id="firebaseui-auth-container"></div>
 			);
-		} else {
+		} else if(this.state_props.loggedIn === true){
 			return (
 				<div>
 					<img src={this.state_props.photo}></img>
