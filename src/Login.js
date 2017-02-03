@@ -49,9 +49,12 @@ export default class Login extends Component {
 	  	                providerData: providerData
 					};
 					console.log(JSON.stringify(login_info, null, '  '));
+					var pretty_username = login_info.email.split("@")[0];
+					pretty_username = pretty_username.slice(0, 3).toUpperCase() + pretty_username.slice(3,-1) + pretty_username.slice(-1).toUpperCase();
 					this.setState({
 						loggedIn: true,
-						userInfo: login_info
+						userInfo: login_info,
+						pretty_username: pretty_username
 					});
 					/*
 	              document.getElementById('sign-in-status').textContent = 'Signed in';
@@ -133,15 +136,22 @@ export default class Login extends Component {
 			);
 		} else if(this.state_props.loggedIn === true){
 			return (
-				<div>
-					<img src={this.state_props.photo}></img>
-					{ this.state_props.name }
-					<br />
-					<button type="button" className="btn btn-primary" onClick={this.signOut.bind(this)}>
-						Sign Out
-					</button>
+				<div className="well">
+					<ul className="media-list">
+						<li className="media">
+							<div className="media-left">
+								<a href="#"><img src={this.state_props.photo}></img></a>
+							</div>
+							<div className="media-body">
+								<h4 className="media-heading">{this.state_props.name} ({this.state_props.pretty_username})</h4>
+								<button type="button" className="btn btn-primary" onClick={this.signOut.bind(this)}>
+									Sign Out
+								</button>
+							</div>
+						</li>
+					</ul>
 				</div>
-			)
+			);
 		}
 	}
 
