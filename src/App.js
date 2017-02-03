@@ -5,13 +5,10 @@ import { Router, Route, hashHistory } from 'react-router'
 import Navigation from "./Navigation";
 import Home from "./Home";
 import Login from "./Login";
-<<<<<<< Updated upstream
 import ReviewPage from "./ReviewPage";
-=======
 import * as firebase from "firebase";
 
 const Home = () => <div><h1>welcome to harker courses</h1><a href="/#/login">login</a></div>
->>>>>>> Stashed changes
 
 export default class App extends Component {
     constructor(props){
