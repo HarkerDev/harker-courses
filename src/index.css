@@ -8,6 +8,25 @@ h1 {
 	text-align: center;
 }
 
+nav {
+	background-color: #E76666;
+	padding-bottom: 0.5em;
+}
+
+nav ul{
+	list-style-type: none;
+	padding-top: 1em;
+}
+
+nav ul li{
+	display: inline-block;
+	padding-right: 2em;
+}
+
+nav ul li a {
+	font-size: 18px;
+}
+
 a {
 	color: #000;
 	display: block; 

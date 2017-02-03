@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import { Router, Route, hashHistory } from 'react-router'
 
-import ReviewPage from "./ReviewPage";
+import Navigation from "./Navigation";
+import Home from "./Home";
 import Login from "./Login";
-
-const Home = () => <div><h1>welcome to harker courses</h1><a href="/#/login">login</a><a href="/#/review">review</a></div>
+import ReviewPage from "./ReviewPage";
 
 export default class App extends Component {
   render() {
