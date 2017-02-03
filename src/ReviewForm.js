@@ -16,12 +16,36 @@ export default class ReviewForm extends Component {
 
         // Note: Login component should be included on this page so firebase
         // has been initialized.
+
+        // Init tooltip (broken right now)
+        /*
+        $('.rating-tooltip-manual').rating({
+          extendSymbol: function () {
+            var title;
+            $(this).tooltip({
+              container: 'body',
+              placement: 'bottom',
+              trigger: 'manual',
+              title: function () {
+                return title;
+              }
+            });
+            $(this).on('rating.rateenter', function (e, rate) {
+              title = rate;
+              $(this).tooltip('show');
+            })
+            .on('rating.rateleave', function () {
+              $(this).tooltip('hide');
+            });
+          }
+        });
+        */
     }
 
     handleSubmit(event) {
         event.preventDefault();
         var courseId = this.refs.courseId.value.trim();
-        var rating = $('#reviewRating').rating('rate');
+        var rating = this.refs.rating.value;
         var review = this.refs.review.value;
         // A post entry.
         var postData = {
@@ -49,7 +73,7 @@ export default class ReviewForm extends Component {
         console.log(firebase.database().ref().update(updates));
         //this.props.onReviewSubmit({courseId: courseId, rating: rating, review: review});
         this.refs.courseId.value = ''; //reset fields
-        this.refs.rating.value = '';
+        this.refs.rating.value = 0;
         this.refs.review.value = '';
 
         // TODO: Check return status, display error/success in field, bootstrap
@@ -80,7 +104,7 @@ export default class ReviewForm extends Component {
                 </div>
                 <label htmlFor="rating">Rating:</label>
                 <div className="form-group">
-                    <input type="hidden" className="rating" data-start="0" data-stop="5"
+                    <input type="hidden" className="rating rating-tooltip-manual" data-start="0" data-stop="5"
                     data-fractions="2" ref='rating' id="reviewRating" />
                 </div>
                 <div className="form-group">
