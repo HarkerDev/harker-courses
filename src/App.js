@@ -8,8 +8,6 @@ import Login from "./Login";
 import ReviewPage from "./ReviewPage";
 import * as firebase from "firebase";
 
-const Home = () => <div><h1>welcome to harker courses</h1><a href="/#/login">login</a></div>
-
 export default class App extends Component {
     constructor(props){
         super(props);
