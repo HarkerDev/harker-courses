@@ -103,7 +103,7 @@ export default class ReviewForm extends Component {
                 <label htmlFor="rating">Rating:</label>
                 <div className="form-group">
                     <input type="hidden" className="rating rating-tooltip-manual" data-start="0" data-stop="5"
-                    data-fractions="2" ref='rating' id="reviewRating" />
+                    data-fractions="2" ref='rating' id="reviewRating"></input>
                 </div>
                 <div className="form-group">
                     <textarea className="form-control" rows="5" ref='review'
