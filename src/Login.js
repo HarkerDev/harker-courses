@@ -7,7 +7,9 @@ export default class Login extends Component {
 	constructor(props){
 		super(props);
 		this.state_props = {
-			loggedIn: false
+			loggedIn: false,
+			name: "",
+			photo: ""
 		};
 
 		// Init auth
@@ -38,9 +40,11 @@ export default class Login extends Component {
 		firebase.auth().onAuthStateChanged(function(user) {
 			if (user) {
 				var displayName = user.displayName;
+				this.state_props.name = user.displayName;
 	            var email = user.email;
 	            var emailVerified = user.emailVerified;
 	            var photoURL = user.photoURL;
+	            this.state_props.photo = user.photoURL;
 	            var uid = user.uid;
 	            var providerData = user.providerData;
 	            user.getToken().then(function(accessToken) {
@@ -89,10 +93,6 @@ export default class Login extends Component {
 		}).bind(this);
 	}
 
-	handleSubmit(event) {
-
-	}
-
 	initSignIn(){
 		// Define UI Config.
 		var uiConfig = {
@@ -132,24 +132,13 @@ export default class Login extends Component {
 		console.log(this.state_props.loggedIn);
 		if(!this.state_props.loggedIn){
 			return (
-				<form className='loginForm' onSubmit={this.handleSubmit.bind(this)}>
-					<h3>Login</h3>
-					<label htmlFor="uid">Username:</label>
-					<div className="input-group">
-					  <input type="text" className="form-control" placeholder="Username" ref='uid' />
-					  <span className="input-group-addon" id="basic-addon1">@students.harker.org</span>
-					</div>
-					<div className="form-group">
-					  <label htmlFor="pwd">Password:</label>
-					  <input type="password" className="form-control" placeholder="Password" ref='pwd' />
-					</div>
-					<div id="firebaseui-auth-container"></div>
-	        	</form>
+				<div id="firebaseui-auth-container"></div>
 			);
 		} else {
 			return (
 				<div>
-					{ JSON.stringify(this.state_props.userInfo) }
+					<img src={this.state_props.photo}></img>
+					{ this.state_props.name }
 					<br />
 					<button type="button" className="btn btn-primary" onClick={this.signOut.bind(this)}>
 						Sign Out

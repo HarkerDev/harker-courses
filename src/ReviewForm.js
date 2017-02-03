@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import coursesData from '../courses.json';
-import $ from "jquery";
 
 var coursesArr = [];
-for(var key in coursesData){
-    coursesArr.push([key, coursesData[key]]);
+for(var key in coursesData) {
+    if (coursesData[key]!=null) {
+        coursesArr.push([key, coursesData[key]]);
+    }
 }
 
 //form for adding a review
