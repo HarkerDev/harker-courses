@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import coursesData from '../courses.json';
 
+var courseIDS = [];
+
+//keep all course ids
 for (var key in coursesData) {
   if (coursesData[key]!=null) {
-    console.log("coursesData[key].title is " + coursesData[key].title);
+    courseIDS.push(key);
   }
 }
 
@@ -22,15 +25,18 @@ export default class CourseBrowser extends Component {
         console.log(childData);
       });
     })
+   };
 
-    //render course names
-    for (var key in coursesData) {
-      var course = document.createElement("LI");
-      var title = document.createTextNode(coursesData[key].title);
-      course.appendChild(title);
-      document.body.appendChild(course);
-    }
-  };
+   //render course title on page
+   renderCourse(courseID) {
+     return <li>{coursesData[courseID].title}</li>;
+   };
+
+   //render all course titles on page
+   renderCourses(courseIDS) {
+     return courseIDS.map(this.renderCourse);
+   };
+
 
   // TODO: Add search option (maybe to navbar top-right?)
   // For now, lists courses with number of reviews
@@ -42,7 +48,8 @@ export default class CourseBrowser extends Component {
   render() {
     return (
       <div>
-      <h3 className="text-center">Browse All Courses</h3>
+        <h3 className="text-center">Browse All Courses</h3>
+        {this.renderCourses(courseIDS)}
       </div>
     );
   }
