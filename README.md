@@ -1,62 +1,25 @@
-# harker-courses
+# harker-courses :apple:
 
-## Available Courses
+## Development To-Do
 
-This platform will have required courses (for the sake of determining Regular/Honors), as well as offered electives, even if the course is not available for the current year.
+- Organize and render list of courses to browse on home page
+- Generate individual course pages for each course
+- Move review form to each course page, such that the course ID/name does not need to be a field in filling out the review.
+- Add TravisCI for deployment
 
-## Organization/Search
 
-Sorting will (probably) be based on the organization of the course list provided on the Harker website. There will also be a search bar, which will have a dropdown of the following courses.
+## Details
 
-Each course will have an individual page based on course id, which search and direct link will lead to.
+### Course Pages
 
-## Course Page Layout
+Each course page will be rendered with the specific ID of the course, so that each course has a unique webpage with course specific content.
 
-The course page will consist of the ratings on top, and then a feed of reviews given by date. At the bottom, there will be a link to submit a review, which will lead the user to the review page, with the course id already filled out as a parameter in the form.
+Each course will show the reviews that have been posted, and offer a form to submit a review for that specific course on the right side of the page (as shown in the design).
 
-## Submit Review Page
-
-Will have three parameters.
-
-1. Course name/ID
-2. Ratings (hardness, work load, etcc)
-3. Verification Questionm
-
-## Verification/Login
+### Verification/Login
 
 Due to anonymity, we will need to verify if students are from Harker or not. In order to do this, students will log into their Google account (student account), but post anonymously. This is also to be able to track and maintain malicious activity and posts, and ban from the platform if necessary.
 
 Login for Google will be done through Firebase.
 
-## Usage
-
-### To run:
-
-In command line,
-
-`git clone https://github.com/aggarwalneeraj141/harker-courses`
-
-Wherever you cloned it, create a folder inside the `public` folder named `credentials`, and inside, `credentials.js`. Inside of this file, add your Firebase configuration script. So,
-
-```
-  var config = {
-    apiKey: "<API_KEY>",
-    authDomain: "<PROJECT_ID>.firebaseapp.com",
-    databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
-    storageBucket: "<BUCKET>.appspot.com",
-    messagingSenderId: "<SENDER_ID>",
-  };
-  firebase.initializeApp(config);
-```
-
-Then, again in command line,
-
-`npm install`
-
-`npm start`
-
-### To deploy:
-
-`npm run build`
-
-`npm run deploy`
+When signed in, account information will not be shown in header, as we want to remind that each post will be previewed on the website anonymously. That way, we only have to show the Login button if relevant.
