@@ -8,12 +8,16 @@ import Login from "./Login";
 import ReviewPage from "./ReviewPage";
 import BrowsePage from "./BrowsePage";
 import * as firebase from "firebase";
+import * as firebaseui from 'firebaseui';
+
+var authUi;
 
 export default class App extends Component {
     constructor(props){
         super(props);
 
         // Init firebase
+        //console.log("Initing firebase again.");
         var config = {
 			apiKey: "AIzaSyDGzHdJ-4B35kuShuJCgmHhkbBy_nMCvy4",
 			authDomain: "harker-courses.firebaseapp.com",
@@ -22,6 +26,37 @@ export default class App extends Component {
 			messagingSenderId: "125151666633"
 		};
 		firebase.initializeApp(config);
+
+        // Init login UI
+        authUi = new firebaseui.auth.AuthUI(firebase.auth());
+        var loginClass = React.createClass({
+          componentDidMount: function() {
+            var self = this;
+            var uiConfig = {
+    			signInSuccessUrl: '/',
+    			signInOptions: [
+    				// Leave the lines as is for the providers you want to offer your users.
+    				firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    				//firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    				//firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+    				//firebase.auth.GithubAuthProvider.PROVIDER_ID,
+    				//firebase.auth.EmailAuthProvider.PROVIDER_ID
+    			],
+    			// Terms of service url.
+    			tosUrl: 'google.com'
+    		};
+            authUi.start('#firebaseui-auth-container', uiConfig);
+          },
+          componentWillUnmount: function() {
+            authUi.reset();
+          },
+          render: function() {
+            return (
+              <div id="firebaseui-auth-container"></div>
+            );
+          }
+        });
+        global.loginClass = loginClass;
     }
   render() {
     return (

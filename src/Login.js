@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-import * as firebaseui from 'firebaseui';
 var Loading = require('react-loading');
+
+var authUi;
 
 export default class Login extends Component {
 
 	constructor(props){
 		super(props);
+		console.log(props);
 		this.state_props = {
 			loggedIn: undefined,
 			name: "",
-			photo: ""
+			photo: "",
+			logInInited: false
 		};
 
 		// Init sign in
@@ -74,7 +77,6 @@ export default class Login extends Component {
 				this.setState({
 					loggedIn: false
 				});
-				this.initSignIn();
 				/*
 				// User is signed out.
 				document.getElementById('sign-in-status').textContent = 'Signed out';
@@ -85,29 +87,6 @@ export default class Login extends Component {
 		}.bind(this), function(error) {
 			console.log(error);
 		}).bind(this);
-	}
-
-	initSignIn(){
-		// Define UI Config.
-		var uiConfig = {
-			signInSuccessUrl: '/',
-			signInOptions: [
-				// Leave the lines as is for the providers you want to offer your users.
-				firebase.auth.GoogleAuthProvider.PROVIDER_ID
-				//firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-				//firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-				//firebase.auth.GithubAuthProvider.PROVIDER_ID,
-				//firebase.auth.EmailAuthProvider.PROVIDER_ID
-			],
-			// Terms of service url.
-			tosUrl: 'google.com'
-		};
-
-		// Initialize the FirebaseUI Widget using Firebase.
-		var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-		// The start method will wait until the DOM is loaded.
-		ui.start('#firebaseui-auth-container', uiConfig);
 	}
 
 	signOut(){
@@ -131,9 +110,9 @@ export default class Login extends Component {
 				</div>
 			);
 		} else if(this.state_props.loggedIn === false){
-			return (
-				<div id="firebaseui-auth-container"></div>
-			);
+			// <div id="firebaseui-auth-container"></div>
+			var LoginClass = global.loginClass;
+			return <LoginClass />;
 		} else if(this.state_props.loggedIn === true){
 			return (
 				<div className="well">
