@@ -13,9 +13,9 @@ export default class Navigation extends Component {
                 <nav>
                     <ul>
                         <li><a href="/#/">harker-courses</a></li>
-                        <li><a href="/#/login">login</a></li>
+                        <li><a href="/#/login">account</a></li>
                         <li><a href="/#/browse">browse</a></li>
-                        <li style={{align: "right"}}><Login /></li>
+                        <li style={{float: "right"}}><Login hide={true}/></li>
                     </ul>
 			     </nav>
             </div>

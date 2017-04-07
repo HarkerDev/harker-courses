@@ -15,6 +15,7 @@ export default class Login extends Component {
 			photo: "",
 			logInInited: false
 		};
+		Object.assign(this.state_props, props);
 
 		// Init firebase
         //console.log("Initing firebase again.");
@@ -107,8 +108,6 @@ export default class Login extends Component {
 			this.setState({
 				loggedIn: false
 			});
-
-			this.initSignIn();
 		}, (err) => {
 			console.log(err);
 		});
@@ -124,9 +123,11 @@ export default class Login extends Component {
 			);
 		} else if(this.state_props.loggedIn === false){
 			// <div id="firebaseui-auth-container"></div>
+			if(!this.state_props.hide) return;
 			var LoginClass = global.loginClass;
 			return <LoginClass />;
 		} else if(this.state_props.loggedIn === true){
+			if(this.state_props.hide) return;
 			return (
 				<div className="well">
 					<ul className="media-list">

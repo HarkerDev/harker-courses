@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Login from "./Login";
 
 export default class Home extends Component {
 
@@ -10,6 +11,7 @@ export default class Home extends Component {
         return (
             <div>
                 <h1>welcome to harker-courses</h1>
+                <Login />
             </div>
         );
     }

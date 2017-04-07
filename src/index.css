@@ -68,9 +68,13 @@ form {
 #firebaseui-auth-container div {
     height: 30px;
     width: 76px;
-    transform: translate(0px, 10px);
 }
 
 #firebaseui-auth-container button {
-    transform: translate(0px, -30px);
+    transform: translate(0px, -20px);
+}
+
+.firebaseui-busy-indicator {
+    display: none !important;
+    height: 0px;
 }

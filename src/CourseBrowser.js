@@ -30,7 +30,7 @@ export default class CourseBrowser extends Component {
    //render course title on page
    renderCourse(courseID) {
      return (
-         <a href={"/#/course/" + courseID}>
+         <a key={courseID} href={"/#/course/" + courseID}>
             <li>{coursesData[courseID].title}</li>
         </a>
      );
