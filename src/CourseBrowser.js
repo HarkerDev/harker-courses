@@ -29,7 +29,7 @@ export default class CourseBrowser extends Component {
 
    //render course title on page
    renderCourse(courseID) {
-     return <a href="https://google.com"><li>{coursesData[courseID].title}</li></a>;
+     return <a href="/#/course"><li>{coursesData[courseID].title}</li></a>;
    };
 
    //render all course titles on page
