@@ -2,8 +2,9 @@
 
 ## Development To-Do
 
-- Organize and render list of courses to browse on home page
-- Generate individual course pages for each course
+- Connect courses to database (add and view reviews)
+- change database security rules (only admins can delete)
+- formatting to match sketch layout
 - Move review form to each course page, such that the course ID/name does not need to be a field in filling out the review.
 - Add TravisCI for deployment
 
