@@ -4,7 +4,7 @@ import { Router, Route, hashHistory } from 'react-router'
 import Navigation from "./Navigation";
 import Home from "./Home";
 import Login from "./Login";
-import ReviewPage from "./ReviewPage";
+import CoursePage from "./CoursePage";
 import BrowsePage from "./BrowsePage";
 import * as firebase from "firebase";
 
@@ -28,7 +28,7 @@ export default class App extends Component {
         <Route path='/' component={Home} />
         <Route path='/login' component={Login} />
         <Route path='/browse' component={BrowsePage} />
-        <Route path='/review' component={ReviewPage} />
+        <Route path='/course' component={CoursePage} />
       </Router>
     );
   }

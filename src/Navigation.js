@@ -14,7 +14,7 @@ export default class Navigation extends Component {
                         <li><a href="/#/">harker-courses</a></li>
                         <li><a href="/#/login">login</a></li>
                         <li><a href="/#/browse">browse</a></li>
-                        <li><a href="/#/review">review</a></li>
+                        <li><a href="/#/course">coursepage</a></li>
                     </ul>
 			     </nav>
             </div>
