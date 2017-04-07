@@ -1,3 +1,8 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -27,11 +32,23 @@ nav ul li a {
 	font-size: 18px;
 }
 
+#course-browser {
+	padding-left: 2em;
+    padding-right: 2em;
+	list-style: none;
+}
+
+#course-browser li {
+	padding-top: 1.3em;
+    font-size: 1.2em;
+    display: inline-block;
+    padding-left: .6em;
+    padding-right: .6em;
+
+}
+
 a {
-	color: #000;
-	display: block; 
-	text-align: center;
-	font-size: 24px;
+    color: #000;
 }
 
 img {

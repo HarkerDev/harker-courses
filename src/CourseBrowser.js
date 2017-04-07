@@ -29,7 +29,7 @@ export default class CourseBrowser extends Component {
 
    //render course title on page
    renderCourse(courseID) {
-     return <li>{coursesData[courseID].title}</li>;
+     return <a href="https://google.com"><li>{coursesData[courseID].title}</li></a>;
    };
 
    //render all course titles on page
@@ -49,7 +49,7 @@ export default class CourseBrowser extends Component {
     return (
       <div>
         <h3 className="text-center">Browse All Courses</h3>
-        {this.renderCourses(courseIDS)}
+          <div id="course-browser">{this.renderCourses(courseIDS)}</div>
       </div>
     );
   }

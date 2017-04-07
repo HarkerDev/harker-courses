@@ -12,5 +12,6 @@ build
 .env
 npm-debug.log
 /credentials
+.idea
 
 public/credentials/credentials.js

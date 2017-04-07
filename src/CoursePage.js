@@ -3,11 +3,14 @@ import React, { Component } from 'react';
 import Login from "./Login";
 import ReviewForm from "./ReviewForm";
 
-// Review page code
-export default class ReviewPage extends Component {
+//Course page
+//Will be opened with a parameter carrying the course ID, from which it will
+//pull the corresponding reviews from Firebase
+export default class CoursePage extends Component {
 
     constructor(props){
         super(props);
+        console.log(props);
     }
 
     render() {

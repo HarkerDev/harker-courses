@@ -119,7 +119,7 @@ export default class Login extends Component {
 					<ul className="media-list">
 						<li className="media">
 							<div className="media-left">
-								<a href="#"><img src={this.state_props.photo}></img></a>
+								<a href="#"><img src={this.state_props.photo} alt="login button"></img></a>
 							</div>
 							<div className="media-body">
 								<h4 className="media-heading">{this.state_props.name} ({this.state_props.pretty_username})</h4>
