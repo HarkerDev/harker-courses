@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import { Router, Route, hashHistory } from 'react-router'
 
 import Navigation from "./Navigation";
