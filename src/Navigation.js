@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Login from "./Login";
 
 export default class Navigation extends Component {
 
@@ -14,7 +15,7 @@ export default class Navigation extends Component {
                         <li><a href="/#/">harker-courses</a></li>
                         <li><a href="/#/login">login</a></li>
                         <li><a href="/#/browse">browse</a></li>
-                        <li><a href="/#/course">coursepage</a></li>
+                        <li style={{align: "right"}}><Login /></li>
                     </ul>
 			     </nav>
             </div>

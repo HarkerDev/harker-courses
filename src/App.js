@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Router, Route, hashHistory } from 'react-router'
 
-import Navigation from "./Navigation";
 import Home from "./Home";
 import Login from "./Login";
+import Navigation from "./Navigation";
 import CoursePage from "./CoursePage";
 import BrowsePage from "./BrowsePage";
 import * as firebase from "firebase";
@@ -14,17 +14,6 @@ var authUi;
 export default class App extends Component {
     constructor(props){
         super(props);
-
-        // Init firebase
-        //console.log("Initing firebase again.");
-        var config = {
-			apiKey: "AIzaSyDGzHdJ-4B35kuShuJCgmHhkbBy_nMCvy4",
-			authDomain: "harker-courses.firebaseapp.com",
-			databaseURL: "https://harker-courses.firebaseio.com",
-			storageBucket: "harker-courses.appspot.com",
-			messagingSenderId: "125151666633"
-		};
-		firebase.initializeApp(config);
 
         // Init login UI
         authUi = new firebaseui.auth.AuthUI(firebase.auth());
@@ -63,7 +52,7 @@ export default class App extends Component {
         <Route path='/' component={Home} />
         <Route path='/login' component={Login} />
         <Route path='/browse' component={BrowsePage} />
-        <Route path='/course' component={CoursePage} />
+        <Route path='/course/:courseId' component={CoursePage} />
       </Router>
     );
   }

@@ -16,6 +16,19 @@ export default class Login extends Component {
 			logInInited: false
 		};
 
+		// Init firebase
+        //console.log("Initing firebase again.");
+        var config = {
+			apiKey: "AIzaSyDGzHdJ-4B35kuShuJCgmHhkbBy_nMCvy4",
+			authDomain: "harker-courses.firebaseapp.com",
+			databaseURL: "https://harker-courses.firebaseio.com",
+			storageBucket: "harker-courses.appspot.com",
+			messagingSenderId: "125151666633"
+		};
+		if(firebase.apps.length === 0){
+			firebase.initializeApp(config);
+		}
+
 		// Init sign in
 		this.authenticateUser();
 	}

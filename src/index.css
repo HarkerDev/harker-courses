@@ -60,3 +60,17 @@ form {
 	width: 60%;
 	margin: 5em auto;
 }
+
+#firebaseui-auth-container form {
+    margin: 0 !important;
+}
+
+#firebaseui-auth-container div {
+    height: 30px;
+    width: 76px;
+    transform: translate(0px, 10px);
+}
+
+#firebaseui-auth-container button {
+    transform: translate(0px, -30px);
+}
