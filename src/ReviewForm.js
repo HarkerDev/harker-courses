@@ -14,30 +14,9 @@ export default class ReviewForm extends Component {
 
     constructor(props){
         super(props);
-
-        // Init tooltip (broken right now)
-        /*
-        $('.rating-tooltip-manual').rating({
-          extendSymbol: function () {
-            var title;
-            $(this).tooltip({
-              container: 'body',
-              placement: 'bottom',
-              trigger: 'manual',
-              title: function () {
-                return title;
-              }
-            });
-            $(this).on('rating.rateenter', function (e, rate) {
-              title = rate;
-              $(this).tooltip('show');
-            })
-            .on('rating.rateleave', function () {
-              $(this).tooltip('hide');
-            });
-          }
-        });
-        */
+        console.log(props);
+        this.state_props = props;
+        this.course = this.state_props.course;
     }
 
     handleSubmit(event) {
@@ -78,6 +57,16 @@ export default class ReviewForm extends Component {
         // it all, make appropriate input fields, etc.
     }
 
+    componentWillMount() {
+        const script = document.createElement("script");
+
+        script.innerHTML = "setTimeout(function() { \
+            $('.rating').rating(); \
+        }, 200);";
+
+        document.body.appendChild(script);
+    }
+
     render() {
         /*
         <form className='reviewForm' onSubmit={this.handleSubmit.bind(this)}>
@@ -88,29 +77,31 @@ export default class ReviewForm extends Component {
         </form>
         */
         return (
-            <form className='reviewForm' onSubmit={this.handleSubmit.bind(this)}>
-                <h3>Post a Review</h3>
-                <div className="input-group">
-                    <label htmlFor="courseId">Course:</label>
-                    <select className="form-control" ref="courseId">
-                    {coursesArr.map(function(obj, i){
-                        return (
-                            <option key={i} value={obj[0]}>{obj[1]["title"]}</option>
-                        );
-                    })}
-                    </select>
-                </div>
-                <label htmlFor="rating">Rating:</label>
-                <div className="form-group">
-                    <input type="hidden" className="rating rating-tooltip-manual" data-start="0" data-stop="5"
-                    data-fractions="2" ref='rating' id="reviewRating"></input>
-                </div>
-                <div className="form-group">
-                    <textarea className="form-control" rows="5" ref='review'
-                    placeholder="Your review of this course here" />
-                </div>
-                <input type="submit" className="btn btn-info" value="Post Review!" />
-            </form>
+            <div>
+                <form className='reviewForm' onSubmit={this.handleSubmit.bind(this)}>
+                    <h3>Post a Review</h3>
+                    <div className="input-group">
+                        <label htmlFor="courseId">Course:</label>
+                        <select className="form-control" ref="courseId" defaultValue={this.course}>
+                        {coursesArr.map(function(obj, i){
+                            return (
+                                <option key={i} value={obj[0]}>{obj[1]["title"]}</option>
+                            );
+                        })}
+                        </select>
+                    </div>
+                    <label htmlFor="rating">Rating:</label>
+                    <div className="form-group">
+                        <input type="hidden" className="rating rating-tooltip-manual" data-start="0" data-stop="5"
+                        data-fractions="2" ref='rating' id="reviewRating"></input>
+                    </div>
+                    <div className="form-group">
+                        <textarea className="form-control" rows="5" ref='review'
+                        placeholder="Your review of this course here" />
+                    </div>
+                    <input type="submit" className="btn btn-info" value="Post Review!" />
+                </form>
+            </div>
         );
     }
 }

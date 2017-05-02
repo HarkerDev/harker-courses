@@ -11,13 +11,14 @@ export default class CoursePage extends Component {
     constructor(props){
         super(props);
         console.log(props);
+        this.courseId = props.routeParams.courseId;
     }
 
     render() {
         return (
             <div>
 				<Login />
-				<ReviewForm />
+				<ReviewForm course={this.courseId}/>
 			</div>
         );
     }
