@@ -1,5 +1,9 @@
 # harker-courses :apple:
 
+
+
+An online platform for Harker students to leave reviews on courses. Deployed platform can be found at [http://harker-courses.surge.sh](http://harker-courses.surge.sh).
+
 ## Development To-Do
 
 - [ ] Connect courses to database (add and view reviews per course)
