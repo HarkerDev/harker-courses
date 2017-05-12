@@ -41,6 +41,11 @@ export default class CourseBrowser extends Component {
      return courseIDS.map(this.renderCourse);
    };
 
+   //will take in
+   renderCourseCat(int) {
+
+   }
+
 
   // TODO: Add search option (maybe to navbar top-right?)
   // For now, lists courses with number of reviews

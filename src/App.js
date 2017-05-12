@@ -5,7 +5,6 @@ import Home from "./Home";
 import Login from "./Login";
 import Navigation from "./Navigation";
 import CoursePage from "./CoursePage";
-import BrowsePage from "./BrowsePage";
 import * as firebase from "firebase";
 import * as firebaseui from 'firebaseui';
 
@@ -51,7 +50,6 @@ export default class App extends Component {
       <Router history={hashHistory}>
         <Route path='/' component={Home} />
         <Route path='/login' component={Login} />
-        <Route path='/browse' component={BrowsePage} />
         <Route path='/course/:courseId' component={CoursePage} />
       </Router>
     );
