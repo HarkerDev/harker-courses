@@ -1,6 +1,6 @@
 # harker-courses :apple:
 
-
+[![Build Status](https://travis-ci.com/n3a9/harker-courses.svg?token=oqxxEvW7knppYxyBV7jq&branch=master)](https://travis-ci.com/n3a9/harker-courses)
 
 An online platform for Harker students to leave reviews on courses. Deployed platform can be found at [http://harker-courses.surge.sh](http://harker-courses.surge.sh).
 
@@ -10,8 +10,6 @@ An online platform for Harker students to leave reviews on courses. Deployed pla
 - [ ] Categorize the course listings on the homepage
 - [ ] Create better course page, with teacher/availability information
 - [ ] Organization/design to match sketch files
-- [ ] Add TravisCI for deployment
-
 
 ## Details
 
