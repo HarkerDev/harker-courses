@@ -78,14 +78,14 @@ export default class ReviewForm extends Component {
         */
         return (
             <div>
-                <form className='reviewForm' onSubmit={this.handleSubmit.bind(this)}>
+                <form className='reviewForm' onSubmit={ this.handleSubmit.bind(this) }>
                     <h3>Post a Review</h3>
                     <div className="input-group">
                         <label htmlFor="courseId">Course:</label>
                         <select className="form-control" ref="courseId" defaultValue={this.course}>
                         {coursesArr.map(function(obj, i){
                             return (
-                                <option key={i} value={obj[0]}>{obj[1]["title"]}</option>
+                                <option key={i} value={obj[0]}>{ obj[1]["title"] }</option>
                             );
                         })}
                         </select>

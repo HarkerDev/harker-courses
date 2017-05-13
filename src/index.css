@@ -7,6 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  margin-bottom: 2em;
 }
 
 h1 {
@@ -30,6 +31,18 @@ nav ul li{
 
 nav ul li a {
 	font-size: 18px;
+}
+
+#categories ul{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    list-style: none;
+}
+
+#categories li {
+    display: inline-block;
+    padding: 1em;
 }
 
 #course-browser {

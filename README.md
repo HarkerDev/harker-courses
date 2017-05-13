@@ -10,6 +10,8 @@ An online platform for Harker students to leave reviews on courses. Deployed pla
 - [ ] Categorize the course listings on the homepage
 - [ ] Create better course page, with teacher/availability information
 - [ ] Organization/design to match sketch files
+- [ ] Search Bar funtionality
+- [ ] Add star in ratings next to course name in course page
 
 ## Details
 
