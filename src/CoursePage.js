@@ -18,7 +18,7 @@ export default class CoursePage extends Component {
         return (
             <div>
 				<Login />
-				<ReviewForm course={this.courseId}/>
+				<ReviewForm course={ this.courseId }/>
 			</div>
         );
     }

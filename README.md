@@ -1,13 +1,15 @@
-# harker-courses :apple:
+# harker-courses :apple: [![Build Status](https://travis-ci.com/n3a9/harker-courses.svg?token=oqxxEvW7knppYxyBV7jq&branch=master)](https://travis-ci.com/n3a9/harker-courses)
+
+An online platform for Harker students to leave reviews on courses. Deployed platform can be found at [http://harker-courses.surge.sh](http://harker-courses.surge.sh) (may be behind master branch).
 
 ## Development To-Do
 
-- Connect courses to database (add and view reviews)
-- change database security rules (only admins can delete)
-- formatting to match sketch layout
-- Move review form to each course page, such that the course ID/name does not need to be a field in filling out the review.
-- Add TravisCI for deployment
-
+- [ ] Connect courses to database (add and view reviews per course)
+- [ ] Categorize the course listings on the homepage
+- [ ] Create better course page, with teacher/availability information
+- [ ] Organization/design to match sketch files
+- [ ] Search Bar funtionality
+- [ ] Add star in ratings next to course name in course page
 
 ## Details
 
@@ -19,8 +21,16 @@ Each course will show the reviews that have been posted, and offer a form to sub
 
 ### Verification/Login
 
-Due to anonymity, we will need to verify if students are from Harker or not. In order to do this, students will log into their Google account (student account), but post anonymously. This is also to be able to track and maintain malicious activity and posts, and ban from the platform if necessary.
+Due to anonymity, we will need to verify if students are from Harker or not. In order to do this, students will log into their student Google account, but post anonymously. This is also to be able to track and maintain malicious activity and posts, and ban from the platform if necessary.
 
-Login for Google will be done through Firebase.
+Although anyone will be able to sign in with any Google account, Firebase will check if it is from the correct Harker domain before allowing write access to the database.
 
 When signed in, account information will not be shown in header, as we want to remind that each post will be previewed on the website anonymously. That way, we only have to show the Login button if relevant.
+
+## Technology
+
+Built using React & Firebase
+
+## Authors and Contributors
+
+[Neeraj](https://github.com/n3a9) & [Sumer](https://github.com/firebolt55439)
