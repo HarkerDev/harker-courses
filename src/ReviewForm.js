@@ -17,6 +17,7 @@ export default class ReviewForm extends Component {
         console.log(props);
         this.state_props = props;
         this.course = this.state_props.course;
+        this.submitted = undefined;
     }
 
     handleSubmit(event) {
@@ -25,11 +26,9 @@ export default class ReviewForm extends Component {
         firebase.auth().onAuthStateChanged(function(user) {
 			if (user) {
 				var displayName = user.displayName;
-				this.state_props.name = user.displayName;
 	            var email = user.email;
 	            var emailVerified = user.emailVerified;
 	            var photoURL = user.photoURL;
-	            this.state_props.photo = user.photoURL;
 	            var uid = user.uid;
 	            var providerData = user.providerData;
 	            user.getToken().then(function(accessToken) {
@@ -62,18 +61,29 @@ export default class ReviewForm extends Component {
                     };
 
                     // Get a key for a new Post.
-                    var newPostKey = firebase.database().ref().child('reviews').child(this.course).push().key;
+                    var newPostKey = firebase.database().ref().child('reviews').child(courseId).push().key;
 
                     // Write the new post's data simultaneously in the posts list and the user's post list.
                     var updates = {};
-                    updates['/reviews/' + this.course + '/' + newPostKey] = postData;
+                    updates['/reviews/' + courseId + '/' + newPostKey] = postData;
                     //updates['/user-posts/' + uid + '/' + newPostKey] = postData;
 
                     //console.log(firebase.database().ref().update(updates)); // // //
+                    firebase.database().ref().update(updates).then(function(data){
+                        // success
+                        console.log(data);
+                        that.submitted = "success";
+                        that.forceUpdate();
+                    }, function(err){
+                        // error
+                        console.log("ERROR!");
+                        that.submitted = "failure";
+                        that.forceUpdate();
+                    })
                     //this.props.onReviewSubmit({courseId: courseId, rating: rating, review: review});
-                    that.refs.courseId.value = ''; //reset fields
+                    /*that.refs.courseId.value = ''; //reset fields
                     that.refs.rating.value = 0;
-                    that.refs.review.value = '';
+                    that.refs.review.value = '';*/
 
                     // TODO: Check return status, display error/success in field, bootstrap
                     // it all, make appropriate input fields, etc.
@@ -101,32 +111,46 @@ export default class ReviewForm extends Component {
         <input type='submit' value='Post' />
         </form>
         */
-        return (
-            <div>
-                <form className='reviewForm' onSubmit={ this.handleSubmit.bind(this) }>
-                    <h3>Post a Review</h3>
-                    <div className="input-group">
-                        <label htmlFor="courseId">Course:</label>
-                        <select className="form-control" ref="courseId" defaultValue={this.course}>
-                        {coursesArr.map(function(obj, i){
-                            return (
-                                <option key={i} value={obj[0]}>{ obj[1]["title"] }</option>
-                            );
-                        })}
-                        </select>
-                    </div>
-                    <label htmlFor="rating">Rating:</label>
-                    <div className="form-group">
-                        <input type="hidden" className="rating rating-tooltip-manual" data-start="0" data-stop="5"
-                        data-fractions="2" ref='rating' id="reviewRating"></input>
-                    </div>
-                    <div className="form-group">
-                        <textarea className="form-control" rows="5" ref='review'
-                        placeholder="Your review of this course here" />
-                    </div>
-                    <input type="submit" className="btn btn-info" value="Post Review!" />
-                </form>
-            </div>
-        );
+        if(this.submitted === undefined){
+            return (
+                <div>
+                    <form className='reviewForm' onSubmit={ this.handleSubmit.bind(this) }>
+                        <h3>Post a Review</h3>
+                        <div className="input-group">
+                            <label htmlFor="courseId">Course:</label>
+                            <select className="form-control" ref="courseId" defaultValue={this.course}>
+                            {coursesArr.map(function(obj, i){
+                                return (
+                                    <option key={i} value={obj[0]}>{ obj[1]["title"] }</option>
+                                );
+                            })}
+                            </select>
+                        </div>
+                        <label htmlFor="rating">Rating:</label>
+                        <div className="form-group">
+                            <input type="hidden" className="rating rating-tooltip-manual" data-start="0" data-stop="5"
+                            data-fractions="2" ref='rating' id="reviewRating"></input>
+                        </div>
+                        <div className="form-group">
+                            <textarea className="form-control" rows="5" ref='review'
+                            placeholder="Your review of this course here" />
+                        </div>
+                        <input type="submit" className="btn btn-info" value="Post Review!" />
+                    </form>
+                </div>
+            );
+        } else if(this.submitted === "success"){
+            return (
+                <div className='reviewForm alert alert-success'>
+                    <span className="glyphicon glyphicon-ok"></span>&nbsp;<strong>Success!</strong> Posted review.
+                </div>
+            );
+        } else if(this.submitted === "failure"){
+            return (
+                <div className='reviewForm alert alert-danger'>
+                    <span className="glyphicon glyphicon-remove"></span>&nbsp;<strong>Error!</strong> Unable to post review.
+                </div>
+            );
+        }
     }
 }
