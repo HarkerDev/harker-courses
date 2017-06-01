@@ -21,40 +21,65 @@ export default class ReviewForm extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        var courseId = this.refs.courseId.value.trim();
-        var rating = this.refs.rating.value;
-        var review = this.refs.review.value;
-        // A post entry.
-        var postData = {
-            /*
-            author: username,
-            uid: uid,
-            body: body,
-            title: title,
-            starCount: 0,
-            authorPic: picture
-            */
-            courseId: courseId,
-            rating: rating,
-            review: review
-        };
+        var that = this;
+        firebase.auth().onAuthStateChanged(function(user) {
+			if (user) {
+				var displayName = user.displayName;
+				this.state_props.name = user.displayName;
+	            var email = user.email;
+	            var emailVerified = user.emailVerified;
+	            var photoURL = user.photoURL;
+	            this.state_props.photo = user.photoURL;
+	            var uid = user.uid;
+	            var providerData = user.providerData;
+	            user.getToken().then(function(accessToken) {
+					var login_info = {
+	  	                displayName: displayName,
+	  	                email: email,
+	  	                emailVerified: emailVerified,
+	  	                photoURL: photoURL,
+	  	                uid: uid,
+	  	                accessToken: accessToken,
+	  	                providerData: providerData
+					};
+                    console.log(login_info);
+                    var courseId = that.refs.courseId.value.trim();
+                    var rating = that.refs.rating.value;
+                    var review = that.refs.review.value;
+                    // A review entry.
+                    var postData = {
+                        /*
+                        author: username,
+                        uid: uid,
+                        body: body,
+                        title: title,
+                        starCount: 0,
+                        authorPic: picture
+                        */
+                        courseId: courseId,
+                        rating: rating,
+                        review: review
+                    };
 
-        // Get a key for a new Post.
-        var newPostKey = firebase.database().ref().child('posts').push().key;
+                    // Get a key for a new Post.
+                    var newPostKey = firebase.database().ref().child('reviews').child(this.course).push().key;
 
-        // Write the new post's data simultaneously in the posts list and the user's post list.
-        var updates = {};
-        updates['/posts/' + newPostKey] = postData;
-        //updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+                    // Write the new post's data simultaneously in the posts list and the user's post list.
+                    var updates = {};
+                    updates['/reviews/' + this.course + '/' + newPostKey] = postData;
+                    //updates['/user-posts/' + uid + '/' + newPostKey] = postData;
 
-        console.log(firebase.database().ref().update(updates));
-        //this.props.onReviewSubmit({courseId: courseId, rating: rating, review: review});
-        this.refs.courseId.value = ''; //reset fields
-        this.refs.rating.value = 0;
-        this.refs.review.value = '';
+                    //console.log(firebase.database().ref().update(updates)); // // //
+                    //this.props.onReviewSubmit({courseId: courseId, rating: rating, review: review});
+                    that.refs.courseId.value = ''; //reset fields
+                    that.refs.rating.value = 0;
+                    that.refs.review.value = '';
 
-        // TODO: Check return status, display error/success in field, bootstrap
-        // it all, make appropriate input fields, etc.
+                    // TODO: Check return status, display error/success in field, bootstrap
+                    // it all, make appropriate input fields, etc.
+                });
+            }
+        });
     }
 
     componentWillMount() {
