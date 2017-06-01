@@ -21,10 +21,34 @@ export default class ReviewForm extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        firebase.auth().onAuthStateChanged(function(user) {
+			if (user) {
+				var displayName = user.displayName;
+				this.state_props.name = user.displayName;
+	            var email = user.email;
+	            var emailVerified = user.emailVerified;
+	            var photoURL = user.photoURL;
+	            this.state_props.photo = user.photoURL;
+	            var uid = user.uid;
+	            var providerData = user.providerData;
+	            user.getToken().then(function(accessToken) {
+					login_info = {
+	  	                displayName: displayName,
+	  	                email: email,
+	  	                emailVerified: emailVerified,
+	  	                photoURL: photoURL,
+	  	                uid: uid,
+	  	                accessToken: accessToken,
+	  	                providerData: providerData
+					};
+                    // ...
+                });
+            }
+        });
         var courseId = this.refs.courseId.value.trim();
         var rating = this.refs.rating.value;
         var review = this.refs.review.value;
-        // A post entry.
+        // A review entry.
         var postData = {
             /*
             author: username,
@@ -40,11 +64,11 @@ export default class ReviewForm extends Component {
         };
 
         // Get a key for a new Post.
-        var newPostKey = firebase.database().ref().child('posts').push().key;
+        var newPostKey = firebase.database().ref().child('reviews').child(this.course).push().key;
 
         // Write the new post's data simultaneously in the posts list and the user's post list.
         var updates = {};
-        updates['/posts/' + newPostKey] = postData;
+        updates['/reviews/' + this.course + '/' + newPostKey] = postData;
         //updates['/user-posts/' + uid + '/' + newPostKey] = postData;
 
         console.log(firebase.database().ref().update(updates));

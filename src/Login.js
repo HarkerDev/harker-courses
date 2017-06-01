@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase';
 var Loading = require('react-loading');
 
-var authUi;
+var authUi, login_info;
 
 export default class Login extends Component {
 
@@ -56,7 +56,7 @@ export default class Login extends Component {
 	            var uid = user.uid;
 	            var providerData = user.providerData;
 	            user.getToken().then(function(accessToken) {
-					var login_info = {
+					login_info = {
 	  	                displayName: displayName,
 	  	                email: email,
 	  	                emailVerified: emailVerified,
