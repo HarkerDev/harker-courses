@@ -140,8 +140,8 @@ function uniq(a) {
         return !pos || item != ary[pos - 1];
     })
 }
-
 for(var key in coursesData){
+    courseIDS.push(key);
     if(coursesData[key].subject && coursesData[key].subject !== "NULL"){
         courseCategories.push(coursesData[key].subject);
     }
@@ -195,47 +195,14 @@ export default class CourseBrowser extends Component {
     };
 
     categoryRender(category) {
-        console.log(category);
-        switch(category) {
-            case 1:
-                currentIDS = courseIDS.slice(0,6);
-                this.forceUpdate();
-                break;
-            case 2:
-                alert("not finished");
-                break;
-            case 3:
-                alert("English");
-                break;
-            case 4:
-                alert("Global Online Academy");
-                break;
-            case 5:
-                alert("History and Social Science");
-                break;
-            case 6:
-                alert("Journalism");
-                break;
-            case 7:
-                alert("Mathematics");
-                break;
-            case 8:
-                alert("Modern and Classical Languages");
-                break;
-            case 9:
-                alert("Physical Education");
-                break;
-            case 10:
-                alert("Science");
-                break;
-            case 11:
-                alert("Speech and Debate");
-                break;
-            case 12:
-                alert("Visual and Performing Arts");
-                break;
+        console.log("Filtering for", category);
+        currentIDS = [];
+        for(var on of courseIDS){
+            if(coursesData[on].subject === category){
+                currentIDS.push(on);
+            }
         }
-
+        this.forceUpdate();
     }
 
     onChange = (event, { newValue, method }) => {
