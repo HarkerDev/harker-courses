@@ -5,6 +5,7 @@ import coursesData from '../courses.json';
 
 var courseIDS = [];
 var currentIDS = [];
+var courseCategories = [];
 
 const languages = [
     {
@@ -133,14 +134,19 @@ function getSectionSuggestions(section) {
     return section.languages;
 }
 
+// Keep all course ids
+function uniq(a) {
+    return a.sort().filter(function(item, pos, ary) {
+        return !pos || item != ary[pos - 1];
+    })
+}
 
-
-//keep all course ids
-for (var key in coursesData) {
-    if (coursesData[key]!=null) {
-        courseIDS.push(key);
+for(var key in coursesData){
+    if(coursesData[key].subject && coursesData[key].subject !== "NULL"){
+        courseCategories.push(coursesData[key].subject);
     }
 }
+courseCategories = uniq(courseCategories);
 
 export default class CourseBrowser extends Component {
 
@@ -173,14 +179,24 @@ export default class CourseBrowser extends Component {
         );
     };
 
+    renderCategory(category){
+        return (
+            <li onClick={() => this.categoryRender(category)} key={category}>{category}</li>
+        );
+    }
+
     //render all course titles on page
     renderCourses(courseIDS) {
-        return courseIDS.map(this.renderCourse);
+        return courseIDS.map(this.renderCourse, this);
     };
 
+    renderCategories(categories){
+        return courseCategories.map(this.renderCategory, this);
+    };
 
-    categoryRender(num) {
-        switch(num) {
+    categoryRender(category) {
+        console.log(category);
+        switch(category) {
             case 1:
                 currentIDS = courseIDS.slice(0,6);
                 this.forceUpdate();
@@ -262,18 +278,7 @@ export default class CourseBrowser extends Component {
                 <h3 className="text-center">Browse All Courses</h3>
                 <div id="categories">
                     <ul>
-                        <li onClick={ () => this.categoryRender(1) }>Business and Entrepreneurship</li>
-                        <li onClick={ () => this.categoryRender(2) }>Computer Science</li>
-                        <li onClick={ () => this.categoryRender(3) }>English</li>
-                        <li onClick={ () => this.categoryRender(4) }>Global Online Academy</li>
-                        <li onClick={ () => this.categoryRender(5) }>History and Social Science</li>
-                        <li onClick={ () => this.categoryRender(6) }>Journalism</li>
-                        <li onClick={ () => this.categoryRender(7) }>Mathematics</li>
-                        <li onClick={ () => this.categoryRender(8) }>Modern and Classical Languages</li>
-                        <li onClick={ () => this.categoryRender(9) }>Physical Education</li>
-                        <li onClick={ () => this.categoryRender(10) }>Science</li>
-                        <li onClick={ () => this.categoryRender(11) }>Speech and Debate</li>
-                        <li onClick={ () => this.categoryRender(12) }>Visual and Performing Arts</li>
+                        { this.renderCategories(courseCategories) }
                     </ul>
                 </div>
                 <div id="course-browser">{ this.renderCourses(currentIDS) }</div>
