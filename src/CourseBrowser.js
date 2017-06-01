@@ -3,6 +3,7 @@ import * as firebase from 'firebase';
 import coursesData from '../courses.json';
 
 var courseIDS = [];
+var currentIDS = [];
 
 //keep all course ids
 for (var key in coursesData) {
@@ -44,13 +45,13 @@ export default class CourseBrowser extends Component {
 
 
     categoryRender(num) {
-
         switch(num) {
             case 1:
-                alert("Business and Entrepreneurship");
+                currentIDS = courseIDS.slice(0,6);
+                this.forceUpdate();
                 break;
             case 2:
-                alert("Computer Science");
+                alert("not finished");
                 break;
             case 3:
                 alert("English");
@@ -106,7 +107,7 @@ export default class CourseBrowser extends Component {
                         <li onClick={ () => this.categoryRender(12) }>Visual and Performing Arts</li>
                     </ul>
                 </div>
-                <div id="course-browser">{ this.renderCourses(courseIDS) }</div>
+                <div id="course-browser">{ this.renderCourses(currentIDS) }</div>
             </div>
         );
     }

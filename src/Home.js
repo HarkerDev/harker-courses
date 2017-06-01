@@ -12,7 +12,6 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <h1>welcome to harker-courses</h1>
                 <Login />
                 <CourseBrowser />
             </div>
