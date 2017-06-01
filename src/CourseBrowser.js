@@ -74,10 +74,10 @@ export default class CourseBrowser extends Component {
                 alert("Physical Education");
                 break;
             case 10:
-                alert("Speech and Debate");
+                alert("Science");
                 break;
             case 11:
-                alert("Business and Entrepreneurship");
+                alert("Speech and Debate");
                 break;
             case 12:
                 alert("Visual and Performing Arts");
