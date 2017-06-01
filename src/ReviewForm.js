@@ -21,6 +21,7 @@ export default class ReviewForm extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        var that = this;
         firebase.auth().onAuthStateChanged(function(user) {
 			if (user) {
 				var displayName = user.displayName;
@@ -32,7 +33,7 @@ export default class ReviewForm extends Component {
 	            var uid = user.uid;
 	            var providerData = user.providerData;
 	            user.getToken().then(function(accessToken) {
-					login_info = {
+					var login_info = {
 	  	                displayName: displayName,
 	  	                email: email,
 	  	                emailVerified: emailVerified,
@@ -41,44 +42,44 @@ export default class ReviewForm extends Component {
 	  	                accessToken: accessToken,
 	  	                providerData: providerData
 					};
-                    // ...
+                    console.log(login_info);
+                    var courseId = that.refs.courseId.value.trim();
+                    var rating = that.refs.rating.value;
+                    var review = that.refs.review.value;
+                    // A review entry.
+                    var postData = {
+                        /*
+                        author: username,
+                        uid: uid,
+                        body: body,
+                        title: title,
+                        starCount: 0,
+                        authorPic: picture
+                        */
+                        courseId: courseId,
+                        rating: rating,
+                        review: review
+                    };
+
+                    // Get a key for a new Post.
+                    var newPostKey = firebase.database().ref().child('reviews').child(this.course).push().key;
+
+                    // Write the new post's data simultaneously in the posts list and the user's post list.
+                    var updates = {};
+                    updates['/reviews/' + this.course + '/' + newPostKey] = postData;
+                    //updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+                    //console.log(firebase.database().ref().update(updates)); // // //
+                    //this.props.onReviewSubmit({courseId: courseId, rating: rating, review: review});
+                    that.refs.courseId.value = ''; //reset fields
+                    that.refs.rating.value = 0;
+                    that.refs.review.value = '';
+
+                    // TODO: Check return status, display error/success in field, bootstrap
+                    // it all, make appropriate input fields, etc.
                 });
             }
         });
-        var courseId = this.refs.courseId.value.trim();
-        var rating = this.refs.rating.value;
-        var review = this.refs.review.value;
-        // A review entry.
-        var postData = {
-            /*
-            author: username,
-            uid: uid,
-            body: body,
-            title: title,
-            starCount: 0,
-            authorPic: picture
-            */
-            courseId: courseId,
-            rating: rating,
-            review: review
-        };
-
-        // Get a key for a new Post.
-        var newPostKey = firebase.database().ref().child('reviews').child(this.course).push().key;
-
-        // Write the new post's data simultaneously in the posts list and the user's post list.
-        var updates = {};
-        updates['/reviews/' + this.course + '/' + newPostKey] = postData;
-        //updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-
-        console.log(firebase.database().ref().update(updates));
-        //this.props.onReviewSubmit({courseId: courseId, rating: rating, review: review});
-        this.refs.courseId.value = ''; //reset fields
-        this.refs.rating.value = 0;
-        this.refs.review.value = '';
-
-        // TODO: Check return status, display error/success in field, bootstrap
-        // it all, make appropriate input fields, etc.
     }
 
     componentWillMount() {
