@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
 import * as firebase from 'firebase';
-import coursesData from '../courses.json';
+import coursesDataCO from '../courses.json';
+
+var coursesData = coursesDataCO;
 
 var courseIDS = [];
 var currentIDS = [];
 var courseCategories = [];
 
-const languages = [
+var languages = [
     {
         title: '1970s',
         languages: [
@@ -140,13 +142,39 @@ function uniq(a) {
         return !pos || item != ary[pos - 1];
     })
 }
+var prettyCategories = {
+    "Science - Life": "Life Sciences",
+    "Science - Physical": "Physical Sciences"
+}
+for(var key in coursesData){
+    var on = coursesData[key];
+    if(on.subject in prettyCategories){
+        on.subject = prettyCategories[on.subject];
+    }
+}
+languages = [];
 for(var key in coursesData){
     courseIDS.push(key);
-    if(coursesData[key].subject && coursesData[key].subject !== "NULL"){
-        courseCategories.push(coursesData[key].subject);
+    var on = coursesData[key];
+    if(on.subject && on.subject !== "NULL"){
+        courseCategories.push(on.subject);
     }
 }
 courseCategories = uniq(courseCategories);
+for(var category of courseCategories){
+    languages.push({
+        title: category,
+        languages: Object.values(coursesData)
+            .filter(function(val){
+                return val.subject === category;
+            })
+            .map(function(val){
+                return {
+                    name: val.title
+                };
+            })
+    })
+}
 
 export default class CourseBrowser extends Component {
 
