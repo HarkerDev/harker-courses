@@ -128,7 +128,7 @@ export default class CourseBrowser extends Component {
 
     renderCategory(category){
         return (
-            <li onClick={() => this.categoryRender(category)} key={category}>{category}</li>
+            <li onClick={ () => this.categoryRender(category) } key={ category }>{ category }</li>
         );
     }
 
@@ -144,7 +144,7 @@ export default class CourseBrowser extends Component {
     categoryRender(category) {
         console.log("Filtering for", category);
         currentIDS = [];
-        for(var on of courseIDS){
+        for(var on of courseIDS) {
             if(coursesData[on].subject === category){
                 currentIDS.push(on);
             }
