@@ -6,9 +6,9 @@ import App from './App';
 import './index.css';
 
 ReactDOM.render(
-	<div>
-		<Navigation />
-  		<App />
-  	</div>,
-  document.getElementById('root')
+  <div>
+    <Navigation />
+    <App />
+  </div>,
+  document.getElementById('root'),
 );

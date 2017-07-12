@@ -1,51 +1,51 @@
 import React, { Component } from 'react';
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, hashHistory } from 'react-router';
 
-import Home from "./Home";
-import Login from "./Login";
-import Navigation from "./Navigation";
-import CoursePage from "./CoursePage";
-import * as firebase from "firebase";
+import * as firebase from 'firebase';
 import * as firebaseui from 'firebaseui';
 
-var authUi;
+import Home from './Home';
+import Login from './Login';
+import CoursePage from './CoursePage';
+
+
+let authUi;
 
 export default class App extends Component {
-    constructor(props){
-        super(props);
+  constructor(props) {
+    super(props);
 
-        // Init login UI
-        authUi = new firebaseui.auth.AuthUI(firebase.auth());
-        var loginClass = React.createClass({
-          componentDidMount: function() {
-            var self = this;
-            var uiConfig = {
-    			signInSuccessUrl: '/',
-    			signInOptions: [
-    				firebase.auth.GoogleAuthProvider.PROVIDER_ID
-    			],
-    			// Terms of service url.
-    			tosUrl: 'google.com'
-    		};
-            authUi.start('#firebaseui-auth-container', uiConfig);
-          },
-          componentWillUnmount: function() {
-            authUi.reset();
-          },
-          render: function() {
-            return (
-              <div id="firebaseui-auth-container"></div>
-            );
-          }
-        });
-        global.loginClass = loginClass;
-    }
+    // Init login UI
+    authUi = new firebaseui.auth.AuthUI(firebase.auth());
+    const loginClass = React.createClass({
+      componentDidMount() {
+        const uiConfig = {
+          signInSuccessUrl: '/',
+          signInOptions: [
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          ],
+          // Terms of service url.
+          tosUrl: 'google.com',
+        };
+        authUi.start('#firebaseui-auth-container', uiConfig);
+      },
+      componentWillUnmount() {
+        authUi.reset();
+      },
+      render() {
+        return (
+          <div id="firebaseui-auth-container" />
+        );
+      },
+    });
+    global.loginClass = loginClass;
+  }
   render() {
     return (
-      <Router history={ hashHistory }>
-        <Route path='/' component={ Home } />
-        <Route path='/login' component={ Login } />
-        <Route path='/course/:courseId' component={ CoursePage } />
+      <Router history={hashHistory}>
+        <Route path="/" component={Home} />
+        <Route path="/login" component={Login} />
+        <Route path="/course/:courseId" component={CoursePage} />
       </Router>
     );
   }
