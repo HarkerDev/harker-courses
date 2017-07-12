@@ -10,6 +10,10 @@ An online platform for Harker students to leave reviews on courses. Deployed pla
 
 ## Details
 
+### Code Style
+
+Use Airbnb's style guide found [here](https://github.com/airbnb/javascript/tree/master/react).
+
 ### Course Pages
 
 Each course page will be rendered with the specific ID of the course, so that each course has a unique webpage with course specific content.
