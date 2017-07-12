@@ -28,6 +28,14 @@ Although anyone will be able to sign in with any Google account, Firebase will c
 
 When signed in, account information will not be shown in header, as we want to remind that each post will be previewed on the website anonymously. That way, we only have to show the Login button if relevant.
 
+### Build & Deploy
+
+`npm run-script build`
+
+`cd build`
+
+`surge`
+
 ## Technology
 
 Built using React & Firebase
