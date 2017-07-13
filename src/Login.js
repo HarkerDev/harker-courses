@@ -36,7 +36,7 @@ export default class Login extends Component {
 
   setState(d) {
     for (const k in d) {
-      if (d[k] != null) {
+      if (d[k] !== null) {
         this.state_props[k] = d[k];
       }
     }
@@ -65,7 +65,6 @@ export default class Login extends Component {
             accessToken,
             providerData,
           };
-          console.log(JSON.stringify(loginInfo, null, '  '));
           let prettyUsername = loginInfo.email.split('@')[0];
           prettyUsername = prettyUsername.slice(0, 3).toUpperCase() + prettyUsername.slice(3, -1)
               + prettyUsername.slice(-1).toUpperCase();
@@ -114,7 +113,7 @@ export default class Login extends Component {
     });
   }
 
-  html_gen() {
+  htmlGenerator() {
     console.log(this.state_props.loggedIn);
     if (this.state_props.loggedIn === undefined) {
       return (
@@ -124,35 +123,45 @@ export default class Login extends Component {
       );
     } else if (this.state_props.loggedIn === false) {
       // <div id="firebaseui-auth-container"></div>
-      if (!this.state_props.hide) return;
-      const LoginClass = global.loginClass;
-      return <LoginClass />;
+      if (this.state_props.hide) {
+        const LoginClass = global.loginClass;
+        return <LoginClass />;
+      }
     } else if (this.state_props.loggedIn === true) {
-      if (this.state_props.hide) return;
-      return (
-        <div className="well">
-          <ul className="media-list">
-            <li className="media">
-              <div className="media-left">
-                <a href="#"><img src={this.state_props.photo} alt="login button" /></a>
-              </div>
-              <div className="media-body">
-                <h4 className="media-heading">{this.state_props.name} ({this.state_props.pretty_username})</h4>
-                <button type="button" className="btn btn-primary" onClick={this.signOut.bind(this)}>
+      if (!this.state_props.hide) {
+        return (
+          <div className="well">
+            <ul className="media-list">
+              <li className="media">
+                <div className="media-left">
+                  <a href="#"><img src={this.state_props.photo} alt="login button" /></a>
+                </div>
+                <div className="media-body">
+                  <h4 className="media-heading">
+                    {this.state_props.name}
+                    ({this.state_props.pretty_username})
+                  </h4>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={this.signOut.bind(this)}
+                  >
                     Sign Out
-                </button>
-              </div>
-            </li>
-          </ul>
-        </div>
-      );
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        );
+      }
     }
+    return null;
   }
 
   render() {
     return (
       <div>
-        { this.html_gen() }
+        { this.htmlGenerator() }
       </div>
     );
   }

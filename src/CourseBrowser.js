@@ -3,12 +3,12 @@ import Autosuggest from 'react-autosuggest';
 import * as firebase from 'firebase';
 import coursesDataCO from '../courses.json';
 
-var coursesData = coursesDataCO;
+let coursesData = coursesDataCO;
 
-var courseIDS = [];
-var currentIDS = [];
-var courseCategories = [];
-var subjects = [];
+let courseIDS = [];
+let currentIDS = [];
+let courseCategories = [];
+let subjects = [];
 
 function escapeRegexCharacters(str) {
     return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -56,31 +56,31 @@ function getSectionSuggestions(section) {
 // Keep all course ids
 function uniq(a) {
     return a.sort().filter(function(item, pos, ary) {
-        return !pos || item != ary[pos - 1];
+        return !pos || item !== ary[pos - 1];
     })
 }
 
-var prettyCategories = {
+let prettyCategories = {
     "Science - Life": "Life Sciences",
     "Science - Physical": "Physical Sciences"
 }
 
-for(var key in coursesData){
-    var on = coursesData[key];
+for(let key in coursesData){
+    let on = coursesData[key];
     if(on.subject in prettyCategories){
         on.subject = prettyCategories[on.subject];
     }
 }
 
-for(var key in coursesData){
+for(let key in coursesData){
     courseIDS.push(key);
-    var on = coursesData[key];
+    let on = coursesData[key];
     if(on.subject && on.subject !== "NULL"){
         courseCategories.push(on.subject);
     }
 }
 courseCategories = uniq(courseCategories);
-for(var category of courseCategories){
+for(let category of courseCategories){
     subjects.push({
         title: category,
         subjects: Object.values(coursesData)
@@ -108,10 +108,10 @@ export default class CourseBrowser extends Component {
         };
 
         // TODO: Download all course reviews from database
-        var postsRef = firebase.database().ref('harker-courses').child("posts");
+        let postsRef = firebase.database().ref('harker-courses').child("posts");
         postsRef.on('value', function (snapshot) {
             snapshot.forEach(function (childSnapshot) {
-                var childData = childSnapshot.val();
+                let childData = childSnapshot.val();
                 console.log(childData);
             });
         })
@@ -130,7 +130,7 @@ export default class CourseBrowser extends Component {
         return (
             <li onClick={ () => this.categoryRender(category) } key={ category }>{ category }</li>
         );
-    }
+    };
 
     //render all course titles on page
     renderCourses(courseIDS) {
@@ -144,13 +144,13 @@ export default class CourseBrowser extends Component {
     categoryRender(category) {
         console.log("Filtering for", category);
         currentIDS = [];
-        for(var on of courseIDS) {
+        for(let on of courseIDS) {
             if(coursesData[on].subject === category){
                 currentIDS.push(on);
             }
         }
         this.forceUpdate();
-    }
+    };
 
     onChange = (event, { newValue, method }) => {
         this.setState({
