@@ -7,7 +7,6 @@ const Navigation = () => {
       <nav>
         <ul>
           <li><a href="/#/">harker-courses</a></li>
-          <li><a href="/#/login">account</a></li>
           <li style={{ float: 'right' }}><Login hide /></li>
         </ul>
       </nav>

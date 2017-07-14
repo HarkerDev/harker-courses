@@ -139,15 +139,13 @@ export default class Login extends Component {
                 <div className="media-body">
                   <h4 className="media-heading">
                     {this.state_props.name}
-                    ({this.state_props.pretty_username})
+                    {/*({this.state_props.prettyUsername})*/}
                   </h4>
                   <button
                     type="button"
                     className="btn btn-primary"
                     onClick={this.signOut.bind(this)}
-                  >
-                    Sign Out
-                  </button>
+                  > Sign Out </button>
                 </div>
               </li>
             </ul>

@@ -1,10 +1,11 @@
+/* eslint-env browser */
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import coursesData from '../courses.json';
 
 const coursesArr = [];
 for (const key in coursesData) {
-  if (coursesData[key] != null) {
+  if (coursesData[key] !== null) {
     coursesArr.push([key, coursesData[key]]);
   }
 }
@@ -161,7 +162,8 @@ export default class ReviewForm extends Component {
     } else if (this.submitted === 'failure') {
       return (
         <div className="reviewForm alert alert-danger">
-          <span className="glyphicon glyphicon-remove" />&nbsp;<strong>Error!</strong> Unable to post review.
+          <span className="glyphicon glyphicon-remove" />&nbsp;<strong>
+          Error!</strong> Unable to post review.
         </div>
       );
     }
