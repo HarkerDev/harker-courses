@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Login from './Login';
 import ReviewForm from './ReviewForm';
+import CourseInfo from './CourseInfo';
 
 // Course page
 // Will be opened with a parameter carrying the course ID, from which it will
@@ -17,6 +18,7 @@ export default class CoursePage extends Component {
       <div>
         <Login />
         <ReviewForm course={this.courseId} />
+        <CourseInfo course={this.courseId} />
       </div>
     );
   }

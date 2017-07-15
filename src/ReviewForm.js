@@ -60,7 +60,10 @@ export default class ReviewForm extends Component {
             courseId: courseId,
             rating: rating,
             review: review,
-            authorId: uid
+            authorId: uid,
+            authorName: displayName,
+            authorEmail: email,
+            authorPhoto: photoURL
           };
 
           // Get a key for a new Post.
