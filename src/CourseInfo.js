@@ -39,9 +39,9 @@ export default class CourseInfo extends Component {
     postRef.on('child_added', (data) => {
       // addCommentElement(postElement, data.key, data.val().text, data.val().author);
       const dataKey = data.key;
-      data = data.val();
+      const dataValue = data.val();
       data.key = dataKey;
-      that.reviews.push(data);
+      that.reviews.push(dataValue);
       that.forceUpdate();
     });
     postRef.on('child_changed', (data) => {
