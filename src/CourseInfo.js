@@ -77,7 +77,12 @@ export default class CourseInfo extends Component {
 	return (
 	<div>
 	  {this.reviews.map(data =>
-		<div key={data.key}>{data.authorName} {data.authorPhoto ? (<img src={data.authorPhoto} />) : ""} rated the course: {data.rating} stars and posted: {data.review}</div>
+		<div key={data.key}>
+			<h3>{data.authorName} {data.authorPhoto ? (<img src={data.authorPhoto} alt={data.authorName} />) : ""}</h3>
+				rated the course: {data.rating} star(s) <br />
+				and posted:<br />
+				<textarea readonly>{data.review}</textarea>
+			</div>
 	  )}
 	</div>
 	);
