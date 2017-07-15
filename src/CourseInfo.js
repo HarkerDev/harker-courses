@@ -81,7 +81,7 @@ export default class CourseInfo extends Component {
 			<h3>{data.authorName} {data.authorPhoto ? (<img src={data.authorPhoto} alt={data.authorName} />) : ""}</h3>
 				rated the course: {data.rating} star(s) <br />
 				and posted:<br />
-				<textarea readOnly value={data.review} />
+				<textarea className="form-control" readOnly value={data.review} />
 			</div>
 	  )}
 	</div>
