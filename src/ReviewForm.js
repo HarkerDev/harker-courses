@@ -42,7 +42,7 @@ export default class ReviewForm extends Component {
         const uid = user.uid;
         const providerData = user.providerData;
         user.getToken().then((accessToken) => {
-          const login_info = {
+          const login_info = [
             displayName,
             email,
             emailVerified,
@@ -50,24 +50,17 @@ export default class ReviewForm extends Component {
             uid,
             accessToken,
             providerData,
-          };
+          ];
           console.log(login_info);
           const courseId = that.refs.courseId.value.trim();
           const rating = that.refs.rating.value;
           const review = that.refs.review.value;
           // A review entry.
           const postData = {
-            /*
-             author: username,
-             uid: uid,
-             body: body,
-             title: title,
-             starCount: 0,
-             authorPic: picture
-             */
-            courseId,
-            rating,
-            review,
+            courseId: courseId,
+            rating: rating,
+            review: review,
+            authorId: uid
           };
 
           // Get a key for a new Post.

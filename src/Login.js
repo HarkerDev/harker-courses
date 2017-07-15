@@ -71,7 +71,7 @@ export default class Login extends Component {
           this.setState({
             loggedIn: true,
             userInfo: loginInfo,
-            prettyUsername,
+            prettyUsername: prettyUsername,
           });
           /*
            document.getElementById('sign-in-status').textContent = 'Signed in';
