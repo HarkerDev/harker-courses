@@ -18,6 +18,7 @@ export default class CourseInfo extends Component {
     this.state_props = props;
     this.course = this.state_props.course;
     this.reviews = [];
+    this.averageStars = 0;
     this.setUpListeners();
   }
 
@@ -40,7 +41,6 @@ export default class CourseInfo extends Component {
       // addCommentElement(postElement, data.key, data.val().text, data.val().author);
       const dataKey = data.key;
       const dataValue = data.val();
-      data.key = dataKey;
       that.reviews.push(dataValue);
       that.forceUpdate();
     });
@@ -70,12 +70,23 @@ export default class CourseInfo extends Component {
       that.reviews.splice(idx, 1); // delete review
       that.forceUpdate();
     });
+    var courseRef = firebase.database()
+		.ref()
+		.child("courses")
+		.child(this.course);
+    courseRef.on('value', function(data) {
+    	data = data.val();
+    	//console.log("GOT", data);
+    	that.averageStars = data.totalStars / data.totalReviews;
+    	that.forceUpdate();
+    });
     // (see https://firebase.google.com/docs/database/web/lists-of-data)
   }
 
   render() {
     return (
       <div>
+      	<p>Average Course Rating: {this.averageStars} stars</p>
         {this.reviews.map(data =>
           (<div key={data.key}>
             <h3>{data.authorName} {data.authorPhoto ?

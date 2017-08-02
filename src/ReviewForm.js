@@ -53,7 +53,7 @@ export default class ReviewForm extends Component {
           ];
           console.log(login_info);
           const courseId = that.refs.courseId.value.trim();
-          const rating = that.refs.rating.value;
+          const rating = parseFloat(that.refs.rating.value);
           const review = that.refs.review.value;
           // A review entry.
           const postData = {
@@ -63,8 +63,27 @@ export default class ReviewForm extends Component {
             authorId: uid,
             authorName: displayName,
             authorEmail: email,
-            authorPhoto: photoURL
+            authorPhoto: photoURL,
+            timestamp: Date.now()
           };
+          
+          // Update average star rating.
+          var courseRef = firebase.database()
+          	.ref()
+          	.child("courses")
+          	.child(courseId);
+          courseRef.child("totalStars").transaction(function(stars) {
+          	if(stars){
+          		return stars + rating; // otherwise increment
+          	}
+          	return (stars || rating); // if undefined, initialize to given rating
+          });
+          courseRef.child("totalReviews").transaction(function(reviews) {
+          	if(reviews){
+          		return reviews + 1; // otherwise increment
+          	}
+          	return (reviews || 1); // if undefined, initialize to 1
+          });
 
           // Get a key for a new Post.
           const newPostKey = firebase.database()
