@@ -46,12 +46,12 @@ export default class CourseInfo extends Component {
     });
     postRef.on('child_changed', (data) => {
       const dataKey = data.key;
-      data = data.val();
-      for (let i = 0; i < that.reviews.length; i++) {
+      const dataValue = data.val();
+      for (let i = 0; i < that.reviews.length; i += 1) {
         const on = that.reviews[i];
         if (on.key === dataKey) {
-          for (const key in data) {
-            that.reviews[i][key] = data[key];
+          for (const key in dataValue) {
+            that.reviews[i][key] = dataValue[key];
           }
           break;
         }
@@ -70,15 +70,12 @@ export default class CourseInfo extends Component {
       that.reviews.splice(idx, 1); // delete review
       that.forceUpdate();
     });
-    var courseRef = firebase.database()
-		.ref()
-		.child("courses")
-		.child(this.course);
-    courseRef.on('value', function(data) {
-    	data = data.val();
-    	//console.log("GOT", data);
-    	that.averageStars = data.totalStars / data.totalReviews;
-    	that.forceUpdate();
+    const courseRef = firebase.database().ref().child('courses').child(this.course);
+    courseRef.on('value', (data) => {
+      // const dataValue = data.val();
+      // console.log("GOT", data);
+      that.averageStars = data.totalStars / data.totalReviews;
+      that.forceUpdate();
     });
     // (see https://firebase.google.com/docs/database/web/lists-of-data)
   }
@@ -86,14 +83,14 @@ export default class CourseInfo extends Component {
   render() {
     return (
       <div>
-      	<p>Average Course Rating: {this.averageStars} stars</p>
+        <p>Average Course Rating: {this.averageStars} stars</p>
         {this.reviews.map(data =>
           (<div key={data.key}>
             <h3>{data.authorName} {data.authorPhoto ?
               (<img src={data.authorPhoto} alt={data.authorName} />) :
               ''}</h3>
-            rated the course: {data.rating} star(s) <br />
-            and posted:<br />
+                rated the course: {data.rating} star(s) <br />
+                and posted:<br />
             <textarea
               className="form-control"
               readOnly

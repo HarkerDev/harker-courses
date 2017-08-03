@@ -71,7 +71,7 @@ export default class Login extends Component {
           this.setState({
             loggedIn: true,
             userInfo: loginInfo,
-            prettyUsername: prettyUsername,
+            prettyUsername,
           });
           /*
            document.getElementById('sign-in-status').textContent = 'Signed in';
@@ -139,7 +139,7 @@ export default class Login extends Component {
                 <div className="media-body">
                   <h4 className="media-heading">
                     {this.state_props.name}
-                    {/*({this.state_props.prettyUsername})*/}
+                    {/* ({this.state_props.prettyUsername})*/}
                   </h4>
                   <button
                     type="button"

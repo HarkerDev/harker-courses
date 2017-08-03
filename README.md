@@ -8,7 +8,27 @@ An online platform for Harker students to leave reviews on courses. Deployed pla
 - [ ] Create better course page, with teacher/availability information (with rating next to course name)
 - [ ] Organization/design to match sketch files
 
-## Details
+## Project Set Up
+
+### Install and Run
+
+`yarn` or `npm install` in project directory.
+
+`npm start`
+
+### Build & Deploy
+
+`npm run-script build`
+
+`cd build`
+
+`surge`
+
+### Linting
+
+`eslint --fix [file/directory]`
+
+## Technical Details
 
 ### Code Style
 
@@ -27,14 +47,6 @@ Due to anonymity, we will need to verify if students are from Harker or not. In 
 Although anyone will be able to sign in with any Google account, Firebase will check if it is from the correct Harker domain before allowing write access to the database.
 
 When signed in, account information will not be shown in header, as we want to remind that each post will be previewed on the website anonymously. That way, we only have to show the Login button if relevant.
-
-### Build & Deploy
-
-`npm run-script build`
-
-`cd build`
-
-`surge`
 
 ## Technology
 

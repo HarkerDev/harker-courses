@@ -42,7 +42,7 @@ export default class ReviewForm extends Component {
         const uid = user.uid;
         const providerData = user.providerData;
         user.getToken().then((accessToken) => {
-          const login_info = [
+          const loginInfo = [
             displayName,
             email,
             emailVerified,
@@ -51,38 +51,38 @@ export default class ReviewForm extends Component {
             accessToken,
             providerData,
           ];
-          console.log(login_info);
+          console.log(loginInfo);
           const courseId = that.refs.courseId.value.trim();
           const rating = parseFloat(that.refs.rating.value);
           const review = that.refs.review.value;
           // A review entry.
           const postData = {
-            courseId: courseId,
-            rating: rating,
-            review: review,
+            courseId,
+            rating,
+            review,
             authorId: uid,
             authorName: displayName,
             authorEmail: email,
             authorPhoto: photoURL,
-            timestamp: Date.now()
+            timestamp: Date.now(),
           };
-          
+
           // Update average star rating.
-          var courseRef = firebase.database()
-          	.ref()
-          	.child("courses")
-          	.child(courseId);
-          courseRef.child("totalStars").transaction(function(stars) {
-          	if(stars){
-          		return stars + rating; // otherwise increment
-          	}
-          	return (stars || rating); // if undefined, initialize to given rating
+          const courseRef = firebase.database()
+            .ref()
+            .child('courses')
+            .child(courseId);
+          courseRef.child('totalStars').transaction((stars) => {
+            if (stars) {
+              return stars + rating; // otherwise increment
+            }
+            return (stars || rating); // if undefined, initialize to given rating
           });
-          courseRef.child("totalReviews").transaction(function(reviews) {
-          	if(reviews){
-          		return reviews + 1; // otherwise increment
-          	}
-          	return (reviews || 1); // if undefined, initialize to 1
+          courseRef.child('totalReviews').transaction((reviews) => {
+            if (reviews) {
+              return reviews + 1; // otherwise increment
+            }
+            return (reviews || 1); // if undefined, initialize to 1
           });
 
           // Get a key for a new Post.
@@ -171,14 +171,15 @@ export default class ReviewForm extends Component {
     } else if (this.submitted === 'success') {
       return (
         <div className="reviewForm alert alert-success">
-          <span className="glyphicon glyphicon-ok" />&nbsp;<strong>Success!</strong> Posted review.
+          <span className="glyphicon glyphicon-ok" />&nbsp;
+          <strong>Success!</strong> Posted review.
         </div>
       );
     } else if (this.submitted === 'failure') {
       return (
         <div className="reviewForm alert alert-danger">
           <span className="glyphicon glyphicon-remove" />&nbsp;<strong>
-          Error!</strong> Unable to post review.
+            Error!</strong> Unable to post review.
         </div>
       );
     }
