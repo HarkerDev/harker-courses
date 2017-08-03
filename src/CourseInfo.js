@@ -74,7 +74,12 @@ export default class CourseInfo extends Component {
     courseRef.on('value', (data) => {
       // const dataValue = data.val();
       // console.log("GOT", data);
-      that.averageStars = data.totalStars / data.totalReviews;
+      const reviewAverage = data.totalStars / data.totalReviews;
+      if (Number.isNaN(reviewAverage)) {
+        that.averageStars = 'No reviews yet.';
+      } else {
+        that.averageStars = `Average course rating: ${reviewAverage} stars.`;
+      }
       that.forceUpdate();
     });
     // (see https://firebase.google.com/docs/database/web/lists-of-data)
@@ -83,7 +88,7 @@ export default class CourseInfo extends Component {
   render() {
     return (
       <div>
-        <p>Average Course Rating: {this.averageStars} stars</p>
+        <p>{this.averageStars}</p>
         {this.reviews.map(data =>
           (<div key={data.key}>
             <h3>{data.authorName} {data.authorPhoto ?
