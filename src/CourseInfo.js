@@ -4,11 +4,11 @@ import * as firebase from 'firebase';
 import coursesData from '../courses.json';
 
 const coursesArr = [];
-for (const key in coursesData) {
+Object.keys(coursesData).forEach((key) => {
   if (coursesData[key] !== null) {
     coursesArr.push([key, coursesData[key]]);
   }
-}
+});
 
 // form for adding a review
 export default class CourseInfo extends Component {
@@ -39,7 +39,7 @@ export default class CourseInfo extends Component {
     const that = this;
     postRef.on('child_added', (data) => {
       // addCommentElement(postElement, data.key, data.val().text, data.val().author);
-      const dataKey = data.key;
+      // const dataKey = data.key;
       const dataValue = data.val();
       that.reviews.push(dataValue);
       that.forceUpdate();
@@ -50,9 +50,9 @@ export default class CourseInfo extends Component {
       for (let i = 0; i < that.reviews.length; i += 1) {
         const on = that.reviews[i];
         if (on.key === dataKey) {
-          for (const key in dataValue) {
+          Object.keys(dataValue).forEach((key) => {
             that.reviews[i][key] = dataValue[key];
-          }
+          });
           break;
         }
       }
@@ -61,7 +61,7 @@ export default class CourseInfo extends Component {
     postRef.on('child_removed', (data) => {
       const dataKey = data.key;
       let idx = -1;
-      for (let i = 0; i < that.reviews.length; i++) {
+      for (let i = 0; i < that.reviews.length; i += 1) {
         if (that.reviews[i].key === dataKey) {
           idx = i;
           break;

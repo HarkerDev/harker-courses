@@ -4,17 +4,18 @@ import * as firebase from 'firebase';
 import coursesData from '../courses.json';
 
 const coursesArr = [];
-for (const key in coursesData) {
+Object.keys(coursesData).forEach((key) => {
   if (coursesData[key] !== null) {
     coursesArr.push([key, coursesData[key]]);
   }
-}
+});
 
 // form for adding a review
 export default class ReviewForm extends Component {
   constructor(props) {
     super(props);
     console.log(props);
+    this.handleSubmit.bind(this);
     this.state_props = props;
     this.course = this.state_props.course;
     this.submitted = undefined;
@@ -134,13 +135,13 @@ export default class ReviewForm extends Component {
     if (this.submitted === undefined) {
       return (
         <div>
-          <form className="reviewForm" onSubmit={this.handleSubmit.bind(this)}>
+          <form className="reviewForm" onSubmit={this.handleSubmit}>
             <h3>Post a Review</h3>
             <div className="input-group">
               <label htmlFor="courseId">Course:</label>
               <select className="form-control" ref="courseId" defaultValue={this.course}>
-                {coursesArr.map((obj, i) => (
-                  <option key={i} value={obj[0]}>{ obj[1].title }</option>
+                {coursesArr.map(obj => (
+                  <option key={obj[1].title} value={obj[0]}>{ obj[1].title }</option>
                 ))}
               </select>
             </div>

@@ -9,6 +9,7 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     console.log(props);
+    this.signOut = this.signOut.bind(this);
     this.state_props = {
       loggedIn: undefined,
       name: '',
@@ -35,11 +36,11 @@ export default class Login extends Component {
   }
 
   setState(d) {
-    for (const k in d) {
+    Object.keys(d).forEach((k) => {
       if (d[k] !== null) {
         this.state_props[k] = d[k];
       }
-    }
+    });
     this.forceUpdate();
   }
 
@@ -144,7 +145,7 @@ export default class Login extends Component {
                   <button
                     type="button"
                     className="btn btn-primary"
-                    onClick={this.signOut.bind(this)}
+                    onClick={this.signOut}
                   > Sign Out </button>
                 </div>
               </li>

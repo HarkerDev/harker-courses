@@ -75,12 +75,12 @@ for(let key in coursesData){
 for(let key in coursesData){
     courseIDS.push(key);
     let on = coursesData[key];
-    if(on.subject && on.subject !== "NULL"){
+    if (on.subject && on.subject !== "NULL"){
         courseCategories.push(on.subject);
     }
 }
 courseCategories = uniq(courseCategories);
-for(let category of courseCategories){
+for (let category of courseCategories){
     subjects.push({
         title: category,
         subjects: Object.values(coursesData)
