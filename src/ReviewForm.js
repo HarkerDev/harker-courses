@@ -152,7 +152,7 @@ export default class ReviewForm extends Component {
 			<h3>Post a Review</h3>
 			<label htmlFor="courseId">Course:</label>
 			<div className="input-group">
-			  <select className="form-control" ref="courseId" defaultValue={this.course}>
+			  <select className="form-control" ref="courseId" defaultValue={this.course} readOnly="true" disabled="disabled">
 				{coursesArr.map(obj => (
 				  <option key={obj[1].title} value={obj[0]}>{ obj[1].title }</option>
 				))}

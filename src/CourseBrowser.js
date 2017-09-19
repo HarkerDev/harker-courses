@@ -106,8 +106,7 @@ export default class CourseBrowser extends Component {
             value: '',
             suggestions: []
         };
-
-        // TODO: Download all course reviews from database
+        
         let postsRef = firebase.database().ref('harker-courses').child("posts");
         postsRef.on('value', function (snapshot) {
             snapshot.forEach(function (childSnapshot) {
@@ -189,7 +188,7 @@ export default class CourseBrowser extends Component {
                     renderSectionTitle={ renderSectionTitle }
                     getSectionSuggestions={ getSectionSuggestions }
                     inputProps={ inputProps } />
-                <h3 className="text-center">Browse All Courses</h3>
+                <h3 className="text-center">Browse By Department</h3>
                 <div id="categories">
                     <ul>
                         { this.renderCategories(courseCategories) }
