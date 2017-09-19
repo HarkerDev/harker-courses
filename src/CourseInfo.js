@@ -79,11 +79,11 @@ export default class CourseInfo extends Component {
       } else {
         const reviewAverage = data.totalStars / data.totalReviews;
         var star_text = reviewAverage.toFixed(1) !== "1.0" ? "stars" : "star";
-        that.averageStars = `Average course rating: ${reviewAverage} ${star_text}.`;
+        var review_text = data.totalReviews == 1 ? "review" : "reviews";
+        that.averageStars = `Average course rating: ${reviewAverage.toFixed(2)} ${star_text} from ${data.totalReviews} ${review_text}.`;
       }
       that.forceUpdate();
     });
-    // (see https://firebase.google.com/docs/database/web/lists-of-data)
   }
   
   timeStamp(timestamp) {
@@ -98,7 +98,7 @@ export default class CourseInfo extends Component {
 		  time[i] = "0" + time[i];
 		}
 	  }
-	  return date.join("/") + " " + time.join(":") + " " + suffix;
+	  return date.join("/");/* + " at " + time.join(":") + " " + suffix;*/
 	}
 
   render() {
@@ -109,12 +109,12 @@ export default class CourseInfo extends Component {
         {this.reviews.map(data =>
           (<div key={data.key}>
             <h5><em>Anonymous</em> rated the course <b>{data.rating} star{data.rating.toFixed(1) !== "1.0" ? "s" : ""}</b> on {this.timeStamp(data.timestamp)}</h5>
-            <textarea
+            {data.review && data.review.length > 0 ? (<textarea
               className="form-control"
               readOnly
-              style={{"backgroundColor":"transparent", "border": 3, "font-size": "1em"}}
+              style={{"backgroundColor":"transparent", "border": 3, "fontSize": "1em"}}
               value={data.review}
-            />
+            />) : (<p>(empty review body)<br /><br /></p>)}
           </div>),
         )}
       </div>

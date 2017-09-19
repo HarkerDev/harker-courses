@@ -129,61 +129,68 @@ export default class ReviewForm extends Component {
      <input type='submit' value='Post' />
      </form>
      */
-    if (this.submitted === undefined) {
-      return (
-        <div>
-          <form className="reviewForm" onSubmit={this.handleSubmit}>
-            <h3>Post a Review</h3>
-            <label htmlFor="courseId">Course:</label>
-            <div className="input-group">
-              <select className="form-control" ref="courseId" defaultValue={this.course}>
-                {coursesArr.map(obj => (
-                  <option key={obj[1].title} value={obj[0]}>{ obj[1].title }</option>
-                ))}
-              </select>
-            </div>
-            <label htmlFor="rating">Rating:</label>
-            <div className="form-group">
-              <input
-                type="hidden"
-                className="rating rating-tooltip-manual"
-                data-start="0"
-                data-stop="5"
-                data-fractions="2"
-                ref="rating"
-                id="reviewRating"
-              />
-            </div>
-            <div className="form-group">
-              <textarea
-                className="form-control"
-                rows="5"
-                ref="review"
-                placeholder="Your review of this course here"
-              />
-            </div>
-            <div className="form-group">
-            	<label htmlFor="anonymousBool">Anonymous:</label>&nbsp;&nbsp;
-            	<input type="checkbox" ref="anonymousBool" checked readOnly />
-            </div>
-            <input type="submit" className="btn btn-info" value="Post Review Anonymously!" />
-          </form>
-        </div>
-      );
-    } else if (this.submitted === 'success') {
-      return (
+    var ret_arr = [];
+    if (this.submitted === 'success') {
+      ret_arr.push((
         <div className="reviewForm alert alert-success">
           <span className="glyphicon glyphicon-ok" />&nbsp;
           <strong>Success!</strong> Posted review.
         </div>
-      );
+      ));
     } else if (this.submitted === 'failure') {
-      return (
+      ret_arr.push((
         <div className="reviewForm alert alert-danger">
           <span className="glyphicon glyphicon-remove" />&nbsp;<strong>
             Error!</strong> Unable to post review.
         </div>
-      );
+      ));
     }
+    {
+	  ret_arr.push((
+		<div>
+		  <form className="reviewForm" onSubmit={this.handleSubmit}>
+			<h3>Post a Review</h3>
+			<label htmlFor="courseId">Course:</label>
+			<div className="input-group">
+			  <select className="form-control" ref="courseId" defaultValue={this.course}>
+				{coursesArr.map(obj => (
+				  <option key={obj[1].title} value={obj[0]}>{ obj[1].title }</option>
+				))}
+			  </select>
+			</div>
+			<label htmlFor="rating">Rating:</label>
+			<div className="form-group">
+			  <input
+				type="hidden"
+				className="rating rating-tooltip-manual"
+				data-start="0"
+				data-stop="5"
+				data-fractions="2"
+				ref="rating"
+				id="reviewRating"
+			  />
+			</div>
+			<div className="form-group">
+			  <textarea
+				className="form-control"
+				rows="5"
+				ref="review"
+				placeholder="Your review of this course here"
+			  />
+			</div>
+			<div className="form-group">
+				<label htmlFor="anonymousBool">Anonymous:</label>&nbsp;&nbsp;
+				<input type="checkbox" ref="anonymousBool" checked readOnly />
+			</div>
+			<input type="submit" className="btn btn-info" value="Post Review Anonymously!" />
+		  </form>
+		</div>
+	  ));
+	}
+    return (
+    	<div>
+    	{ret_arr}
+    	</div>
+    );
   }
 }
