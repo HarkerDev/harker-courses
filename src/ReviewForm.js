@@ -15,7 +15,7 @@ export default class ReviewForm extends Component {
   constructor(props) {
     super(props);
     console.log(props);
-    this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.state_props = props;
     this.course = this.state_props.course;
     this.submitted = undefined;
@@ -33,7 +33,7 @@ export default class ReviewForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const that = this;
+    var that = this;
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         const displayName = user.displayName;

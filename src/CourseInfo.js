@@ -73,7 +73,7 @@ export default class CourseInfo extends Component {
     const courseRef = firebase.database().ref().child('courses').child(this.course);
     courseRef.on('value', (data) => {
       // const dataValue = data.val();
-      // console.log("GOT", data);
+      data = data.val();
       const reviewAverage = data.totalStars / data.totalReviews;
       if (Number.isNaN(reviewAverage)) {
         that.averageStars = 'No reviews yet.';
