@@ -74,10 +74,10 @@ export default class CourseInfo extends Component {
     courseRef.on('value', (data) => {
       // const dataValue = data.val();
       data = data.val();
-      const reviewAverage = data.totalStars / data.totalReviews;
-      if (Number.isNaN(reviewAverage)) {
-        that.averageStars = 'No reviews yet.';
+      if(!data) {
+        that.averageStars = 'No reviews yet for this class — be the first!';
       } else {
+        const reviewAverage = data.totalStars / data.totalReviews;
         var star_text = reviewAverage.toFixed(1) !== "1.0" ? "stars" : "star";
         that.averageStars = `Average course rating: ${reviewAverage} ${star_text}.`;
       }
@@ -104,7 +104,7 @@ export default class CourseInfo extends Component {
   render() {
     return (
       <div className="text-center">
-        <h4>{this.averageStars}</h4>
+        <h4>{this.averageStars ? this.averageStars : "Fetching reviews..."}</h4>
         <br />
         {this.reviews.map(data =>
           (<div key={data.key}>
@@ -112,7 +112,7 @@ export default class CourseInfo extends Component {
             <textarea
               className="form-control"
               readOnly
-              style={{"background-color":"transparent", "border": 3, "font-size": "1em"}}
+              style={{"backgroundColor":"transparent", "border": 3, "font-size": "1em"}}
               value={data.review}
             />
           </div>),

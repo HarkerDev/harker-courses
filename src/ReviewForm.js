@@ -61,10 +61,7 @@ export default class ReviewForm extends Component {
             courseId,
             rating,
             review,
-            authorId: uid,
-            authorName: displayName,
-            authorEmail: email,
-            authorPhoto: photoURL,
+            poster_uid: uid,
             timestamp: Date.now(),
           };
 
@@ -167,7 +164,7 @@ export default class ReviewForm extends Component {
             </div>
             <div className="form-group">
             	<label htmlFor="anonymousBool">Anonymous:</label>&nbsp;&nbsp;
-            	<input type="checkbox" ref="anonymousBool" checked readonly />
+            	<input type="checkbox" ref="anonymousBool" checked readOnly />
             </div>
             <input type="submit" className="btn btn-info" value="Post Review Anonymously!" />
           </form>
