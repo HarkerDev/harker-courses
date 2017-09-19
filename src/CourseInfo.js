@@ -78,27 +78,41 @@ export default class CourseInfo extends Component {
       if (Number.isNaN(reviewAverage)) {
         that.averageStars = 'No reviews yet.';
       } else {
-        that.averageStars = `Average course rating: ${reviewAverage} stars.`;
+        var star_text = reviewAverage.toFixed(1) !== "1.0" ? "stars" : "star";
+        that.averageStars = `Average course rating: ${reviewAverage} ${star_text}.`;
       }
       that.forceUpdate();
     });
     // (see https://firebase.google.com/docs/database/web/lists-of-data)
   }
+  
+  timeStamp(timestamp) {
+      var now = new Date(timestamp);
+	  var date = [ now.getMonth() + 1, now.getDate(), now.getFullYear() ];
+	  var time = [ now.getHours(), now.getMinutes(), now.getSeconds() ];
+	  var suffix = ( time[0] < 12 ) ? "AM" : "PM";
+	  time[0] = ( time[0] < 12 ) ? time[0] : time[0] - 12;
+	  time[0] = time[0] || 12;
+	  for ( var i = 1; i < 3; i++ ) {
+		if ( time[i] < 10 ) {
+		  time[i] = "0" + time[i];
+		}
+	  }
+	  return date.join("/") + " " + time.join(":") + " " + suffix;
+	}
 
   render() {
     return (
-      <div>
-        <p>{this.averageStars}</p>
+      <div className="text-center">
+        <h4>{this.averageStars}</h4>
+        <br />
         {this.reviews.map(data =>
           (<div key={data.key}>
-            <h3>{data.authorName} {data.authorPhoto ?
-              (<img src={data.authorPhoto} alt={data.authorName} />) :
-              ''}</h3>
-                rated the course: {data.rating} star(s) <br />
-                and posted:<br />
+            <h5><em>Anonymous</em> rated the course <b>{data.rating} star{data.rating.toFixed(1) !== "1.0" ? "s" : ""}</b> on {this.timeStamp(data.timestamp)}</h5>
             <textarea
               className="form-control"
               readOnly
+              style={{"background-color":"transparent", "border": 3, "font-size": "1em"}}
               value={data.review}
             />
           </div>),

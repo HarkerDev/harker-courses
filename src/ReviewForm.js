@@ -137,8 +137,8 @@ export default class ReviewForm extends Component {
         <div>
           <form className="reviewForm" onSubmit={this.handleSubmit}>
             <h3>Post a Review</h3>
+            <label htmlFor="courseId">Course:</label>
             <div className="input-group">
-              <label htmlFor="courseId">Course:</label>
               <select className="form-control" ref="courseId" defaultValue={this.course}>
                 {coursesArr.map(obj => (
                   <option key={obj[1].title} value={obj[0]}>{ obj[1].title }</option>
@@ -165,7 +165,11 @@ export default class ReviewForm extends Component {
                 placeholder="Your review of this course here"
               />
             </div>
-            <input type="submit" className="btn btn-info" value="Post Review!" />
+            <div className="form-group">
+            	<label htmlFor="anonymousBool">Anonymous:</label>&nbsp;&nbsp;
+            	<input type="checkbox" ref="anonymousBool" checked readonly />
+            </div>
+            <input type="submit" className="btn btn-info" value="Post Review Anonymously!" />
           </form>
         </div>
       );
