@@ -74,45 +74,45 @@ export default class CourseInfo extends Component {
     courseRef.on('value', (data) => {
       // const dataValue = data.val();
       data = data.val();
-      if(!data) {
+      if (!data) {
         that.averageStars = 'No reviews yet for this class — be the first!';
       } else {
         const reviewAverage = data.totalStars / data.totalReviews;
-        var star_text = reviewAverage.toFixed(1) !== "1.0" ? "stars" : "star";
-        var review_text = data.totalReviews == 1 ? "review" : "reviews";
-        that.averageStars = `Average course rating: ${reviewAverage.toFixed(2)} ${star_text} from ${data.totalReviews} ${review_text}.`;
+        const starText = reviewAverage.toFixed(1) !== '1.0' ? 'stars' : 'star';
+        const reviewText = data.totalReviews === 1 ? 'review' : 'reviews';
+        that.averageStars = `Average course rating: ${reviewAverage.toFixed(2)} ${starText} from ${data.totalReviews} ${reviewText}.`;
       }
       that.forceUpdate();
     });
   }
-  
+
   timeStamp(timestamp) {
-      var now = new Date(timestamp);
-	  var date = [ now.getMonth() + 1, now.getDate(), now.getFullYear() ];
-	  var time = [ now.getHours(), now.getMinutes(), now.getSeconds() ];
-	  var suffix = ( time[0] < 12 ) ? "AM" : "PM";
-	  time[0] = ( time[0] < 12 ) ? time[0] : time[0] - 12;
-	  time[0] = time[0] || 12;
-	  for ( var i = 1; i < 3; i++ ) {
-		if ( time[i] < 10 ) {
-		  time[i] = "0" + time[i];
-		}
-	  }
-	  return date.join("/");/* + " at " + time.join(":") + " " + suffix;*/
-	}
+    const now = new Date(timestamp);
+    const date = [now.getMonth() + 1, now.getDate(), now.getFullYear()];
+    const time = [now.getHours(), now.getMinutes(), now.getSeconds()];
+    // const suffix = (time[0] < 12) ? 'AM' : 'PM';
+    time[0] = (time[0] < 12) ? time[0] : time[0] - 12;
+    time[0] = time[0] || 12;
+    for (let i = 1; i < 3; i += 1) {
+      if (time[i] < 10) {
+        time[i] = `0${time[i]}`;
+      }
+    }
+    return date.join('/');/* + " at " + time.join(":") + " " + suffix;*/
+  }
 
   render() {
     return (
       <div className="text-center">
-        <h4>{this.averageStars ? this.averageStars : "Fetching reviews..."}</h4>
+        <h4>{this.averageStars ? this.averageStars : 'Fetching reviews...'}</h4>
         <br />
         {this.reviews.map(data =>
           (<div key={data.key}>
-            <h5><em>Anonymous</em> rated the course <b>{data.rating} star{data.rating.toFixed(1) !== "1.0" ? "s" : ""}</b> on {this.timeStamp(data.timestamp)}</h5>
+            <h5><em>Anonymous</em> rated the course <b>{data.rating} star{data.rating.toFixed(1) !== '1.0' ? 's' : ''}</b> on {this.timeStamp(data.timestamp)}</h5>
             {data.review && data.review.length > 0 ? (<textarea
               className="form-control"
               readOnly
-              style={{"backgroundColor":"transparent", "border": 3, "fontSize": "1em"}}
+              style={{ backgroundColor: 'transparent', border: 3, fontSize: '1em' }}
               value={data.review}
             />) : (<p>(empty review body)<br /><br /></p>)}
           </div>),
