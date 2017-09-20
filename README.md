@@ -1,6 +1,6 @@
 # harker-courses :apple: [![Build Status](https://travis-ci.com/n3a9/harker-courses.svg?token=oqxxEvW7knppYxyBV7jq&branch=master)](https://travis-ci.com/n3a9/harker-courses)
 
-An online platform for Harker students to leave reviews on courses. Deployed platform can be found at [http://harker-courses.surge.sh](http://harker-courses.surge.sh) (may be behind master branch).
+An online platform for Harker students to leave reviews on courses. Deployed platform can be found at [http://tiny.cc/harkercourses](http://tiny.cc/harkercourses) or [http://harker-courses.surge.sh](http://harker-courses.surge.sh). The latest deployment will be the latest release.
 
 ## Development To-Do
 
