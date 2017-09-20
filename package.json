@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://harker-courses.surge.sh",
   "devDependencies": {
+    "babel-eslint": "7",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-plugin-import": "^2.7.0",

@@ -103,7 +103,7 @@ export default class ReviewForm extends Component {
             that.forceUpdate();
           }, (err) => {
             // error
-            console.log('ERROR!');
+            console.log('ERROR!', err);
             that.submitted = 'failure';
             that.forceUpdate();
           });
