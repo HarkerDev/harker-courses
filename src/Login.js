@@ -66,6 +66,17 @@ export default class Login extends Component {
             accessToken,
             providerData,
           };
+          if(loginInfo.email.indexOf("@students.harker.org") == -1){
+            firebase.auth().signOut().then(() => {
+              this.setState({
+                loggedIn: false,
+              });
+              alert("Must log in with students.harker.org email to verify identity as Harker student.");
+            }, (err) => {
+              console.log(err);
+            });
+            return;
+          }
           let prettyUsername = loginInfo.email.split('@')[0];
           prettyUsername = prettyUsername.slice(0, 3).toUpperCase() + prettyUsername.slice(3, -1)
               + prettyUsername.slice(-1).toUpperCase();
