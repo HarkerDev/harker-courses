@@ -107,42 +107,7 @@ export default class CourseBrowser extends Component {
     });
   }
 
-  // render course title on page
-  renderCourse(courseID) {
-    return (
-      <a key={courseID} href={`/#/course/${courseID}`}>
-        <li>{ coursesData[courseID].title }</li>
-      </a>
-    );
-  }
-
-  renderCategory(category) {
-    return (
-      <li onClick={() => this.categoryRender(category)} key={category}>{ category }</li>
-    );
-  }
-
-  // render all course titles on page
-  renderCourses(courseIDs) {
-    return courseIDs.map(this.renderCourse, this);
-  }
-
-  renderCategories() {
-    return courseCategories.map(this.renderCategory, this);
-  }
-
-  categoryRender(category) {
-    console.log('Filtering for', category);
-    currentIDS = [];
-    for (const on of courseIDS) {
-      if (coursesData[on].subject === category) {
-        currentIDS.push(on);
-      }
-    }
-    this.forceUpdate();
-  }
-
-  onChange = (event, { newValue, method }) => {
+  onChange = (event, { newValue }) => {
     this.setState({
       value: newValue,
     });
@@ -159,6 +124,41 @@ export default class CourseBrowser extends Component {
       suggestions: [],
     });
   };
+
+  categoryRender(category) {
+    console.log('Filtering for', category);
+    currentIDS = [];
+    for (const on of courseIDS) {
+      if (coursesData[on].subject === category) {
+        currentIDS.push(on);
+      }
+    }
+    this.forceUpdate();
+  }
+
+  // render course title on page
+  renderCourse(courseID) {
+    return (
+      <a key={courseID} href={`/#/course/${courseID}`}>
+        <li>{ coursesData[courseID].title }</li>
+      </a>
+    );
+  }
+
+  // render all course titles on page
+  renderCourses(courseIDs) {
+    return courseIDs.map(this.renderCourse, this);
+  }
+
+  renderCategory(category) {
+    return (
+      <li onClick={() => this.categoryRender(category)} key={category}>{ category }</li>
+    );
+  }
+
+  renderCategories() {
+    return courseCategories.map(this.renderCategory, this);
+  }
 
   render() {
     const { value, suggestions } = this.state;

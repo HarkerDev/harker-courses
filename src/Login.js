@@ -66,12 +66,12 @@ export default class Login extends Component {
             accessToken,
             providerData,
           };
-          if(loginInfo.email.indexOf("@students.harker.org") == -1){
+          if (loginInfo.email.indexOf('@students.harker.org') === -1) {
             firebase.auth().signOut().then(() => {
               this.setState({
                 loggedIn: false,
               });
-              alert("Must log in with students.harker.org email to verify identity as Harker student.");
+              alert('Must log in with students.harker.org email to verify identity as Harker student.');
             }, (err) => {
               console.log(err);
             });
