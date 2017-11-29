@@ -6,6 +6,7 @@ import * as firebaseui from 'firebaseui';
 
 import Home from './Home';
 import Login from './Login';
+import About from './About';
 import CoursePage from './CoursePage';
 
 
@@ -44,6 +45,7 @@ export default class App extends Component {
     return (
       <Router history={hashHistory}>
         <Route path="/" component={Home} />
+        <Route path="/about" component={About} />
         <Route path="/login" component={Login} />
         <Route path="/course/:courseId" component={CoursePage} />
       </Router>

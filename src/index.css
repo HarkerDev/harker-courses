@@ -81,6 +81,22 @@ nav ul li a {
     padding-right: .6em;
 }
 
+#about-detail {
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 1em;
+}
+
+#about-detail h2 {
+    font-size: 2em;
+    padding-top: 1em;
+}
+
+#about-detail p {
+    font-size: 1.2em;
+    padding-top: .5em;
+}
+
 a {
     color: #000;
 }
