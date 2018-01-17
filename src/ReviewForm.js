@@ -54,8 +54,8 @@ export default class ReviewForm extends Component {
           ];
           console.log(loginInfo);
           const courseId = that.refs.courseId.value.trim();
-          const rating = parseFloat(that.refs.rating.value);
-          const review = that.refs.review.value;
+          const rating = parseFloat(this.rating.value);
+          const review = this.review.value;
           // A review entry.
           const postData = {
             courseId,
@@ -117,7 +117,6 @@ export default class ReviewForm extends Component {
     });
   }
 
-
   render() {
     const retArr = [];
     if (this.submitted === 'success') {
@@ -147,7 +146,7 @@ export default class ReviewForm extends Component {
               data-start="0"
               data-stop="5"
               data-fractions="2"
-              ref="rating"
+              ref={(rat) => { this.rating = rat; }}
               id="reviewRating"
             />
           </div>
@@ -155,7 +154,7 @@ export default class ReviewForm extends Component {
             <textarea
               className="form-control"
               rows="5"
-              ref="review"
+              ref={(rev) => { this.review = rev; }}
               placeholder="Your review of this course here"
             />
           </div>

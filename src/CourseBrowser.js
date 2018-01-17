@@ -61,20 +61,18 @@ const prettyCategories = {
   'Science - Physical': 'Physical Sciences',
 };
 
-for (const key in coursesData) {
+
+Object.keys(coursesData).forEach((key) => {
   const on = coursesData[key];
   if (on.subject in prettyCategories) {
     on.subject = prettyCategories[on.subject];
   }
-}
-
-for (const key in coursesData) {
   courseIDS.push(key);
-  const on = coursesData[key];
   if (on.subject && on.subject !== 'NULL') {
     courseCategories.push(on.subject);
   }
-}
+});
+
 courseCategories = uniq(courseCategories);
 for (const category of courseCategories) {
   subjects.push({
@@ -86,6 +84,15 @@ for (const category of courseCategories) {
         id: Object.keys(coursesData).filter(x => coursesData[x].title === val.title)[0],
       })),
   });
+}
+
+// render course title on page
+function renderCourse(courseID) {
+  return (
+    <a key={courseID} href={`/#/course/${courseID}`}>
+      <li>{ coursesData[courseID].title }</li>
+    </a>
+  );
 }
 
 export default class CourseBrowser extends Component {
@@ -142,23 +149,14 @@ export default class CourseBrowser extends Component {
     this.forceUpdate();
   }
 
-  // render course title on page
-  renderCourse(courseID) {
-    return (
-      <a key={courseID} href={`/#/course/${courseID}`}>
-        <li>{ coursesData[courseID].title }</li>
-      </a>
-    );
-  }
-
   // render all course titles on page
   renderCourses(courseIDs) {
-    return courseIDs.map(this.renderCourse, this);
+    return courseIDs.map(renderCourse, this);
   }
 
   renderCategory(category) {
     return (
-      <li onClick={() => this.categoryRender(category)} key={category}>{ category }</li>
+      <li onClick={() => this.categoryRender(category)} role="presentation" key={category}>{ category }</li>
     );
   }
 
@@ -194,6 +192,7 @@ export default class CourseBrowser extends Component {
         </div>) : (<div id="categories">
           <ul><li
             className="back-li"
+            role="presentation"
             onClick={() => {
               this.categoryClicked = false; currentIDS = []; this.forceUpdate();
             }}
