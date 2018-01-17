@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-
+import swal from 'sweetalert';
 const Loading = require('react-loading');
 
 let loginInfo;
@@ -67,14 +67,19 @@ export default class Login extends Component {
             providerData,
           };
           if (loginInfo.email.indexOf('@students.harker.org') === -1) {
-            firebase.auth().signOut().then(() => {
-              this.setState({
-                loggedIn: false,
+            swal({
+              title: 'Error',
+              text: 'Must log in with students.harker.org email to verify identity as Harker student.',
+              icon: 'error'
+            }).then(() => {
+              firebase.auth().signOut().then(() => {
+                this.setState({
+                  loggedIn: false,
+                });
+              }, (err) => {
+                console.log(err);
               });
-              alert('Must log in with students.harker.org email to verify identity as Harker student.');
-            }, (err) => {
-              console.log(err);
-            });
+            })
             return;
           }
           let prettyUsername = loginInfo.email.split('@')[0];
@@ -128,11 +133,12 @@ export default class Login extends Component {
   htmlGenerator() {
     console.log(this.state_props.loggedIn);
     if (this.state_props.loggedIn === undefined) {
-      return (
+      /*return (
         <div>
           <Loading type="balls" color="#e3e3e3" />
         </div>
-      );
+      );*/
+      return null;
     } else if (this.state_props.loggedIn === false) {
       // <div id="firebaseui-auth-container"></div>
       if (this.state_props.hide) {
