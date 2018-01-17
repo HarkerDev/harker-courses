@@ -224,3 +224,9 @@ form {
     padding: 20px;
     border-radius: 25px;
 }
+
+.course-info {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 4em;
+}
