@@ -2,19 +2,13 @@
 
 An online platform for Harker students to leave reviews on courses. Deployed platform can be found at [http://tiny.cc/harkercourses](http://tiny.cc/harkercourses) or [http://harker-courses.surge.sh](http://harker-courses.surge.sh). The latest deployment will be the latest release.
 
-## Development To-Do
-
-- [ ] Render courses to website (view reviews per course)
-- [ ] Create better course page, with teacher/availability information (with rating next to course name)
-- [ ] Organization/design to match sketch files
-
 ## Project Set Up
 
 ### Install and Run
 
-`yarn` or `npm install` in project directory.
+First install dependencies with `yarn` or `npm install` in project directory.
 
-`npm start`
+Then, begin the server with `yarn start` and head to [http://localhost:3000/](http://localhost:3000/).
 
 ### Build & Deploy
 
