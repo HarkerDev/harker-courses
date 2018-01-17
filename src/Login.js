@@ -153,7 +153,7 @@ export default class Login extends Component {
                     {this.state_props.name}
                     {/* ({this.state_props.prettyUsername})*/}
                   </h4>
-                  <h5>(reviews are anonymous by default)</h5>
+                  <h5>(currently anonymous)</h5>
                   <button
                     type="button"
                     className="btn btn-primary"
