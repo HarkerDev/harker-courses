@@ -104,6 +104,7 @@ export default class CourseInfo extends Component {
   render() {
     return (
       <div className="text-center">
+        <h1>{coursesData[this.course].title}</h1>
         <h4>{this.averageStars ? this.averageStars : 'Fetching reviews...'}</h4>
         <br />
         {this.reviews.map(data =>
