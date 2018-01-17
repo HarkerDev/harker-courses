@@ -148,21 +148,8 @@ export default class ReviewForm extends Component {
     retArr.push((
       <div>
         <form className="reviewForm" onSubmit={this.handleSubmit}>
-          <h3>Post a Review</h3>
-          <label htmlFor="courseId">Course:</label>
-          <div className="input-group">
-            <select
-              className="form-control"
-              ref="courseId"
-              defaultValue={this.course}
-              readOnly="true"
-              disabled="disabled"
-            >
-              {coursesArr.map(obj => (
-                <option key={obj[1].title} value={obj[0]}>{ obj[1].title }</option>
-              ))}
-            </select>
-          </div>
+          <h3>Post a Review for {coursesData[this.course].title}</h3>
+          <label htmlFor="courseId">Course: {coursesData[this.course].title}</label>
           <label htmlFor="rating">Rating:</label>
           <div className="form-group">
             <input
@@ -184,8 +171,8 @@ export default class ReviewForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="anonymousBool">Anonymous:</label>&nbsp;&nbsp;
-            <input type="checkbox" ref="anonymousBool" checked readOnly />
+            {/*<label htmlFor="anonymousBool">Anonymous:</label>&nbsp;&nbsp;*/}
+            {/*<input type="checkbox" ref="anonymousBool" checked readOnly />*/}
           </div>
           <input type="submit" className="btn btn-info" value="Post Review Anonymously!" />
         </form>
