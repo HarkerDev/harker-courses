@@ -47,10 +47,12 @@ nav ul li a {
     -moz-column-count: 4;
     -webkit-column-count: 4;
     column-count: 4;
+    columns: 4;
+    list-style: none;
+    padding-top: 1em;
 }
 
 #categories li {
-    display: inline-block;
     padding: 1em;
     font-size: 1.3em;
 }
@@ -71,12 +73,12 @@ nav ul li a {
     -moz-column-count: 5;
     -webkit-column-count: 5;
     column-count: 5;
+    columns: 5;
 }
 
 #course-browser li {
 	padding-top: 1.3em;
     font-size: 1em;
-    display: inline-block;
     padding-left: .6em;
     padding-right: .6em;
 }
