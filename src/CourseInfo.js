@@ -110,12 +110,7 @@ export default class CourseInfo extends Component {
         {this.reviews.map(data =>
           (<div key={data.key}>
             <h5><em>Anonymous</em> rated the course <b>{data.rating} star{data.rating.toFixed(1) !== '1.0' ? 's' : ''}</b> on {this.timeStamp(data.timestamp)}</h5>
-            {data.review && data.review.length > 0 ? (<textarea
-              className="form-control"
-              readOnly
-              style={{ backgroundColor: 'transparent', border: 3, fontSize: '1em', width: '60%', margin: '0 auto' }}
-              value={data.review}
-            />) : (<p>(empty review body)<br /><br /></p>)}
+            {data.review && data.review.length > 0 ? (<p className="review-text">{data.review}</p>) : (<p>(empty review body)<br /><br /></p>)}
           </div>),
         )}
       </div>
