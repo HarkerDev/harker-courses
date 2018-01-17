@@ -91,6 +91,7 @@ export default class CourseBrowser extends Component {
   constructor(props) {
     super(props);
 
+    this.categoryClicked = false;
     this.categoryRender = this.categoryRender.bind(this);
 
     this.state = {
@@ -133,6 +134,7 @@ export default class CourseBrowser extends Component {
         currentIDS.push(on);
       }
     }
+    this.categoryClicked = true;
     this.forceUpdate();
   }
 
@@ -181,11 +183,15 @@ export default class CourseBrowser extends Component {
           inputProps={inputProps}
         />
         <h3 className="text-center">Browse By Department</h3>
-        <div id="categories">
+        {!this.categoryClicked ? (<div id="categories">
           <ul>
             { this.renderCategories() }
           </ul>
-        </div>
+        </div>) : (<div id="categories">
+          <ul><li className="back-li" onClick={() => {
+            this.categoryClicked = false; currentIDS = []; this.forceUpdate();
+          }}>Back To Departments</li></ul>
+        </div>)}
         <div id="course-browser">{ this.renderCourses(currentIDS) }</div>
       </div>
     );
