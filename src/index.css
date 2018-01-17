@@ -226,7 +226,11 @@ form {
 }
 
 .course-info {
+    max-width: 1000px;
+    text-align: justify;
     width: 60%;
     margin: 0 auto;
-    margin-bottom: 4em;
+    margin-bottom: 3em;
+    padding: 20px;
+    border-radius: 5px;
 }
