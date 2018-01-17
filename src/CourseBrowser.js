@@ -83,6 +83,7 @@ for (const category of courseCategories) {
       .filter(val => val.subject === category)
       .map(val => ({
         name: val.title,
+        id: Object.keys(coursesData).filter((x) => coursesData[x].title === val.title)[0],
       })),
   });
 }
@@ -115,8 +116,13 @@ export default class CourseBrowser extends Component {
   };
 
   onSuggestionsFetchRequested = ({ value }) => {
+    var suggestions = getSuggestions(value);
+    console.log(suggestions);
+    currentIDS = suggestions.reduce((obj, x) => {
+      return obj.concat(x.subjects.map(y => y.id));
+    }, [])
     this.setState({
-      suggestions: getSuggestions(value),
+      suggestions: suggestions,
     });
   };
 
