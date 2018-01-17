@@ -185,9 +185,11 @@ export default class ReviewForm extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="anonymousBool">Anonymous:</label>&nbsp;&nbsp;
-            <input type="checkbox" ref="anonymousBool" checked readOnly />
+            <input type="hidden" ref="anonymousBool" checked readOnly />
+            <input type="checkbox" checked disabled="disabled" />
+            <h6>Keep reviews civil, please. Don't abuse your anonymity to personally attack teachers.</h6>
           </div>
-          <input type="submit" className="btn btn-info" value="Post Review Anonymously!" />
+          <input type="submit" className="btn btn-info" value="Post Review Anonymously" />
         </form>
       </div>
     ));

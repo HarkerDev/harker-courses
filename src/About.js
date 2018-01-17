@@ -20,9 +20,11 @@ const About = () => (
         will be authored as anonymous.</p>
       <p>Review content must be Harker appropriate. Try to focus reviews on amount of work,
         material in class, and what you got most out of the class.</p>
-      <p>We reserve the right to delete any review that breaks the Terms of Service. Because
-        your reviews are tagged (but not publicized), we will also know the author. Make sure
-        your reviews are appropriate.</p>
+
+      <h2>BNBR</h2>
+      <p>Stands for "be nice be respectful." No racism, sexism, or other such -isms will be tolerated.
+       We reserve the right to delete any review that breaks the Terms of Service. Please don't use 
+       this as a platform to personally attack teachers.</p>
     </div>
   </div>
 );
