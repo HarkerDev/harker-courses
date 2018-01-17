@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import swal from 'sweetalert';
+
 const Loading = require('react-loading');
 
 let loginInfo;
@@ -79,7 +80,7 @@ export default class Login extends Component {
               }, (err) => {
                 console.log(err);
               });
-            })
+            });
             return;
           }
           let prettyUsername = loginInfo.email.split('@')[0];
@@ -90,30 +91,11 @@ export default class Login extends Component {
             userInfo: loginInfo,
             prettyUsername,
           });
-          /*
-           document.getElementById('sign-in-status').textContent = 'Signed in';
-           document.getElementById('sign-in').textContent = 'Sign out';
-           document.getElementById('account-details').textContent = JSON.stringify({
-           displayName: displayName,
-           email: email,
-           emailVerified: emailVerified,
-           photoURL: photoURL,
-           uid: uid,
-           accessToken: accessToken,
-           providerData: providerData
-           }, null, '  ');
-           */
         });
       } else {
         this.setState({
           loggedIn: false,
         });
-        /*
-         // User is signed out.
-         document.getElementById('sign-in-status').textContent = 'Signed out';
-         document.getElementById('sign-in').textContent = 'Sign in';
-         document.getElementById('account-details').textContent = 'null';
-         */
       }
     }, (error) => {
       console.log(error);
