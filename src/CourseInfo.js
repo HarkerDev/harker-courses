@@ -10,7 +10,22 @@ Object.keys(coursesData).forEach((key) => {
   }
 });
 
-// form for adding a review
+function timeStamp(timestamp) {
+  const now = new Date(timestamp);
+  const date = [now.getMonth() + 1, now.getDate(), now.getFullYear()];
+  const time = [now.getHours(), now.getMinutes(), now.getSeconds()];
+  // const suffix = (time[0] < 12) ? 'AM' : 'PM';
+  time[0] = (time[0] < 12) ? time[0] : time[0] - 12;
+  time[0] = time[0] || 12;
+  for (let i = 1; i < 3; i += 1) {
+    if (time[i] < 10) {
+      time[i] = `0${time[i]}`;
+    }
+  }
+  return date.join('/');/* + " at " + time.join(":") + " " + suffix;*/
+}
+
+// Form for posting a review
 export default class CourseInfo extends Component {
   constructor(props) {
     super(props);
@@ -22,17 +37,7 @@ export default class CourseInfo extends Component {
     this.setUpListeners();
   }
 
-  componentWillMount() {
-    /*
-     const script = document.createElement('script');
-
-     script.innerHTML = "setTimeout(function() { \
-     $('.rating').rating(); \
-     }, 200);";
-
-     document.body.appendChild(script);
-     */
-  }
+  componentWillMount() {}
 
   setUpListeners() {
     const postRef = firebase.database().ref().child('reviews').child(this.course);
@@ -72,33 +77,17 @@ export default class CourseInfo extends Component {
     });
     const courseRef = firebase.database().ref().child('courses').child(this.course);
     courseRef.on('value', (data) => {
-      // const dataValue = data.val();
-      data = data.val();
-      if (!data) {
+      const dataValue = data.val();
+      if (!dataValue) {
         that.averageStars = 'No reviews yet for this class — be the first!';
       } else {
-        const reviewAverage = data.totalStars / data.totalReviews;
+        const reviewAverage = dataValue.totalStars / dataValue.totalReviews;
         const starText = reviewAverage.toFixed(1) !== '1.0' ? 'stars' : 'star';
-        const reviewText = data.totalReviews === 1 ? 'review' : 'reviews';
-        that.averageStars = `Average course rating: ${reviewAverage.toFixed(2)} ${starText} from ${data.totalReviews} ${reviewText}.`;
+        const reviewText = dataValue.totalReviews === 1 ? 'review' : 'reviews';
+        that.averageStars = `Average course rating: ${reviewAverage.toFixed(2)} ${starText} from ${dataValue.totalReviews} ${reviewText}.`;
       }
       that.forceUpdate();
     });
-  }
-
-  timeStamp(timestamp) {
-    const now = new Date(timestamp);
-    const date = [now.getMonth() + 1, now.getDate(), now.getFullYear()];
-    const time = [now.getHours(), now.getMinutes(), now.getSeconds()];
-    // const suffix = (time[0] < 12) ? 'AM' : 'PM';
-    time[0] = (time[0] < 12) ? time[0] : time[0] - 12;
-    time[0] = time[0] || 12;
-    for (let i = 1; i < 3; i += 1) {
-      if (time[i] < 10) {
-        time[i] = `0${time[i]}`;
-      }
-    }
-    return date.join('/');/* + " at " + time.join(":") + " " + suffix;*/
   }
 
   render() {
@@ -110,7 +99,7 @@ export default class CourseInfo extends Component {
         <br />
         {this.reviews.map(data =>
           (<div key={data.key}>
-            <h5><em>Anonymous</em> rated the course <b>{data.rating} star{data.rating.toFixed(1) !== '1.0' ? 's' : ''}</b> on {this.timeStamp(data.timestamp)}</h5>
+            <h5><em>Anonymous</em> rated the course <b>{data.rating} star{data.rating.toFixed(1) !== '1.0' ? 's' : ''}</b> on {timeStamp(data.timestamp)}</h5>
             {data.review && data.review.length > 0 ? (<p className="review-text">{data.review}</p>) : (<p>(empty review body)<br /><br /></p>)}
           </div>),
         )}

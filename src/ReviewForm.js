@@ -24,9 +24,9 @@ export default class ReviewForm extends Component {
   componentWillMount() {
     const script = document.createElement('script');
 
-    script.innerHTML = "setTimeout(function() { \
-            $('.rating').rating(); \
-        }, 200);";
+    script.innerHTML = 'setTimeout(function() { \n' +
+            '$(".rating").rating(); \n' +
+        '}, 200);';
 
     document.body.appendChild(script);
   }
@@ -54,8 +54,8 @@ export default class ReviewForm extends Component {
           ];
           console.log(loginInfo);
           const courseId = that.refs.courseId.value.trim();
-          const rating = parseFloat(that.refs.rating.value);
-          const review = that.refs.review.value;
+          const rating = parseFloat(this.rating.value);
+          const review = this.review.value;
           // A review entry.
           const postData = {
             courseId,
@@ -117,7 +117,6 @@ export default class ReviewForm extends Component {
     });
   }
 
-
   render() {
     const retArr = [];
     if (this.submitted === 'success') {
@@ -139,7 +138,7 @@ export default class ReviewForm extends Component {
       <div>
         <form className="reviewForm" onSubmit={this.handleSubmit}>
           <h3>Post a Review</h3>
-          <label htmlFor="rating">Rating:</label>
+          <h4>Rating:</h4>
           <div className="form-group">
             <input
               type="hidden"
@@ -147,7 +146,7 @@ export default class ReviewForm extends Component {
               data-start="0"
               data-stop="5"
               data-fractions="2"
-              ref="rating"
+              ref={(rat) => { this.rating = rat; }}
               id="reviewRating"
             />
           </div>
@@ -155,7 +154,7 @@ export default class ReviewForm extends Component {
             <textarea
               className="form-control"
               rows="5"
-              ref="review"
+              ref={(rev) => { this.review = rev; }}
               placeholder="Your review of this course here"
             />
           </div>
