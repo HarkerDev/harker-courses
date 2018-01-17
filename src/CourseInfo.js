@@ -104,7 +104,7 @@ export default class CourseInfo extends Component {
   render() {
     return (
       <div className="text-center">
-        <h1>{coursesData[this.course].title}</h1>
+        <h2>{coursesData[this.course].title}</h2>
         <p className="course-info">{coursesData[this.course].prerequisiteString}</p>
         <h4>{this.averageStars ? this.averageStars : 'Fetching reviews...'}</h4>
         <br />
