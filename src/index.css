@@ -207,3 +207,13 @@ form {
     color: #777;
 }
 
+.review-text {
+    font-family: roboto;
+    font-size: 0.95em;
+    max-width: 1000px;
+    text-align: justify;
+    margin: 0 auto;
+    background-color: #EEE;
+    padding: 20px;
+    border-radius: 25px;
+}
