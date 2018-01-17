@@ -95,7 +95,6 @@ export default class ReviewForm extends Component {
           updates[`/reviews/${courseId}/${newPostKey}`] = postData;
           // updates['/user-posts/' + uid + '/' + newPostKey] = postData;
 
-          // console.log(firebase.database().ref().update(updates)); // // //
           firebase.database().ref().update(updates).then((data) => {
             // success
             console.log(data);
@@ -113,7 +112,6 @@ export default class ReviewForm extends Component {
            that.refs.review.value = '';*/
 
           // TODO: Check return status, display error/success in field, bootstrap
-          // it all, make appropriate input fields, etc.
         });
       }
     });
@@ -121,14 +119,6 @@ export default class ReviewForm extends Component {
 
 
   render() {
-    /*
-     <form className='reviewForm' onSubmit={this.handleSubmit.bind(this)}>
-     <input type='text' placeholder='Course ID' ref='courseId' />
-     <input type='text' placeholder='Rating' ref='rating' />
-     <input type='text' placeholder='Review' ref='review' />
-     <input type='submit' value='Post' />
-     </form>
-     */
     const retArr = [];
     if (this.submitted === 'success') {
       retArr.push((
@@ -149,7 +139,6 @@ export default class ReviewForm extends Component {
       <div>
         <form className="reviewForm" onSubmit={this.handleSubmit}>
           <h3>Post a Review for {coursesData[this.course].title}</h3>
-          <label htmlFor="courseId">Course: {coursesData[this.course].title}</label>
           <label htmlFor="rating">Rating:</label>
           <div className="form-group">
             <input
@@ -173,8 +162,7 @@ export default class ReviewForm extends Component {
           <div className="form-group">
             {/* <label htmlFor="anonymousBool">Anonymous:</label>&nbsp;&nbsp; */}
             {/* <input type="checkbox" ref="anonymousBool" checked readOnly /> */}
-            <h6>Keep reviews civil, please. Do not abuse your anonymity to
-              personally attack teachers.</h6>
+            <h6>Keep reviews civil, please. Do not abuse your anonymity.</h6>
           </div>
           <input type="submit" className="btn btn-info" value="Post Review Anonymously" />
         </form>

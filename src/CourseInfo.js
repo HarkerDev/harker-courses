@@ -113,7 +113,7 @@ export default class CourseInfo extends Component {
             {data.review && data.review.length > 0 ? (<textarea
               className="form-control"
               readOnly
-              style={{ backgroundColor: 'transparent', border: 3, fontSize: '1em' }}
+              style={{ backgroundColor: 'transparent', border: 3, fontSize: '1em', width: '60%', margin: '0 auto' }}
               value={data.review}
             />) : (<p>(empty review body)<br /><br /></p>)}
           </div>),
