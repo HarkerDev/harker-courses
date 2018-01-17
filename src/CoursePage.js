@@ -6,8 +6,12 @@ import CourseInfo from './CourseInfo';
 
 // Course page
 // Will be opened with a parameter carrying the course ID, from which it will
-// pull the corresponding reviews from Firebase
+// pull the corresponding reviews from Firebase.
 export default class CoursePage extends Component {
+  static propTypes = {
+    routeParams: React.PropTypes.element.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.courseId = props.routeParams.courseId;

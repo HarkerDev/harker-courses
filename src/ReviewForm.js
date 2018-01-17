@@ -24,9 +24,9 @@ export default class ReviewForm extends Component {
   componentWillMount() {
     const script = document.createElement('script');
 
-    script.innerHTML = "setTimeout(function() { \
-            $('.rating').rating(); \
-        }, 200);";
+    script.innerHTML = 'setTimeout(function() { \n' +
+            '$(".rating").rating(); \n' +
+        '}, 200);';
 
     document.body.appendChild(script);
   }
@@ -139,7 +139,7 @@ export default class ReviewForm extends Component {
       <div>
         <form className="reviewForm" onSubmit={this.handleSubmit}>
           <h3>Post a Review</h3>
-          <label htmlFor="rating">Rating:</label>
+          <h4>Rating:</h4>
           <div className="form-group">
             <input
               type="hidden"

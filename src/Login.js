@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
+import swal from 'sweetalert';
 
 const Loading = require('react-loading');
 
@@ -71,7 +72,7 @@ export default class Login extends Component {
               this.setState({
                 loggedIn: false,
               });
-              alert('Must log in with students.harker.org email to verify identity as Harker student.');
+              swal('Oops', 'Must log in with students.harker.org email to verify identity as Harker student.', 'error');
             }, (err) => {
               console.log(err);
             });
@@ -85,30 +86,11 @@ export default class Login extends Component {
             userInfo: loginInfo,
             prettyUsername,
           });
-          /*
-           document.getElementById('sign-in-status').textContent = 'Signed in';
-           document.getElementById('sign-in').textContent = 'Sign out';
-           document.getElementById('account-details').textContent = JSON.stringify({
-           displayName: displayName,
-           email: email,
-           emailVerified: emailVerified,
-           photoURL: photoURL,
-           uid: uid,
-           accessToken: accessToken,
-           providerData: providerData
-           }, null, '  ');
-           */
         });
       } else {
         this.setState({
           loggedIn: false,
         });
-        /*
-         // User is signed out.
-         document.getElementById('sign-in-status').textContent = 'Signed out';
-         document.getElementById('sign-in').textContent = 'Sign in';
-         document.getElementById('account-details').textContent = 'null';
-         */
       }
     }, (error) => {
       console.log(error);

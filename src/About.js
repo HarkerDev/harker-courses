@@ -22,9 +22,10 @@ const About = () => (
         material in class, and what you got most out of the class.</p>
 
       <h2>BNBR</h2>
-      <p>Stands for "be nice be respectful." No racism, sexism, or other such -isms will be tolerated.
-       We reserve the right to delete any review that breaks the Terms of Service. Please don't use 
-       this as a platform to personally attack teachers.</p>
+      <p>Stands for Be Nice Be Respectful. No racism, sexism, or other such
+        -isms will be tolerated. We reserve the right to delete any review that
+        breaks the Terms of Service. Please do not use this as a platform to
+        personally attack teachers.</p>
     </div>
   </div>
 );

@@ -83,7 +83,7 @@ for (const category of courseCategories) {
       .filter(val => val.subject === category)
       .map(val => ({
         name: val.title,
-        id: Object.keys(coursesData).filter((x) => coursesData[x].title === val.title)[0],
+        id: Object.keys(coursesData).filter(x => coursesData[x].title === val.title)[0],
       })),
   });
 }
@@ -116,13 +116,11 @@ export default class CourseBrowser extends Component {
   };
 
   onSuggestionsFetchRequested = ({ value }) => {
-    var suggestions = getSuggestions(value);
+    const suggestions = getSuggestions(value);
     console.log(suggestions);
-    currentIDS = suggestions.reduce((obj, x) => {
-      return obj.concat(x.subjects.map(y => y.id));
-    }, [])
+    currentIDS = suggestions.reduce((obj, x) => obj.concat(x.subjects.map(y => y.id)), []);
     this.setState({
-      suggestions: suggestions,
+      suggestions,
     });
   };
 
@@ -194,9 +192,12 @@ export default class CourseBrowser extends Component {
             { this.renderCategories() }
           </ul>
         </div>) : (<div id="categories">
-          <ul><li className="back-li" onClick={() => {
-            this.categoryClicked = false; currentIDS = []; this.forceUpdate();
-          }}>Back To Departments</li></ul>
+          <ul><li
+            className="back-li"
+            onClick={() => {
+              this.categoryClicked = false; currentIDS = []; this.forceUpdate();
+            }}
+          >Back To Departments</li></ul>
         </div>)}
         <div id="course-browser">{ this.renderCourses(currentIDS) }</div>
       </div>
