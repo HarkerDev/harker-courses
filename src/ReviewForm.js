@@ -138,7 +138,7 @@ export default class ReviewForm extends Component {
     retArr.push((
       <div>
         <form className="reviewForm" onSubmit={this.handleSubmit}>
-          <h3>Post a Review for {coursesData[this.course].title}</h3>
+          <h3>Post a Review</h3>
           <label htmlFor="rating">Rating:</label>
           <div className="form-group">
             <input
