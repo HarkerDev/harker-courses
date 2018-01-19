@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import coursesData from '../courses.json';
+import swal from 'sweetalert';
 
 const coursesArr = [];
 Object.keys(coursesData).forEach((key) => {
@@ -54,8 +55,8 @@ export default class ReviewForm extends Component {
           ];
           console.log(loginInfo);
           const courseId = that.refs.courseId.value.trim();
-          const rating = parseFloat(this.rating.value);
-          const review = this.review.value;
+          const rating = parseFloat(that.rating.value);
+          const review = that.review.value;
           // A review entry.
           const postData = {
             courseId,
@@ -119,20 +120,31 @@ export default class ReviewForm extends Component {
 
   render() {
     const retArr = [];
+    const that = this;
     if (this.submitted === 'success') {
+      /*
       retArr.push((
         <div className="reviewForm alert alert-success">
           <span className="glyphicon glyphicon-ok" />&nbsp;
           <strong>Success!</strong> Posted review.
         </div>
       ));
+      */
+      swal({
+        title: 'Success!',
+        text: 'Posted review.',
+        icon: "success",
+      }).then(() => {
+        that.submitted = undefined;
+      });
     } else if (this.submitted === 'failure') {
-      retArr.push((
-        <div className="reviewForm alert alert-danger">
-          <span className="glyphicon glyphicon-remove" />&nbsp;<strong>
-            Error!</strong> Unable to post review.
-        </div>
-      ));
+      swal({
+        title: 'Error!',
+        text: 'Unable to post review.',
+        icon: "error",
+      }).then(() => {
+        that.submitted = undefined;
+      });
     }
     retArr.push((
       <div>
@@ -159,6 +171,7 @@ export default class ReviewForm extends Component {
             />
           </div>
           <div className="form-group">
+            <input type="hidden" value={this.course} ref="courseId"/>
             {/* <label htmlFor="anonymousBool">Anonymous:</label>&nbsp;&nbsp; */}
             {/* <input type="checkbox" ref="anonymousBool" checked readOnly /> */}
             <h6>Keep reviews civil, please. Do not abuse your anonymity.</h6>
