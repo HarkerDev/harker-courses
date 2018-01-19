@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import swal from 'sweetalert';
 
-const Loading = require('react-loading');
+// const Loading = require('react-loading');
 
 let loginInfo;
 
@@ -71,7 +71,7 @@ export default class Login extends Component {
             swal({
               title: 'Error',
               text: 'Must log in with students.harker.org email to verify identity as Harker student.',
-              icon: 'error'
+              icon: 'error',
             }).then(() => {
               firebase.auth().signOut().then(() => {
                 this.setState({
@@ -115,7 +115,7 @@ export default class Login extends Component {
   htmlGenerator() {
     console.log(this.state_props.loggedIn);
     if (this.state_props.loggedIn === undefined) {
-      /*return (
+      /* return (
         <div>
           <Loading type="balls" color="#e3e3e3" />
         </div>
