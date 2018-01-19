@@ -122,14 +122,6 @@ export default class ReviewForm extends Component {
     const retArr = [];
     const that = this;
     if (this.submitted === 'success') {
-      /*
-      retArr.push((
-        <div className="reviewForm alert alert-success">
-          <span className="glyphicon glyphicon-ok" />&nbsp;
-          <strong>Success!</strong> Posted review.
-        </div>
-      ));
-      */
       swal({
         title: 'Success!',
         text: 'Posted review.',
