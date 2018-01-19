@@ -184,19 +184,20 @@ export default class CourseBrowser extends Component {
           getSectionSuggestions={getSectionSuggestions}
           inputProps={inputProps}
         />
-        <h3 className="text-center">Browse By Department</h3>
         {!this.categoryClicked ? (<div id="categories">
+          <h3 className="text-center">Browse By Department</h3>
           <ul>
             { this.renderCategories() }
           </ul>
         </div>) : (<div id="categories">
-          <ul><li
-            className="back-li"
+          <h3 className="text-center">Courses</h3>
+          <h4
+            className="back-li text-center"
             role="presentation"
             onClick={() => {
               this.categoryClicked = false; currentIDS = []; this.forceUpdate();
             }}
-          >Back To Departments</li></ul>
+          >Back To Departments</h4>
         </div>)}
         <div id="course-browser">{ this.renderCourses(currentIDS) }</div>
       </div>

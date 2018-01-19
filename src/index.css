@@ -45,17 +45,32 @@ nav ul li a {
 }
 
 #categories ul {
-    -moz-column-count: 4;
-    -webkit-column-count: 4;
-    column-count: 4;
-    columns: 4;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-content: flex-end;
+    align-content: flex-end;
+    width: 80%;
+    margin: auto;
     list-style: none;
-    padding-top: 1em;
+    padding-top: 2em;
 }
 
 #categories li {
-    padding: 1em;
     font-size: 1.3em;
+    list-style: none;
+    padding-top: 1.5em;
+    width: 250px;
+    height: 90px;
 }
 
 #categories li:hover {
@@ -64,24 +79,33 @@ nav ul li a {
 }
 
 #course-browser {
-	padding-left: 2em;
-    padding-right: 2em;
-    padding-top: 2em;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-content: flex-end;
+    align-content: flex-end;
     width: 80%;
     margin: auto;
-    text-align: center;
-	list-style: none;
-    -moz-column-count: 5;
-    -webkit-column-count: 5;
-    column-count: 5;
-    columns: 5;
+    list-style: none;
 }
 
 #course-browser li {
-	padding-top: 1.3em;
     font-size: 1em;
-    padding-left: .6em;
-    padding-right: .6em;
+    width: 250px;
+    height: 60px;
+    margin: auto;
+    padding-top: 1em;
+    padding-right: .5em;
+    padding-left: .5em;
 }
 
 #about-detail {
@@ -236,7 +260,11 @@ form {
 }
 
 .back-li {
-    text-align: left;
-    width: 320px;
-    padding: 0em !important;
+    padding-top: .5em;
+    padding-bottom: 1.5em;
+}
+
+.back-li:hover {
+    color: #337ab7;
+    cursor: pointer;
 }
