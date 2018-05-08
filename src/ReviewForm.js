@@ -37,20 +37,23 @@ export default class ReviewForm extends Component {
     const that = this;
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        const displayName = user.displayName;
-        const email = user.email;
-        const emailVerified = user.emailVerified;
-        const photoURL = user.photoURL;
-        const uid = user.uid;
-        const providerData = user.providerData;
+        const { displayName } = user;
+        const { email } = user;
+        const { emailVerified } = user;
+        const { photoURL } = user;
+        const { uid } = user;
+        const { providerData } = user;
         user.getToken().then((accessToken) => {
-          const loginInfo = [displayName, email, emailVerified, photoURL, uid, accessToken, providerData,];
+          const loginInfo = [displayName, email, emailVerified, 
+            photoURL, uid, accessToken, providerData];
           console.log(loginInfo);
           const courseId = that.refs.courseId.value.trim();
           const rating = parseFloat(that.rating.value);
           const review = that.review.value;
           // A review entry.
-          const postData = {courseId, rating, review, poster_uid: uid, timestamp: Date.now(),};
+          const postData = {
+            courseId, rating, review, poster_uid: uid, timestamp: Date.now()
+          };
 
           // Update average star rating.
           const courseRef = firebase.database()
@@ -145,7 +148,7 @@ export default class ReviewForm extends Component {
             />
           </div>
           <div className="form-group">
-            <input type="hidden" value={ this.course } ref="courseId"/>
+            <input type="hidden" value={this.course} ref="courseId" />
             <h6>Keep reviews civil, please. Do not abuse your anonymity.</h6>
           </div>
           <input type="submit" className="btn btn-info" value="Post Review Anonymously" />

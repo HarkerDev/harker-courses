@@ -16,11 +16,9 @@
   "dependencies": {
     "firebase": "^4.13.1",
     "firebaseui": "^2.7.0",
-    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-autosuggest": "^9.3.4",
     "react-dom": "^16.3.2",
-    "react-loading": "2.0.2",
     "react-router": "^4.2.0",
     "sweetalert": "^2.1.0"
   },
