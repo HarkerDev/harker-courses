@@ -1,8 +1,8 @@
 /* eslint-env browser */
+import swal from 'sweetalert';
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import coursesData from '../courses.json';
-import swal from 'sweetalert';
 
 const coursesArr = [];
 Object.keys(coursesData).forEach((key) => {
@@ -37,21 +37,15 @@ export default class ReviewForm extends Component {
     const that = this;
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        const displayName = user.displayName;
-        const email = user.email;
-        const emailVerified = user.emailVerified;
-        const photoURL = user.photoURL;
-        const uid = user.uid;
-        const providerData = user.providerData;
+        const { displayName } = user;
+        const { email } = user;
+        const { emailVerified } = user;
+        const { photoURL } = user;
+        const { uid } = user;
+        const { providerData } = user;
         user.getToken().then((accessToken) => {
           const loginInfo = [
-            displayName,
-            email,
-            emailVerified,
-            photoURL,
-            uid,
-            accessToken,
-            providerData,
+            displayName, email, emailVerified, photoURL, uid, accessToken, providerData,
           ];
           console.log(loginInfo);
           const courseId = that.refs.courseId.value.trim();
@@ -59,11 +53,7 @@ export default class ReviewForm extends Component {
           const review = that.review.value;
           // A review entry.
           const postData = {
-            courseId,
-            rating,
-            review,
-            poster_uid: uid,
-            timestamp: Date.now(),
+            courseId, rating, review, poster_uid: uid, timestamp: Date.now(),
           };
 
           // Update average star rating.
@@ -107,10 +97,6 @@ export default class ReviewForm extends Component {
             that.submitted = 'failure';
             that.forceUpdate();
           });
-          // this.props.onReviewSubmit({courseId: courseId, rating: rating, review: review});
-          /* that.refs.courseId.value = ''; //reset fields
-           that.refs.rating.value = 0;
-           that.refs.review.value = '';*/
 
           // TODO: Check return status, display error/success in field, bootstrap
         });
@@ -125,7 +111,7 @@ export default class ReviewForm extends Component {
       swal({
         title: 'Success!',
         text: 'Posted review.',
-        icon: "success",
+        icon: 'success',
       }).then(() => {
         that.submitted = undefined;
       });
@@ -133,7 +119,7 @@ export default class ReviewForm extends Component {
       swal({
         title: 'Error!',
         text: 'Unable to post review.',
-        icon: "error",
+        icon: 'error',
       }).then(() => {
         that.submitted = undefined;
       });
@@ -163,9 +149,7 @@ export default class ReviewForm extends Component {
             />
           </div>
           <div className="form-group">
-            <input type="hidden" value={this.course} ref="courseId"/>
-            {/* <label htmlFor="anonymousBool">Anonymous:</label>&nbsp;&nbsp; */}
-            {/* <input type="checkbox" ref="anonymousBool" checked readOnly /> */}
+            <input type="hidden" value={this.course} ref="courseId" />
             <h6>Keep reviews civil, please. Do not abuse your anonymity.</h6>
           </div>
           <input type="submit" className="btn btn-info" value="Post Review Anonymously" />

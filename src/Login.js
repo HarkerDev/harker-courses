@@ -1,8 +1,7 @@
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import swal from 'sweetalert';
-
-// const Loading = require('react-loading');
 
 let loginInfo;
 
@@ -19,8 +18,6 @@ export default class Login extends Component {
     };
     Object.assign(this.state_props, props);
 
-    // Init firebase
-    // console.log("Initing firebase again.");
     const config = {
       apiKey: 'AIzaSyDGzHdJ-4B35kuShuJCgmHhkbBy_nMCvy4',
       authDomain: 'harker-courses.firebaseapp.com',
@@ -49,23 +46,17 @@ export default class Login extends Component {
     // Install state change handler
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        const displayName = user.displayName;
+        const { displayName } = user;
         this.state_props.name = user.displayName;
-        const email = user.email;
-        const emailVerified = user.emailVerified;
-        const photoURL = user.photoURL;
+        const { email } = user;
+        const { emailVerified } = user;
+        const { photoURL } = user;
         this.state_props.photo = user.photoURL;
-        const uid = user.uid;
-        const providerData = user.providerData;
+        const { uid } = user;
+        const { providerData } = user;
         user.getToken().then((accessToken) => {
           loginInfo = {
-            displayName,
-            email,
-            emailVerified,
-            photoURL,
-            uid,
-            accessToken,
-            providerData,
+            displayName, email, emailVerified, photoURL, uid, accessToken, providerData,
           };
           if (loginInfo.email.indexOf('@students.harker.org') === -1) {
             swal({
@@ -115,11 +106,6 @@ export default class Login extends Component {
   htmlGenerator() {
     console.log(this.state_props.loggedIn);
     if (this.state_props.loggedIn === undefined) {
-      /* return (
-        <div>
-          <Loading type="balls" color="#e3e3e3" />
-        </div>
-      );*/
       return null;
     } else if (this.state_props.loggedIn === false) {
       // <div id="firebaseui-auth-container"></div>
@@ -139,14 +125,14 @@ export default class Login extends Component {
                 <div className="media-body">
                   <h4 className="media-heading">
                     {this.state_props.name}
-                    {/* ({this.state_props.prettyUsername})*/}
                   </h4>
                   <h5>(currently anonymous)</h5>
                   <button
                     type="button"
                     className="btn btn-primary"
                     onClick={this.signOut}
-                  > Sign Out </button>
+                  > Sign Out
+                  </button>
                 </div>
               </li>
             </ul>
