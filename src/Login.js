@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import swal from 'sweetalert';
@@ -55,8 +56,7 @@ export default class Login extends Component {
         const { providerData } = user;
         user.getToken().then((accessToken) => {
           loginInfo = {
-            displayName, email, emailVerified, 
-            photoURL, uid, accessToken, providerData
+            displayName, email, emailVerified, photoURL, uid, accessToken, providerData,
           };
           if (loginInfo.email.indexOf('@students.harker.org') === -1) {
             swal({

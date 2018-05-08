@@ -45,7 +45,7 @@ export default class ReviewForm extends Component {
         const { providerData } = user;
         user.getToken().then((accessToken) => {
           const loginInfo = [
-            displayName, email, emailVerified, photoURL, uid, accessToken, providerData
+            displayName, email, emailVerified, photoURL, uid, accessToken, providerData,
           ];
           console.log(loginInfo);
           const courseId = that.refs.courseId.value.trim();
