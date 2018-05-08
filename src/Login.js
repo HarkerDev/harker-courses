@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import swal from 'sweetalert';
 
-// const Loading = require('react-loading');
-
 let loginInfo;
 
 export default class Login extends Component {
@@ -19,8 +17,6 @@ export default class Login extends Component {
     };
     Object.assign(this.state_props, props);
 
-    // Init firebase
-    // console.log("Initing firebase again.");
     const config = {
       apiKey: 'AIzaSyDGzHdJ-4B35kuShuJCgmHhkbBy_nMCvy4',
       authDomain: 'harker-courses.firebaseapp.com',
@@ -58,15 +54,7 @@ export default class Login extends Component {
         const uid = user.uid;
         const providerData = user.providerData;
         user.getToken().then((accessToken) => {
-          loginInfo = {
-            displayName,
-            email,
-            emailVerified,
-            photoURL,
-            uid,
-            accessToken,
-            providerData,
-          };
+          loginInfo = { displayName, email, emailVerified, photoURL, uid, accessToken, providerData,};
           if (loginInfo.email.indexOf('@students.harker.org') === -1) {
             swal({
               title: 'Error',
@@ -115,11 +103,6 @@ export default class Login extends Component {
   htmlGenerator() {
     console.log(this.state_props.loggedIn);
     if (this.state_props.loggedIn === undefined) {
-      /* return (
-        <div>
-          <Loading type="balls" color="#e3e3e3" />
-        </div>
-      );*/
       return null;
     } else if (this.state_props.loggedIn === false) {
       // <div id="firebaseui-auth-container"></div>
@@ -139,7 +122,6 @@ export default class Login extends Component {
                 <div className="media-body">
                   <h4 className="media-heading">
                     {this.state_props.name}
-                    {/* ({this.state_props.prettyUsername})*/}
                   </h4>
                   <h5>(currently anonymous)</h5>
                   <button

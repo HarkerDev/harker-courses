@@ -22,7 +22,7 @@ function timeStamp(timestamp) {
       time[i] = `0${time[i]}`;
     }
   }
-  return date.join('/');/* + " at " + time.join(":") + " " + suffix;*/
+  return date.join('/');
 }
 
 // Form for posting a review
