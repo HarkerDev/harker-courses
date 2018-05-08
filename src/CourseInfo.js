@@ -101,7 +101,7 @@ export default class CourseInfo extends Component {
           <div key={data.key}>
             <h5><em>Anonymous</em> rated the course <b>{data.rating} star{data.rating.toFixed(1) !== '1.0' ? 's' : ''}</b> on {timeStamp(data.timestamp)}</h5>
             {data.review && data.review.length > 0 ? (<p className="review-text">{data.review}</p>) : (<p>(empty review body)<br /><br /></p>)}
-          </div>),)}
+          </div>))}
       </div>
     );
   }

@@ -192,8 +192,8 @@ export default class CourseBrowser extends Component {
             </ul>
           </div>) : (
             <div id="categories">
-            <h3 className="text-center">Courses</h3>
-            <h4
+              <h3 className="text-center">Courses</h3>
+              <h4
               className="back-li text-center"
               role="presentation"
               onClick={() => {
@@ -202,7 +202,7 @@ export default class CourseBrowser extends Component {
             >
             Back To Departments
             </h4>
-          </div>)}
+            </div>)}
         <div id="course-browser">{ this.renderCourses(currentIDS) }</div>
       </div>
     );
