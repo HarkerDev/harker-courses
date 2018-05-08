@@ -44,15 +44,16 @@ export default class ReviewForm extends Component {
         const { uid } = user;
         const { providerData } = user;
         user.getToken().then((accessToken) => {
-          const loginInfo = [displayName, email, emailVerified, 
-            photoURL, uid, accessToken, providerData];
+          const loginInfo = [
+            displayName, email, emailVerified, photoURL, uid, accessToken, providerData
+          ];
           console.log(loginInfo);
           const courseId = that.refs.courseId.value.trim();
           const rating = parseFloat(that.rating.value);
           const review = that.review.value;
           // A review entry.
           const postData = {
-            courseId, rating, review, poster_uid: uid, timestamp: Date.now()
+            courseId, rating, review, poster_uid: uid, timestamp: Date.now(),
           };
 
           // Update average star rating.

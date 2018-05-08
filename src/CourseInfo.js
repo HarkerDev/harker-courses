@@ -97,12 +97,11 @@ export default class CourseInfo extends Component {
         <p className="course-info">{coursesData[this.course].prerequisiteString}</p>
         <h4>{this.averageStars ? this.averageStars : 'Fetching reviews...'}</h4>
         <br />
-        {this.reviews.map(data =>
-          (<div key={data.key}>
+        {this.reviews.map(data => (
+          <div key={data.key}>
             <h5><em>Anonymous</em> rated the course <b>{data.rating} star{data.rating.toFixed(1) !== '1.0' ? 's' : ''}</b> on {timeStamp(data.timestamp)}</h5>
             {data.review && data.review.length > 0 ? (<p className="review-text">{data.review}</p>) : (<p>(empty review body)<br /><br /></p>)}
-          </div>),
-        )}
+          </div>),)}
       </div>
     );
   }

@@ -45,16 +45,19 @@ export default class Login extends Component {
     // Install state change handler
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        const displayName = user.displayName;
+        const { displayName } = user;
         this.state_props.name = user.displayName;
-        const email = user.email;
-        const emailVerified = user.emailVerified;
-        const photoURL = user.photoURL;
+        const { email } = user;
+        const { emailVerified } = user;
+        const { photoURL } = user;
         this.state_props.photo = user.photoURL;
-        const uid = user.uid;
-        const providerData = user.providerData;
+        const { uid } = user;
+        const { providerData } = user;
         user.getToken().then((accessToken) => {
-          loginInfo = { displayName, email, emailVerified, photoURL, uid, accessToken, providerData,};
+          loginInfo = {
+            displayName, email, emailVerified, 
+            photoURL, uid, accessToken, providerData
+          };
           if (loginInfo.email.indexOf('@students.harker.org') === -1) {
             swal({
               title: 'Error',
@@ -128,7 +131,8 @@ export default class Login extends Component {
                     type="button"
                     className="btn btn-primary"
                     onClick={this.signOut}
-                  > Sign Out </button>
+                  > Sign Out
+                  </button>
                 </div>
               </li>
             </ul>
