@@ -9,7 +9,7 @@ const About = () => (
       <h1>Welcome to Harker Courses</h1>
       <h2>Why?</h2>
       <p>
-        Harker students are very fortunate to be able to be 
+        Harker students are very fortunate to be able to be
         able to choose from a variety of electives.
       </p>
 

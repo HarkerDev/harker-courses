@@ -191,17 +191,17 @@ export default class CourseBrowser extends Component {
               { this.renderCategories() }
             </ul>
           </div>) : (
-            <div id="categories">
+          <div id="categories">
               <h3 className="text-center">Courses</h3>
               <h4
-                className="back-li text-center"
-                role="presentation"
-                onClick={() => {
+              className="back-li text-center"
+              role="presentation"
+              onClick={() => {
                 this.categoryClicked = false; currentIDS = []; this.forceUpdate();
-                }}
-              >
-              Back To Departments
-              </h4>
+              }}
+            >
+          Back To Departments
+            </h4>
             </div>)}
         <div id="course-browser">{ this.renderCourses(currentIDS) }</div>
       </div>
