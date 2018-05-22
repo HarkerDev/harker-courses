@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Autosuggest from 'react-autosuggest';
-import * as firebase from 'firebase';
-import coursesDataCO from '../courses.json';
+import coursesDataCO from './courses.json';
+import SearchBar from './SearchBar';
+import TextCard from './TextCard';
+import NavBar from './NavBar';
 
 const coursesData = coursesDataCO;
 
@@ -9,47 +10,6 @@ const courseIDS = [];
 let currentIDS = [];
 let courseCategories = [];
 const subjects = [];
-
-function escapeRegexCharacters(str) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function getSuggestions(value) {
-  const escapedValue = escapeRegexCharacters(value.trim());
-
-  if (escapedValue === '') {
-    return [];
-  }
-
-  const regex = new RegExp(`^${escapedValue}`, 'i');
-
-  return subjects
-    .map(section => ({
-      title: section.title,
-      subjects: section.subjects.filter(language => regex.test(language.name)),
-    }))
-    .filter(section => section.subjects.length > 0);
-}
-
-function getSuggestionValue(suggestion) {
-  return suggestion.name;
-}
-
-function renderSuggestion(suggestion) {
-  return (
-    <span>{suggestion.name}</span>
-  );
-}
-
-function renderSectionTitle(section) {
-  return (
-    <strong>{section.title}</strong>
-  );
-}
-
-function getSectionSuggestions(section) {
-  return section.subjects;
-}
 
 // Keep all course ids
 function uniq(a) {
@@ -88,11 +48,7 @@ for (const category of courseCategories) {
 
 // render course title on page
 function renderCourse(courseID) {
-  return (
-    <a key={courseID} href={`/#/course/${courseID}`}>
-      <li>{ coursesData[courseID].title }</li>
-    </a>
-  );
+  return <TextCard key={courseID} title={coursesData[courseID].title} onClick={() => window.location.href =`/course/${courseID}`} />;
 }
 
 export default class CourseBrowser extends Component {
@@ -106,39 +62,19 @@ export default class CourseBrowser extends Component {
       value: '',
       suggestions: [],
     };
-
+/*
     const postsRef = firebase.database().ref('harker-courses').child('posts');
     postsRef.on('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
         const childData = childSnapshot.val();
         console.log(childData);
       });
-    });
+    });*/
   }
 
-  onChange = (event, { newValue }) => {
-    this.setState({
-      value: newValue,
-    });
-  };
-
-  onSuggestionsFetchRequested = ({ value }) => {
-    const suggestions = getSuggestions(value);
-    console.log(suggestions);
-    currentIDS = suggestions.reduce((obj, x) => obj.concat(x.subjects.map(y => y.id)), []);
-    this.setState({
-      suggestions,
-    });
-  };
-
-  onSuggestionsClearRequested = () => {
-    this.setState({
-      suggestions: [],
-    });
-  };
-
   categoryRender(category) {
-    console.log('Filtering for', category);
+    //console.log('Filtering for', category);
+    this.filterCategory =  category;
     currentIDS = [];
     for (const on of courseIDS) {
       if (coursesData[on].subject === category) {
@@ -155,55 +91,65 @@ export default class CourseBrowser extends Component {
   }
 
   renderCategory(category) {
-    return (
-      <li onClick={() => this.categoryRender(category)} role="presentation" key={category}>{ category }</li>
-    );
+    return <TextCard key={category} title={category} onClick={() => this.categoryRender(category)}/>
   }
 
   renderCategories() {
     return courseCategories.map(this.renderCategory, this);
   }
 
+  filterResults(query){
+    // init courses array
+    if (!this.coursesArray){
+      var keys = Object.keys(coursesData);
+      var vals = Object.values(coursesData);
+      this.coursesArray = vals.map((x, index) => { return {id: keys[index], course: x}});
+    }
+    if (query.length < 3){
+      this.currentIDS = [];
+      this.categoryClicked = false;
+      this.forceUpdate();
+      return;
+    }
+
+    this.filterCategory = "Search Results";
+    currentIDS = this.coursesArray.filter(x => x.course.title.toLowerCase().startsWith(query.toLowerCase())).map(x => x.id);
+    this.categoryClicked = true;
+    this.forceUpdate();
+  }
+
+  componentDidMount(){
+    // kind of hacky, I know, but Router won't let me pass state up
+    document.querySelector(".app-bar .navbar").style.display = "none";
+  }
+
+  componentWillUnmount(){
+    document.querySelector(".app-bar .navbar").style.display = "block";
+  }
+
   render() {
-    const { value, suggestions } = this.state;
-    const inputProps = {
-      placeholder: 'Search for a course',
-      value,
-      onChange: this.onChange,
-    };
     return (
-      <div>
-        <Autosuggest
-          multiSection
-          suggestions={suggestions}
-          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-          getSuggestionValue={getSuggestionValue}
-          renderSuggestion={renderSuggestion}
-          renderSectionTitle={renderSectionTitle}
-          getSectionSuggestions={getSectionSuggestions}
-          inputProps={inputProps}
-        />
+      <div className="course-browser">
+        <div className="heading-container">
+          <NavBar />
+          <SearchBar onQuery={this.filterResults.bind(this)}/>
+        </div>
         {!this.categoryClicked ? (
-          <div id="categories">
-            <h3 className="text-center">Browse By Department</h3>
-            <ul>
+          <div>
+            <div className="mdc-typography--headline5 heading">Browse By Department</div>
+            <div className="categories">
               { this.renderCategories() }
-            </ul>
+            </div>
           </div>) : (
-          <div id="categories">
-              <h3 className="text-center">Courses</h3>
-              <h4
-              className="back-li text-center"
-              role="presentation"
-              onClick={() => {
-                this.categoryClicked = false; currentIDS = []; this.forceUpdate();
-              }}
-            >
-          Back To Departments
-            </h4>
+            <div>
+            <div className="mdc-typography--headline5 heading">
+              <i className="material-icons" onClick={() => {this.categoryClicked = false; currentIDS = []; this.forceUpdate();}}>arrow_back</i>
+              {this.filterCategory}
+            </div>
+            <div className="categories">
+              { this.renderCourses(currentIDS) }
+            </div>
             </div>)}
-        <div id="course-browser">{ this.renderCourses(currentIDS) }</div>
       </div>
     );
   }

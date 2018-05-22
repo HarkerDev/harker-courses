@@ -1,10 +1,7 @@
 import React from 'react';
 
-import Login from './Login';
-
 const About = () => (
   <div>
-    <Login />
     <div id="about-detail">
       <h1>Welcome to Harker Courses</h1>
       <h2>Why?</h2>
