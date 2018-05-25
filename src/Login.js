@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import Snackbar from 'rmwc/Snackbar';
+import { SimpleMenu, MenuItem } from 'rmwc/Menu';
 let loginInfo;
 
 export default class Login extends Component {
@@ -58,7 +59,7 @@ export default class Login extends Component {
             displayName, email, emailVerified, photoURL, uid, accessToken, providerData,
           };
           if (loginInfo.email.indexOf('@students.harker.org') === -1) {
-            this.setState({loginFailure: true});
+            this.setState({ loginFailure: true });
             firebase.auth().signOut().then(() => {
               this.setState({
                 loggedIn: false,
@@ -70,7 +71,7 @@ export default class Login extends Component {
           }
           let prettyUsername = loginInfo.email.split('@')[0];
           prettyUsername = prettyUsername.slice(0, 3).toUpperCase() + prettyUsername.slice(3, -1)
-              + prettyUsername.slice(-1).toUpperCase();
+            + prettyUsername.slice(-1).toUpperCase();
           this.setState({
             loggedIn: true,
             userInfo: loginInfo,
@@ -100,20 +101,28 @@ export default class Login extends Component {
   htmlGenerator() {
     if (this.state_props.loggedIn === undefined) {
       return null;
-    } else if (this.state_props.loginFailure === true){
-      return <Snackbar show onHide={() => this.setState({loginFailure: false})} message="You must login with a Harker student account."/>;
+    } else if (this.state_props.loginFailure === true) {
+      return <Snackbar show onHide={() => this.setState({ loginFailure: false })} message="You must login with a Harker student account." />;
     }
     else if (this.state_props.loggedIn === false) {
       // <div id="firebaseui-auth-container"></div>
-        const LoginClass = global.loginClass;
-        return <LoginClass />;
+      const LoginClass = global.loginClass;
+      return <LoginClass />;
     } else if (this.state_props.loggedIn === true) {
       if (!this.state_props.hide) {
         return (
-          <div className="user">
-              <img src="https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg" alt="login button" />
-              <span>John Lynch</span>
-          </div>
+          <SimpleMenu
+              onSelected={this.signOut.bind(this)}
+              anchorCorner="bottomStart"
+              handle={
+                <div className="user">
+                  <img src={this.state_props.photo} alt="user icon" />
+                  <span>{this.state_props.name}</span>
+                </div>
+              }
+            >
+              <MenuItem>Log Out</MenuItem>
+            </SimpleMenu>
         );
       }
     }
@@ -123,7 +132,7 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        { this.htmlGenerator() }
+        {this.htmlGenerator()}
       </div>
     );
   }
