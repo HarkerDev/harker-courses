@@ -1,14 +1,13 @@
 /* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-import swal from 'sweetalert';
-
+import Snackbar from 'rmwc/Snackbar';
 let loginInfo;
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    //console.log(props);
     this.signOut = this.signOut.bind(this);
     this.state_props = {
       loggedIn: undefined,
@@ -59,18 +58,13 @@ export default class Login extends Component {
             displayName, email, emailVerified, photoURL, uid, accessToken, providerData,
           };
           if (loginInfo.email.indexOf('@students.harker.org') === -1) {
-            swal({
-              title: 'Error',
-              text: 'Must log in with students.harker.org email to verify identity as Harker student.',
-              icon: 'error',
-            }).then(() => {
-              firebase.auth().signOut().then(() => {
-                this.setState({
-                  loggedIn: false,
-                });
-              }, (err) => {
-                console.log(err);
+            this.setState({loginFailure: true});
+            firebase.auth().signOut().then(() => {
+              this.setState({
+                loggedIn: false,
               });
+            }, (err) => {
+              console.log(err);
             });
             return;
           }
@@ -104,38 +98,21 @@ export default class Login extends Component {
   }
 
   htmlGenerator() {
-    console.log(this.state_props.loggedIn);
     if (this.state_props.loggedIn === undefined) {
       return null;
-    } else if (this.state_props.loggedIn === false) {
+    } else if (this.state_props.loginFailure === true){
+      return <Snackbar show onHide={() => this.setState({loginFailure: false})} message="You must login with a Harker student account."/>;
+    }
+    else if (this.state_props.loggedIn === false) {
       // <div id="firebaseui-auth-container"></div>
-      if (this.state_props.hide) {
         const LoginClass = global.loginClass;
         return <LoginClass />;
-      }
     } else if (this.state_props.loggedIn === true) {
       if (!this.state_props.hide) {
         return (
-          <div className="well">
-            <ul className="media-list">
-              <li className="media">
-                <div className="media-left">
-                  <a href="#"><img src={this.state_props.photo} alt="login button" /></a>
-                </div>
-                <div className="media-body">
-                  <h4 className="media-heading">
-                    {this.state_props.name}
-                  </h4>
-                  <h5>(currently anonymous)</h5>
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={this.signOut}
-                  > Sign Out
-                  </button>
-                </div>
-              </li>
-            </ul>
+          <div className="user">
+              <img src="https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg" alt="login button" />
+              <span>John Lynch</span>
           </div>
         );
       }

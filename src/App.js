@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
+import createReactClass from 'create-react-class';
 
 import * as firebase from 'firebase';
 import * as firebaseui from 'firebaseui';
@@ -18,7 +19,9 @@ export default class App extends Component {
 
     // Init login UI
     authUi = new firebaseui.auth.AuthUI(firebase.auth());
-    const loginClass = React.createClass({
+    
+    // eslint-disable-next-line
+    const loginClass = createReactClass({
       componentDidMount() {
         const uiConfig = {
           signInSuccessUrl: '/',
@@ -43,7 +46,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <Router history={hashHistory}>
+      <Router history={browserHistory}>
         <Route path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/login" component={Login} />
