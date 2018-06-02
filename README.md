@@ -12,11 +12,10 @@ Then, begin the server with `yarn start` and head to [http://localhost:3000/](ht
 
 ### Build & Deploy
 
-`npm run-script build`
-
-`cd build`
-
-`surge`
+1. `yarn build`
+2. `cd build`
+3. Rename `index.html` to `200.html`
+4. `surge`
 
 ### Linting
 
