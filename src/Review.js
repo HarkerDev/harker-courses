@@ -58,7 +58,10 @@ export default class Review extends Component {
 
   onMenuItemClicked(index) {
     var ref = firebase.database().ref('flagged_reviews').push();
-    ref.set(this.props.review, (error) => {
+    var review = this.props.review;
+    var user = FirebaseAuth.getInstance().getCurrentUser();
+    review.flaggedBy = user && user.getEmail();
+    ref.set(review, (error) => {
       if (error) {
         this.setState({ flagFailed: true });
         console.log("Error flagging review", error);
